@@ -1,4 +1,8 @@
+// stylin for entire app
 import './App.css';
+
+//import Router
+import { Routes, Route } from 'react-router';
 
 function App() {
   return (
