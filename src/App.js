@@ -8,12 +8,15 @@ import { Routes, Route } from 'react-router';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Main from './components/Main';
+
+//import pages
+import Landing from './pages/Landing';
+
 function App() {
   return (
     <div className="jx-funds">
-      <h1> JX-FUNDS </h1>
       <Header />
-      <Main />
+      <Landing />
       <Footer />
     </div>
   );
