@@ -2,7 +2,7 @@
 const Footer = (props) => {
     return(
         <div className='footer'>
-            <h1>This is the Footer component!</h1>
+            <h3>@JX-FUNDS</h3>
         </div>
     );
 };
