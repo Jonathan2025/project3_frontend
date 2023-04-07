@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import {Routes, Route} from 'react-router-dom';
 import Index from "../pages/Index";
 import Show from "../pages/Show";
 
