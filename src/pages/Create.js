@@ -55,6 +55,9 @@ const Create = (props) => {
 
     return (
         <section>
+            <div>
+                <h1>Welcome to the Create Page!</h1>
+            </div>
             <form onSubmit={handleSubmit}>
     
         <input
