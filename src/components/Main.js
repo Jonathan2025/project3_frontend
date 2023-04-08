@@ -3,6 +3,10 @@ import {Routes, Route} from 'react-router-dom';
 import Create from "../pages/Create";
 import Index from "../pages/Index";
 import Show from "../pages/Show";
+import Edit from "../pages/Edit";
+
+
+
 
 const Main = (props) => {
     //state to hold list of funds 
@@ -78,6 +82,13 @@ const Main = (props) => {
                 funds={funds} 
                 updateFund={updateFund}
                 deleteFund={deleteFund}/>}/>
+
+               {/* route to hit the edit page of that specific fund */}
+	            <Route path="/jxfunds/edit" element={<Edit 
+	                funds={funds} 
+                />}/>
+
+
              </Routes>
         </div>
     );
