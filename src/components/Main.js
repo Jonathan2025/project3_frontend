@@ -4,8 +4,7 @@ import Create from "../pages/Create";
 import Index from "../pages/Index";
 import Show from "../pages/Show";
 import Edit from "../pages/Edit";
-
-
+import Landing from "../pages/Landing";
 
 
 const Main = (props) => {
@@ -64,10 +63,14 @@ const Main = (props) => {
     }, [])
 
     return(
-        <div className='main'>
+        <main>
              <Routes>
-                {/* route to hit index page of posted funds */}
+                {/* route to hit the landing page of the app  */}
+                <Route path="/" element={<Landing />} />
 
+
+
+                {/* route to hit index page of posted funds */}
                 <Route path="/jxfunds" element={<Index 
                 funds={funds} 
                 createFund={createFund}/>}/>
@@ -91,7 +94,7 @@ const Main = (props) => {
 
 
              </Routes>
-        </div>
+        </main>
     );
 };
 
