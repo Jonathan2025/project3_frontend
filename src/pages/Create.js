@@ -37,21 +37,24 @@ const Create = (props) => {
             dividends: ""
           });
         };
-
-    const loaded = () =>{
-        return props.fund.map((fund) => (
-            <div key={fund._id} className='fund'>
-                <Link to={`/jxfunds/${fund._id}`}>
-                <h1>{fund.name}</h1>
-                </Link>
-                <img src={fund.img} alt={fund.name}/>
-                <h3>{fund.title}</h3>
-            </div>
-        ))
-    }
-    const loading = () =>{
-        return <h1>Loading...</h1>
-    }
+        
+        const changePage = () =>{
+            window.location.href = 'http://localhost:3000/jxfunds'
+        }
+    // const loaded = () =>{
+    //     return props.fund.map((fund) => (
+    //         <div key={fund._id} className='fund'>
+    //             <Link to={`/jxfunds/${fund._id}`}>
+    //             <h1>{fund.name}</h1>
+    //             </Link>
+    //             <img src={fund.img} alt={fund.name}/>
+    //             <h3>{fund.title}</h3>
+    //         </div>
+    //     ))
+    // }
+    // const loading = () =>{
+    //     return <h1>Loading...</h1>
+    // }
 
     return (
         <section>
@@ -123,10 +126,11 @@ const Create = (props) => {
           placeholder="dividends"
           onChange={handleChange}
         />
-        <input type="submit" value="Create Fund" />
+        <input type="submit" value="Create Fund" onClick={changePage}/>
       </form>
         
-        {props.fund ? loaded(): loading()}
+        {/* {props.fund ? loaded(): loading()} */}
+        {props.fund}
         </section>
         )
 }
