@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {Link} from 'react-router-dom';
 
 const Index = (props) => {
-    console.log(props.funds)
+    console.log(props.funds) // we get the data from the backend BUT its an object instead of an array 
     //loaded function
     const loaded = () => {
         return props.funds.map((fund)=>(
