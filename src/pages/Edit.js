@@ -11,15 +11,17 @@ const Edit = (props) => {
     const navigate = useNavigate()
     const id = params.id
     console.log("this is showing the params.id", id) 
-    const funds = props.funds
-    console.log("This is going to show the funds", funds) // data: Array(20) 0 : {_id: '642f7bbe5f10b18d9fcffaba', name: 'Fund1', company: 'FricksFunds', sym
+    const funds = props.funds.data 
+    console.log("This is going to show the funds", funds) // when we console log funds we get the data array with the funds and their respective information
     
-
+    // f stands for fund 
+    const fund = funds.find((f) => f._id === id )
+    console.log(fund) // we get the first fund information that MATCHES the id in the url
 
 
     return (
         <div className = "editPerson">
-            <h1>You have reached the edit page where the edit page will be shown</h1>
+            <p>You reached the edit page</p>
         </div>
     )
 
