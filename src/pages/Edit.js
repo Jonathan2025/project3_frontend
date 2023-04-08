@@ -24,14 +24,21 @@ const Edit = (props) => {
 
 
 
-    // HandleSubmit and HandleChange for the form 
+    // HandleChange and HandleSubmit functions for the edit form 
     const handleChange = (event) => {
         // whatever gets changed, we change it to event.target.value
         setEditForm({ ...editForm, [event.target.name]: event.target.value });
     }
 
 
-
+    // 28 handlesubmit function which is called when use submits the form by clicking a button
+    const handleSubmit = (event) => {
+        event.preventDefault() // prevent the default form submission behavior that would cause the page to reload
+        // updateFunds takes 2 arguments: an object representing the edited form data and the id of the fund being edited
+        props.updateFund(editForm, fund._id)
+        // redirect people back to index page AFTER the user edits the information
+        navigate("/");
+    }
 
 
     return (
