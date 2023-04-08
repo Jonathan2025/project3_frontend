@@ -10,8 +10,8 @@ const Edit = (props) => {
     const params = useParams()
     const navigate = useNavigate()
     const id = params.id
-    console.log("this is showing the params.id", id) 
-    const funds = props.funds.data 
+    console.log("going to show the props", props)
+    const funds = props.funds
     console.log("This is going to show the funds", funds) // when we console log funds we get the data array with the funds and their respective information
     
     // f stands for fund, this arrow function checks if the "_id" property of that fund is equal to the id in the url 
@@ -42,8 +42,27 @@ const Edit = (props) => {
 
 
     return (
-        <div className = "editPerson">
-            <p>You reached the edit page</p>
+        <div className = "editFund">
+            <p> You have reached the edit page</p>
+            {/* <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    value={editForm.description}
+                    name="description"
+                    placeholder="Description about the fund"
+                    onChange={handleChange}
+                />
+                <input
+                    type="text"
+                    value={editForm.recommendation}
+                    name="recommendation"
+                    placeholder="Recommendation for the Fund"
+                    onChange={handleChange}
+                />
+            
+                <input type="submit" value="Update Fund" />
+                </form> */}
+
         </div>
     )
 
