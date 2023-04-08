@@ -1,25 +1,29 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 const Show = (props) => {
-  const params = useParams();
-  const navigate = useNavigate()
-  const id = params.id;
-  const funds = props.funds;
-  console.log(funds);
-  // const fund = funds.find((f) => f._id === id);
 
-  //handling for delete
+//   const params = useParams();
+//   const navigate = useNavigate()
+//   const id = params.id;
+//   const funds = props.funds
+//   console.log(funds, "this is props");
+//   const fund = funds.find((f) => f._id === id);
+ 
+// //   handling for delete
 //   const removeFund = (e) => {
 //     e.preventDefault()
 //     props.deleteFund(fund._id);
 //     navigate("/jxfunds");
 //   };
+
+
   return (
     <>
-      <div className="fundInfo">
+      <div className="fundInfo Show">
         <h1> Fund Show Page </h1>
-        {/* <h1>{fund.name} ({fund.symbol})</h1> */}
+        {/* <h1>{name} </h1> */}
         {/* <h2>Exchange: {fund.exchange}</h2> */}
 
         {/*  what we'd want to display ... maybe
