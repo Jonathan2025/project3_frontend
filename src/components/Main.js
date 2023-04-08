@@ -36,6 +36,17 @@ const Main = (props) => {
         //update list of funds
         getFunds();
     };
+
+
+    // Need useEffect in order to fetch the data and diplay it as soon as the component is rendered on the page
+    useEffect(()=> {
+        getFunds()
+    }, [])
+
+
+
+
+
     return(
         <div className='main'>
              <Routes>

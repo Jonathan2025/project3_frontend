@@ -18,10 +18,7 @@ function App() {
       <Header />
 
       <Main />
-       {/* I think we can get rid of the routes tags and everything inside */}
-      {/* <Routes>
-         <Route path='/' element={<Landing />} />
-      </Routes> */}
+      
 
 
 
