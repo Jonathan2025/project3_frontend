@@ -83,7 +83,10 @@ const Main = (props) => {
                 updateFund={updateFund}
                 deleteFund={deleteFund}/>}/>
 
-               
+               {/* route to hit the edit page of that specific fund */}
+	            <Route path="/jxfunds/edit" element={<Edit 
+	                funds={funds} 
+                />}/>
 
 
              </Routes>
