@@ -44,7 +44,7 @@ const Main = (props) => {
                 {/* route to hit index page of posted funds */}
                 <Route path="/jxfunds" element={<Index funds={funds} createFund={createFund}/>}/>
                 {/* route to hit create page */}
-                <Route path="/jxfunds" element={<Create funds={funds} createFund={createFund}/>}/>
+                <Route path="/jxfunds/create" element={<Create funds={funds} createFund={createFund}/>}/>
                 {/* route to hit show page of specific funds post */}
                 <Route path="/jxfunds/:id" element={<Show />}/>
              </Routes>

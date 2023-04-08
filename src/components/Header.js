@@ -12,6 +12,9 @@ const Header = (props) => {
         <Link to="/jxfunds">
           <div>Funds</div>
         </Link>
+        <Link to="/jxfunds/create">
+          <div>Create</div>
+        </Link>
       </nav>
     </div>
   );
