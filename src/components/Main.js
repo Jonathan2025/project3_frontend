@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import {Routes, Route} from 'react-router-dom';
+import Create from "../pages/Create";
 import Index from "../pages/Index";
 import Show from "../pages/Show";
 
@@ -42,6 +43,8 @@ const Main = (props) => {
              <Routes>
                 {/* route to hit index page of posted funds */}
                 <Route path="/jxfunds" element={<Index funds={funds} createFund={createFund}/>}/>
+                {/* route to hit create page */}
+                <Route path="/jxfunds" element={<Create funds={funds} createFund={createFund}/>}/>
                 {/* route to hit show page of specific funds post */}
                 <Route path="/jxfunds/:id" element={<Show />}/>
              </Routes>
