@@ -19,6 +19,7 @@ const Main = (props) => {
         console.log("API Call complete")
         console.log(data);
     };
+    // makes a post request to create a fund
     const createFund = async (fund) => {
         //make post request to create a fund
         await fetch(URL, {
@@ -31,6 +32,26 @@ const Main = (props) => {
         //update list of funds
         getFunds();
     };
+    //makes a request to update fund
+    const updateFund = async (fund, id) => {
+        await fetch(URL + id, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(fund),
+        });
+        //update list of funds
+        getFunds();
+    };
+    //makes a request to DELETE a fund
+    const deleteFund = async (id) => {
+        await fetch(URL + id, {
+            method: "DELETE",
+        });
+        //update list of people
+        getFunds();
+    };
 
     // Need useEffect in order to fetch the data and diplay it as soon as the component is rendered on the page
     useEffect(()=> {
@@ -41,9 +62,14 @@ const Main = (props) => {
         <div className='main'>
              <Routes>
                 {/* route to hit index page of posted funds */}
-                <Route path="/jxfunds" element={<Index funds={funds} createFund={createFund}/>}/>
+                <Route path="/jxfunds" element={<Index 
+                funds={funds} 
+                createFund={createFund}/>}/>
                 {/* route to hit show page of specific funds post */}
-                <Route path="/jxfunds/:id" element={<Show />}/>
+                <Route path="/jxfunds/:id" element={<Show 
+                funds={funds} 
+                updateFund={updateFund}
+                deleteFund={deleteFund}/>}/>
              </Routes>
         </div>
     );
