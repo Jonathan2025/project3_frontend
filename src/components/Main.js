@@ -7,12 +7,21 @@ const Main = (props) => {
     //state to hold list of funds 
     const [funds, setFunds] = useState(null);
     //url for backend
-    const URL = process.env.REACT_APP_BACKEND_URL;
+    //const REACT_APP_BACKEND_URL=
+    // const URL = process.env.REACT_APP_BACKEND_URL;
+    const URL = "http://localhost:4000/jxfunds/"
+    console.log(URL)
+
+
+
+
+
     //function to make the api call 
     const getFunds = async () => {
         const response = await fetch(URL);
         const data = await response.json();
         setFunds(data);
+        console.log("API Call complete")
         console.log(data);
     };
     const createFund = async (fund) => {
@@ -27,6 +36,17 @@ const Main = (props) => {
         //update list of funds
         getFunds();
     };
+
+
+    // Need useEffect in order to fetch the data and diplay it as soon as the component is rendered on the page
+    useEffect(()=> {
+        getFunds()
+    }, [])
+
+
+
+
+
     return(
         <div className='main'>
              <Routes>
