@@ -16,13 +16,11 @@ function App() {
   return (
     <div className="jx-funds">
       <Header />
-
-      <Main />
-      
-
-
-
-
+      <Routes>
+        <Route path = '/' element={<Landing />}/>
+        {/* <Route path = '/jxfunds' element={<Main />}/> */}
+      </Routes>    
+      <Main/>  
       <Footer />
     </div>
   );
