@@ -20,14 +20,26 @@ const Edit = (props) => {
 
     
     // state for the form 
-    const [editForm, setEditForm] = useState(fund);
+    const [editForm, setEditForm] = useState(fund)
+
+
+
+    // HandleSubmit and HandleChange for the form 
+    const handleChange = (event) => {
+        // whatever gets changed, we change it to event.target.value
+        setEditForm({ ...editForm, [event.target.name]: event.target.value });
+    }
+
+
+
+
 
     return (
         <div className = "editPerson">
             <p>You reached the edit page</p>
         </div>
     )
-        
+
 
 }
 
