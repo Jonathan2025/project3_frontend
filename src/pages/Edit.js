@@ -21,7 +21,7 @@ const Edit = (props) => {
     console.log(fund) // we get the first fund information that MATCHES the id in the url
 
     // state for the form 
-    const [editForm, setEditForm] = useState(fund);
+    const [editForm, setEditForm] = useState(fund)
     console.log("this is the editform", editForm)
     
     // added in the useeffect as we kept getting "null" for our editForm
@@ -50,7 +50,7 @@ const Edit = (props) => {
     return (
         <div className = "editFund">
             <p> You have reached the edit page</p>
-            <p>{fund.description}</p>
+
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
