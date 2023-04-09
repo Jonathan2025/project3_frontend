@@ -13,14 +13,14 @@ const Index = (props) => {
                     <h1>{fund.name}({fund.symbol})</h1>
                 </Link>
             </div>
-        ))};
+        ))}
         </div>
         )
-    };
+    }
     const loading = () => {
         return <h1>Loading... </h1> 
-    };
-    return (props.funds ? loaded() : loading());
-};
+    }
+    return (props.funds ? loaded() : loading())
+}
 
 export default Index;
