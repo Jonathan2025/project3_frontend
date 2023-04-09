@@ -7,20 +7,20 @@ const Index = (props) => {
     const loaded = () => {
         return (
         <div className="containerIndex">  
-        props.funds.map((fund)=>(
+        {props.funds.map((fund)=>(
             <div key={fund._id} className='fund'>
                 <Link to={`/jxfunds/${fund._id}`}>
                     <h1>{fund.name}({fund.symbol})</h1>
                 </Link>
             </div>
-        ))};
+        ))}
         </div>
         )
-    };
+    }
     const loading = () => {
         return <h1>Loading... </h1> 
-    };
-    return (props.funds ? loaded() : loading());
-};
+    }
+    return (props.funds ? loaded() : loading())
+}
 
 export default Index;
