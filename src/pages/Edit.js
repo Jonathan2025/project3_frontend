@@ -1,5 +1,5 @@
 // import the necessary useParams, usestate etc
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom"
 
 
