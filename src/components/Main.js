@@ -4,8 +4,7 @@ import Create from "../pages/Create";
 import Index from "../pages/Index";
 import Show from "../pages/Show";
 import Edit from "../pages/Edit";
-
-
+import Landing from "../pages/Landing";
 
 
 const Main = (props) => {
@@ -23,12 +22,13 @@ const Main = (props) => {
         setFunds(data.data);
         console.log("API Call complete")
         console.log(data.data);
-    };
+    }
+
     // makes a post request to create a fund
     const createFund = async (fund) => {
         //make post request to create a fund
         await fetch(URL, {
-            method: "post",
+            method: "POST",
             headers:{
                 'Content-Type': 'application/json',
             },
@@ -37,6 +37,7 @@ const Main = (props) => {
         //update list of funds
         getFunds();
     };
+
     //makes a request to update fund
     const updateFund = async (fund, id) => {
         await fetch(URL + id, {
@@ -49,6 +50,7 @@ const Main = (props) => {
         //update list of funds
         getFunds();
     };
+
     //makes a request to DELETE a fund
     const deleteFund = async (id) => {
         await fetch(URL + id, {
@@ -60,14 +62,19 @@ const Main = (props) => {
 
     // Need useEffect in order to fetch the data and diplay it as soon as the component is rendered on the page
     useEffect(()=> {
+        console.log("Getting funds...")
         getFunds()
     }, [])
 
     return(
-        <div className='main'>
+        <main>
              <Routes>
-                {/* route to hit index page of posted funds */}
+                {/* route to hit the landing page of the app  */}
+                <Route path="/" element={<Landing />} />
 
+
+
+                {/* route to hit index page of posted funds */}
                 <Route path="/jxfunds" element={<Index 
                 funds={funds} 
                 createFund={createFund}/>}/>
@@ -91,7 +98,7 @@ const Main = (props) => {
 
 
              </Routes>
-        </div>
+        </main>
     );
 };
 
