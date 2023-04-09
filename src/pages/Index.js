@@ -6,8 +6,8 @@ const Index = (props) => {
     //loaded function
     const loaded = () => {
         return (
-            <div className="containerIndex">
-            {props.funds.data.map((fund)=>(
+        <div className="containerIndex">  
+        props.funds.map((fund)=>(
             <div key={fund._id} className='fund'>
                 <Link to={`/jxfunds/${fund._id}`}>
                     <h1>{fund.name}({fund.symbol})</h1>

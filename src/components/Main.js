@@ -3,6 +3,10 @@ import {Routes, Route} from 'react-router-dom';
 import Create from "../pages/Create";
 import Index from "../pages/Index";
 import Show from "../pages/Show";
+import Edit from "../pages/Edit";
+
+
+
 
 const Main = (props) => {
     //state to hold list of funds 
@@ -16,9 +20,9 @@ const Main = (props) => {
     const getFunds = async () => {
         const response = await fetch(URL);
         const data = await response.json();
-        setFunds(data);
+        setFunds(data.data);
         console.log("API Call complete")
-        console.log(data);
+        console.log(data.data);
     };
     // makes a post request to create a fund
     const createFund = async (fund) => {
@@ -50,7 +54,7 @@ const Main = (props) => {
         await fetch(URL + id, {
             method: "DELETE",
         });
-        //update list of people
+        //update list of funds
         getFunds();
     };
 
@@ -78,6 +82,14 @@ const Main = (props) => {
                 funds={funds} 
                 updateFund={updateFund}
                 deleteFund={deleteFund}/>}/>
+
+               {/* route to hit the edit page of that specific fund */}
+	            <Route path="/jxfunds/edit/:id" element={<Edit 
+	                funds={funds} 
+                    updateFund={updateFund}
+                />}/>
+
+
              </Routes>
         </div>
     );
