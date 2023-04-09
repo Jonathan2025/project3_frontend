@@ -10,7 +10,7 @@ const Edit = (props) => {
     const params = useParams()
     const navigate = useNavigate()
     const id = params.id
-    console.log("going to show the props", props)
+
     const funds = props.funds
     console.log("This is going to show the funds", funds) // when we console log funds we get the data array with the funds and their respective information
     
@@ -19,26 +19,30 @@ const Edit = (props) => {
     console.log(fund) // we get the first fund information that MATCHES the id in the url
 
     
-    // state for the form 
-    const [editForm, setEditForm] = useState(fund)
+    // // state for the form 
+    // const [editForm, setEditForm] = useState(fund)
 
 
 
-    // HandleChange and HandleSubmit functions for the edit form 
-    const handleChange = (event) => {
-        // whatever gets changed, we change it to event.target.value
-        setEditForm({ ...editForm, [event.target.name]: event.target.value });
-    }
+    // // HandleChange and HandleSubmit functions for the edit form 
+    // const handleChange = (event) => {
+    //     // whatever gets changed, we change it to event.target.value
+    //     setEditForm({ ...editForm, [event.target.name]: event.target.value });
+    // }
 
 
-    // 28 handlesubmit function which is called when use submits the form by clicking a button
-    const handleSubmit = (event) => {
-        event.preventDefault() // prevent the default form submission behavior that would cause the page to reload
-        // updateFunds takes 2 arguments: an object representing the edited form data and the id of the fund being edited
-        props.updateFund(editForm, fund._id)
-        // redirect people back to index page AFTER the user edits the information
-        navigate("/");
-    }
+    // // 28 handlesubmit function which is called when use submits the form by clicking a button
+    // const handleSubmit = (event) => {
+    //     event.preventDefault() // prevent the default form submission behavior that would cause the page to reload
+    //     // updateFunds takes 2 arguments: an object representing the edited form data and the id of the fund being edited
+    //     props.updateFund(editForm, fund._id)
+    //     // redirect people back to index page AFTER the user edits the information
+    //     navigate("/");
+    // }
+
+
+
+
 
 
     return (
