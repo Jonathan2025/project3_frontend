@@ -1,3 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
 body{
-  background-color: slategray;
+  margin: 20px;
+  background-color: rgb(174, 174, 174);
+  font-family: 'PT Serif', serif;
+}
+
+/* nav bar styling */
+.navBar,a{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: black; 
+  margin: 20px;
+  text-decoration: none;
+}
+a:hover{
+  cursor: pointer;
+  text-decoration: underline 3px;
+  text-decoration-color: whitesmoke;
+}
+.logo{
+  margin-right:auto;
+}
+
+/* landing styling  */
+.landing{
+  background-image: url('https://media2.giphy.com/media/f67U9Xc53i4ViUs5T2/giphy.gif?cid=6c09b952e51bdb51ce6e784528602d875f12da25921d494f&rid=giphy.gif&ct=g');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+}
+.containerTitle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;top: 50%;
+}
+.title{
+color:whitesmoke;
+font-size: 80px;
+font: bolder;
+height: 50%;
+margin: 0px 30px 0px 30px;
+opacity: 0.9;
+}
+.search{
+  font-size: 50px;
+  border-radius: 5px;
+  width:300px;
+  height: 60px;
+}
+
+/* index styling */
+.containerIndex{
+display: grid;
+grid-template-columns: repeat(2,1fr);
+grid-gap: 20px;
+
+}
+
+/* create page styling */
+.createForm{
+  border: white solid;
+}
+input[type=text]{
+    font-family: 'PT Serif', serif;
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px 20px 10px 20px;
+    border: none;
+}
+input[type=submit]{
+  font-family: 'PT Serif', serif;
+  font-size: 15px;
+  padding: 5px;
+  margin: 0px 20px;
+  border-radius: 5px;
+  border: none;
+}
+input[type=submit]:hover{
+  cursor: pointer;
+}
+
+/* footer styling */
+.footer{
+  margin-top: 60px;
+  text-align: center;
 }

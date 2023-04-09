@@ -57,7 +57,7 @@ const Create = (props) => {
     // }
 
     return (
-        <section>
+        <section className='createForm'>
             <div>
                 <h1>Welcome to the Create Page!</h1>
             </div>

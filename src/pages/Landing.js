@@ -1,9 +1,12 @@
 
 const Landing = (props) => {
     return(
-        <div>
-            <h1> JX FUNDS</h1>
-            <p> <button > JX FUNDS</button> </p>
+        <div className='landing'>
+            <span className='containerTitle'>
+                 <h1 className='title'>JX FUNDS</h1>  
+               <button className='search'> {'\u2315'}</button>
+            </span>
+             
         </div>
     );
 };
