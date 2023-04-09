@@ -83,7 +83,7 @@ const Main = (props) => {
                 <Route path="/jxfunds/create" element={<Create 
                 funds={funds} 
                 createFund={createFund}/>}/>
-
+                
                 {/* route to hit show page of specific funds post */}
                 <Route path="/jxfunds/:id" element={
                     funds && (
@@ -91,14 +91,14 @@ const Main = (props) => {
                         funds={funds}
                         updateFund={updateFund}
                         deleteFund={deleteFund}
-                        />
-                        )
-                        } />
+                        />)} />
+
                {/* route to hit the edit page of that specific fund */}
-	            <Route path="/jxfunds/edit/:id" element={<Edit 
-	                funds={funds} 
-                    updateFund={updateFund}
-                />}/>
+	            <Route path="/jxfunds/edit/:id" 
+                element={
+                    funds && (
+                      <Edit funds={funds} updateFund={updateFund} />
+                    )}/>
 
 
              </Routes>

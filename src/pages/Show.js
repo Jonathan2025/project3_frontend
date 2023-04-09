@@ -7,7 +7,7 @@ const Show = (props) => {
   const id = params.id;
   const funds = props.funds;
   console.log(funds);
-  const fund = funds && funds.find((f) => f._id === id);
+  const fund = funds.find((f) => f._id === id);
 
   //handling for delete
   const removeFund = (e) => {

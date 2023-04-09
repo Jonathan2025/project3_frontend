@@ -12,10 +12,10 @@ const Edit = (props) => {
     const id = params.id
 
     const funds = props.funds
-    console.log("This is going to show the funds", funds) // when we console log funds we get the data array with the funds and their respective information
+    console.log(funds) // when we console log funds we get the data array with the funds and their respective information
     
     // f stands for fund, this arrow function checks if the "_id" property of that fund is equal to the id in the url 
-    const fund = funds && funds.find((f) => f._id === id);
+    const fund = funds.find((f) => f._id === id);
     
     console.log(id) //642f7bbe5f10b18d9fcffaba
     console.log(fund) // we get the first fund information that MATCHES the id in the url
@@ -24,10 +24,6 @@ const Edit = (props) => {
     const [editForm, setEditForm] = useState(fund)
     console.log("this is the editform", editForm)
     
-    // added in the useeffect as we kept getting "null" for our editForm
-    useEffect(() => {
-        setEditForm(fund && {...fund});
-      }, [fund]);
 
     // HandleChange and HandleSubmit functions for the edit form 
     const handleChange = (event) => {
