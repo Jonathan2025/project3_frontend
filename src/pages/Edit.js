@@ -15,7 +15,11 @@ const Edit = (props) => {
     console.log("This is going to show the funds", funds) // when we console log funds we get the data array with the funds and their respective information
     
     // f stands for fund, this arrow function checks if the "_id" property of that fund is equal to the id in the url 
-    const fund = funds.find((f) => f._id === id )
+    const fund = funds && funds.find((f) => f._id === id);
+    
+    
+    
+    // const fund = funds.find((f) => f._id === id )
     console.log(fund) // we get the first fund information that MATCHES the id in the url
 
     
