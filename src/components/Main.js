@@ -85,11 +85,15 @@ const Main = (props) => {
                 createFund={createFund}/>}/>
 
                 {/* route to hit show page of specific funds post */}
-                <Route path="/jxfunds/:id" element={<Show 
-                funds={funds} 
-                updateFund={updateFund}
-                deleteFund={deleteFund}/>}/>
-
+                <Route path="/jxfunds/:id" element={
+                    funds && (
+                    <Show
+                        funds={funds}
+                        updateFund={updateFund}
+                        deleteFund={deleteFund}
+                        />
+                        )
+                        } />
                {/* route to hit the edit page of that specific fund */}
 	            <Route path="/jxfunds/edit/:id" element={<Edit 
 	                funds={funds} 
