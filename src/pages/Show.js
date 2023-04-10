@@ -10,7 +10,10 @@ const Show = (props) => {
   const funds = props.funds;
   console.log(funds);
   const fund = funds.find((f) => f._id === id);
-
+// edit btn link
+const editForm = () => {
+    navigate(`/jxfunds/edit/${fund._id}`)
+}
 
   // console.log the api key to see that we can access it here 
   const API_KEY = process.env.REACT_APP_API_KEY
@@ -29,8 +32,7 @@ const Show = (props) => {
   return (
     <>
       <div className="fundInfo">
-        <h1> Fund Show Page </h1>
-        <p>{fund.name}</p>
+        <h1> {fund.name} </h1>
         <p>{fund.company}</p>
         <p>{fund.symbol}</p>
         <p>{fund.description}</p>
@@ -42,8 +44,8 @@ const Show = (props) => {
 
       
       </div>
-      <button>Edit</button>
-      <button onClick = {removeFund}>Delete</button>
+      <button className='editBtn' onClick={editForm}>Edit</button>
+      <button className='deleteBtn' onClick = {removeFund}>Delete</button>
       <div className="comments">
         <h1>comments will go here</h1>
       </div>

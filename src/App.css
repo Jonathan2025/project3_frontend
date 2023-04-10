@@ -2,8 +2,14 @@
 
 body{
   margin: 20px;
-  background-color: rgb(174, 174, 174);
+  background-color: black;
   font-family: 'PT Serif', serif;
+  background-image: url('https://images.unsplash.com/photo-1636953056323-9c09fdd74fa6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
+  
 }
 
 /* nav bar styling */
@@ -11,7 +17,7 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  color: black; 
+  color: white; 
   margin: 20px;
   text-decoration: none;
 }
@@ -21,16 +27,17 @@ a:hover{
   text-decoration-color: whitesmoke;
 }
 .logo{
-  margin-right:auto;
-}
+font-size: 25px;
 
+}
+.logo:hover{
+ text-decoration: none;
+}
 /* landing styling  */
 .landing{
-  background-image: url('https://media2.giphy.com/media/f67U9Xc53i4ViUs5T2/giphy.gif?cid=6c09b952e51bdb51ce6e784528602d875f12da25921d494f&rid=giphy.gif&ct=g');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 600px;
+  color: whitesmoke;
+  text-align: center;
+  font-size: 40px;
 }
 .containerTitle{
   display: flex;
@@ -56,36 +63,66 @@ opacity: 0.9;
 /* index styling */
 .containerIndex{
 display: grid;
-grid-template-columns: repeat(2,1fr);
+grid-template-columns: repeat(3,1fr);
 grid-gap: 20px;
 
 }
 
 /* create page styling */
 .createForm{
-  border: white solid;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: whitesmoke;
+  border-radius:10px;
+  height: 300px;
+  margin: 0px 90px 0px 90px;
 }
 input[type=text]{
-    font-family: 'PT Serif', serif;
-    font-size: 20px;
-    padding: 5px;
-    margin: 5px 20px 10px 20px;
-    border: none;
+  font-family: 'PT Serif', serif;
+  font-size: 20px;
+  padding: 5px;
+  margin: 5px 20px 10px 20px;
+  border: none;
 }
 input[type=submit]{
   font-family: 'PT Serif', serif;
-  font-size: 15px;
-  padding: 5px;
-  margin: 0px 20px;
+  font-size: 18px;
+  padding: 7px;
   border-radius: 5px;
-  border: none;
+  width: 300px;
+
 }
 input[type=submit]:hover{
   cursor: pointer;
+  background-color: gainsboro;
 }
 
+/* show page styling */
+.fundInfo{
+  color: whitesmoke;
+  text-align: center;
+
+}
+.editBtn,.deleteBtn{
+  font-family: 'PT Serif', serif;
+  margin:0 auto;
+  display: block;
+}
+
+/* comment section styling */
+.comments{
+  margin: 20px;
+  border: solid whitesmoke;
+  color: whitesmoke;
+}
+/* edit page styling */
+.editFund{
+  color: whitesmoke;
+}
 /* footer styling */
 .footer{
   margin-top: 60px;
-  text-align: center;
+  text-align:center;
+  color: whitesmoke;
 }
