@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-
-
 const Show = (props) => {
   const params = useParams();
   const navigate = useNavigate()
@@ -10,17 +8,15 @@ const Show = (props) => {
   const funds = props.funds;
   console.log(funds);
   const fund = funds.find((f) => f._id === id);
-// edit btn link
-const editForm = () => {
-    navigate(`/jxfunds/edit/${fund._id}`)
-}
 
+  //linking edit btn to edit route
+  const editForm = (e) => {
+    navigate(`/jxfunds/edit/${fund._id}`)
+  }
+  
   // console.log the api key to see that we can access it here 
   const API_KEY = process.env.REACT_APP_API_KEY
   console.log("THIS IS process env ", API_KEY)
-
-
-
 
   //handling for delete
   const removeFund = (e) => {
@@ -41,11 +37,12 @@ const editForm = () => {
         <p>{fund.timezone}</p>
         <p>{fund.price}</p>
         <p>{fund.dividends}</p>
-
-      
+    
       </div>
+
       <button className='editBtn' onClick={editForm}>Edit</button>
       <button className='deleteBtn' onClick = {removeFund}>Delete</button>
+
       <div className="comments">
         <h1>comments will go here</h1>
       </div>
