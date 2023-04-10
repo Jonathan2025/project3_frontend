@@ -12,20 +12,26 @@ const Show = (props) => {
   const fund = funds.find((f) => f._id === id);
 
 
-  // console.log the api key to see that we can access it here 
+  // To use the API we will need the API KEY and the symbol of the fund we want to see info on
   const API_KEY = process.env.REACT_APP_API_KEY
-  console.log("THIS IS process env ", API_KEY)
-
   const symbol = fund.symbol
-
-
 
   // Now we will get the URL of the API
   const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=${API_KEY}`
 
   
+  // Now we need to set up a state hook to our component 
+  const [fundAPIData, setFundAPIData] = useState(null)
+  const getAPIData = async () => {
+    const response = await fetch(url)
+    const data = await response.json()
+    console.log(data)
+    setFundAPIData(data)
+  }
 
-
+  React.useEffect(()=> {
+    getAPIData()
+  }, [])
 
 
 
