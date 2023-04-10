@@ -8,7 +8,12 @@ const Show = (props) => {
   const funds = props.funds;
   console.log(funds);
   const fund = funds.find((f) => f._id === id);
-
+  
+  //linking edit btn to edit route
+  const editForm = (e) => {
+    navigate(`/jxfunds/edit/${fund._id}`)
+  }
+  
   //handling for delete
   const removeFund = (e) => {
     e.preventDefault()
@@ -32,7 +37,7 @@ const Show = (props) => {
 
       
       </div>
-      <button>Edit</button>
+      <button onClick={editForm}>Edit</button>
       <button onClick = {removeFund}>Delete</button>
       <div className="comments">
         <h1>comments will go here</h1>
