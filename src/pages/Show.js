@@ -23,7 +23,7 @@ const Show = (props) => {
   // Now we need to set up a state hook to our component 
   const [fundAPIData, setFundAPIData] = useState(null)
   const getAPIData = async () => {
-    const response = await fetch(url)
+    const response = await fetch(URL)
     const data = await response.json()
     console.log(data)
     setFundAPIData(data)
