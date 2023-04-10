@@ -37,9 +37,6 @@ const Show = (props) => {
     navigate(`/jxfunds/edit/${fund._id}`)
   }
   
-  // console.log the api key to see that we can access it here 
-  const API_KEY = process.env.REACT_APP_API_KEY
-  console.log("THIS IS process env ", API_KEY)
 
 
   //handling for delete
