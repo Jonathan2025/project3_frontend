@@ -11,10 +11,19 @@ const Show = (props) => {
   console.log(funds);
   const fund = funds.find((f) => f._id === id);
 
+  
+  //linking edit btn to edit route
+  const editForm = (e) => {
+    navigate(`/jxfunds/edit/${fund._id}`)
+  }
+  
+
+
 
   // console.log the api key to see that we can access it here 
   const API_KEY = process.env.REACT_APP_API_KEY
   console.log("THIS IS process env ", API_KEY)
+
 
 
 
@@ -42,7 +51,7 @@ const Show = (props) => {
 
       
       </div>
-      <button>Edit</button>
+      <button onClick={editForm}>Edit</button>
       <button onClick = {removeFund}>Delete</button>
       <div className="comments">
         <h1>comments will go here</h1>
