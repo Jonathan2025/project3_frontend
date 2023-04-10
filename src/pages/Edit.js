@@ -52,6 +52,13 @@ const Edit = (props) => {
                 <input
                    label='Description: '
                     type="text"
+                    value={editForm.symbol}
+                    name="symbol"
+                    placeholder="Fund symbol"
+                    onChange={handleChange}
+                />
+                <input
+                    type="text"
                     value={editForm.description}
                     name="description"
                     placeholder="Description about the fund"
