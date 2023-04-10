@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
+
 const Show = (props) => {
   const params = useParams();
   const navigate = useNavigate()
@@ -8,6 +9,13 @@ const Show = (props) => {
   const funds = props.funds;
   console.log(funds);
   const fund = funds.find((f) => f._id === id);
+
+
+  // console.log the api key to see that we can access it here 
+  console.log("this is the api key", API_KEY)
+
+
+
 
   //handling for delete
   const removeFund = (e) => {
