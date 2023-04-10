@@ -16,6 +16,16 @@ const Show = (props) => {
   const API_KEY = process.env.REACT_APP_API_KEY
   console.log("THIS IS process env ", API_KEY)
 
+  const symbol = fund.symbol
+
+
+
+  // Now we will get the URL of the API
+  const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=${API_KEY}`
+
+  
+
+
 
 
 
