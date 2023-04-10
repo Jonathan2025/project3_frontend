@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import React from "react"
 
+import React from "react"
 
 const Show = (props) => {
   const params = useParams();
@@ -10,7 +10,6 @@ const Show = (props) => {
   const funds = props.funds;
   console.log(funds);
   const fund = funds.find((f) => f._id === id);
-
 
   // To use the API we will need the API KEY and the symbol of the fund we want to see info on
   const API_KEY = process.env.REACT_APP_API_KEY
@@ -33,6 +32,16 @@ const Show = (props) => {
     getAPIData()
   }, [])
 
+  //linking edit btn to edit route
+  const editForm = (e) => {
+    navigate(`/jxfunds/edit/${fund._id}`)
+  }
+  
+  // console.log the api key to see that we can access it here 
+  const API_KEY = process.env.REACT_APP_API_KEY
+  console.log("THIS IS process env ", API_KEY)
+
+
   //handling for delete
   const removeFund = (e) => {
     e.preventDefault()
@@ -43,8 +52,7 @@ const Show = (props) => {
   return (
     <>
       <div className="fundInfo">
-        <h1> Fund Show Page </h1>
-        <p>{fund.name}</p>
+        <h1> {fund.name} </h1>
         <p>{fund.company}</p>
         <p>{fund.symbol}</p>
 
@@ -53,19 +61,17 @@ const Show = (props) => {
         <p>{fund.date}</p>
         <p>{fund.timezone}</p>
         <p>{fund.price}</p>
-        <p>{fund.dividends}</p> */}
-
 
         {/* first just see if we can render the fundAPIData on the Page */}
         <p>{fundAPIData}</p>
 
 
 
-
-      
       </div>
-      <button>Edit</button>
-      <button onClick = {removeFund}>Delete</button>
+
+      <button className='editBtn' onClick={editForm}>Edit</button>
+      <button className='deleteBtn' onClick = {removeFund}>Delete</button>
+
       <div className="comments">
         <h1>comments will go here</h1>
       </div>

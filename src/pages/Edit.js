@@ -39,16 +39,18 @@ const Edit = (props) => {
         // updateFunds takes 2 arguments: an object representing the edited form data and the id of the fund being edited
         props.updateFund(editForm, fund._id)
         // redirect people back to index page AFTER the user edits the information
-        navigate("/");
+        navigate(`/jxfunds/${fund._id}`);
     }
 
 
     return (
         <div className = "editFund">
-            <p> You have reached the edit page</p>
-
+          <h1>Jx-Funds Edit Form</h1>
+        <hr/>
             <form onSubmit={handleSubmit}>
+                <label>Description: </label><br/>
                 <input
+                   label='Description: '
                     type="text"
                     value={editForm.symbol}
                     name="symbol"
@@ -61,14 +63,16 @@ const Edit = (props) => {
                     name="description"
                     placeholder="Description about the fund"
                     onChange={handleChange}
-                />
+                /><br/>
+                <label> Recommendation: </label><br/>
                 <input
                     type="text"
                     value={editForm.recommendation}
                     name="recommendation"
                     placeholder="Recommendation for the Fund"
                     onChange={handleChange}
-                />
+                /><br/>
+                <br/>
             
                 <input type="submit" value="Update Fund" />
                 </form>

@@ -51,66 +51,47 @@ const Create = (props) => {
           type="text"
           value={newForm.name}
           name="name"
-          placeholder="name"
+          placeholder="Name"
           onChange={handleChange}
         />
         <input
           type="text"
           value={newForm.company}
           name="company"
-          placeholder="company"
+          placeholder="Company"
           onChange={handleChange}
         />
         <input
           type="text"
           value={newForm.symbol}
           name="symbol"
-          placeholder="symbol"
+          placeholder="Symbol"
           onChange={handleChange}
         />
         <input
           type="text"
           value={newForm.description}
           name="description"
-          placeholder="description"
+          placeholder="Description"
           onChange={handleChange}
         />
         <input
           type="text"
           value={newForm.recommendation}
           name="recommendation"
-          placeholder="recommendation"
+          placeholder="Recommendation"
           onChange={handleChange}
         />
         <input
           type="text"
           value={newForm.date}
           name="date"
-          placeholder="date"
+          placeholder="Date"
           onChange={handleChange}
         />
-        <input
-          type="text"
-          value={newForm.timezone}
-          name="timezone"
-          placeholder="timezone"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          value={newForm.price}
-          name="price"
-          placeholder="price"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          value={newForm.dividends}
-          name="dividends"
-          placeholder="dividends"
-          onChange={handleChange}
-        />
+       <br/>
         <input type="submit" value="Create Fund" onClick={changePage}/>
+
       </form>
         
         {props.fund}
