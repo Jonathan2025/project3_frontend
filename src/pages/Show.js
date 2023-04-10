@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
+import React from "react"
 
 
 const Show = (props) => {
@@ -17,7 +17,7 @@ const Show = (props) => {
   const symbol = fund.symbol
 
   // Now we will get the URL of the API
-  const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=${API_KEY}`
+  //const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=${API_KEY}`
 
   
   // Now we need to set up a state hook to our component 
