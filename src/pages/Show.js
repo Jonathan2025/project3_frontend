@@ -16,9 +16,9 @@ const Show = (props) => {
   const API_KEY = process.env.REACT_APP_API_KEY
   const symbol = fund.symbol
 
-  // Now we will get the URL of the API
+  // Now we will get the URL of the API when ready please remove the comment for the first url. BUT for testing please use the second url
   //const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=${API_KEY}`
-
+  const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=VFINX&apikey=%7bapikey%7d`
   
   // Now we need to set up a state hook to our component 
   const [fundAPIData, setFundAPIData] = useState(null)
@@ -32,8 +32,6 @@ const Show = (props) => {
   React.useEffect(()=> {
     getAPIData()
   }, [])
-
-
 
   //handling for delete
   const removeFund = (e) => {
@@ -49,12 +47,20 @@ const Show = (props) => {
         <p>{fund.name}</p>
         <p>{fund.company}</p>
         <p>{fund.symbol}</p>
-        <p>{fund.description}</p>
+
+        {/* <p>{fund.description}</p>
         <p>{fund.recommendation}</p>
         <p>{fund.date}</p>
         <p>{fund.timezone}</p>
         <p>{fund.price}</p>
-        <p>{fund.dividends}</p>
+        <p>{fund.dividends}</p> */}
+
+
+        {/* first just see if we can render the fundAPIData on the Page */}
+        <p>{fundAPIData}</p>
+
+
+
 
       
       </div>

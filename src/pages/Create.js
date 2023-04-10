@@ -10,10 +10,7 @@ const Create = (props) => {
             symbol: "",
             description: "", 
             recommendation: "", 
-            date: "",
-            timezone: "",
-            price: "", 
-            dividends: ""
+            date: ""
         });
       
         // handleChange function for form
@@ -41,20 +38,7 @@ const Create = (props) => {
         const changePage = () =>{
             window.location.href = 'http://localhost:3000/jxfunds'
         }
-    // const loaded = () =>{
-    //     return props.fund.map((fund) => (
-    //         <div key={fund._id} className='fund'>
-    //             <Link to={`/jxfunds/${fund._id}`}>
-    //             <h1>{fund.name}</h1>
-    //             </Link>
-    //             <img src={fund.img} alt={fund.name}/>
-    //             <h3>{fund.title}</h3>
-    //         </div>
-    //     ))
-    // }
-    // const loading = () =>{
-    //     return <h1>Loading...</h1>
-    // }
+
 
     return (
         <section className='createForm'>
@@ -129,7 +113,6 @@ const Create = (props) => {
         <input type="submit" value="Create Fund" onClick={changePage}/>
       </form>
         
-        {/* {props.fund ? loaded(): loading()} */}
         {props.fund}
         </section>
         )
