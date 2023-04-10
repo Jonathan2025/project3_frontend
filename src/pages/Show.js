@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 
+
 const Show = (props) => {
   const params = useParams();
   const navigate = useNavigate()
@@ -12,7 +13,8 @@ const Show = (props) => {
 
 
   // console.log the api key to see that we can access it here 
-  console.log("this is the api key", API_KEY)
+  const API_KEY = process.env.REACT_APP_API_KEY
+  console.log("THIS IS process env ", API_KEY)
 
 
 
