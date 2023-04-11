@@ -5,11 +5,12 @@ import Index from "../pages/Index";
 import Show from "../pages/Show";
 import Edit from "../pages/Edit";
 import Landing from "../pages/Landing";
-
+import Account from "../pages/Account";
 
 const Main = (props) => {
     //state to hold list of funds 
     const [funds, setFunds] = useState(null);
+    const [users, setUsers] = useState(null);
     //url for backend
     // const URL = process.env.REACT_APP_BACKEND_URL;
     const URL = "http://localhost:4000/jxfunds/"
@@ -99,6 +100,9 @@ const Main = (props) => {
                     funds && (
                       <Edit funds={funds} updateFund={updateFund} />
                     )}/>
+               {/* route to hit the account page of that specific fund */}
+	            <Route path="/account" 
+                element={<Account/>} />
 
 
              </Routes>
