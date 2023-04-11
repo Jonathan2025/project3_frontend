@@ -16,8 +16,8 @@ const Show = (props) => {
   const symbol = fund.symbol
 
   // Now we will get the URL of the API when ready please remove the comment for the first url. BUT for testing please use the second url
-  //const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=${API_KEY}`
-  const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=VFINX&apikey=%7bapikey%7d`
+  //const URL = ADD IN THE ACTUAL URL WHEN READY
+  const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=IBM&apikey=demo`
   
   // Now we need to set up a state hook to our component 
   const [fundAPIData, setFundAPIData] = useState(null)
@@ -27,6 +27,24 @@ const Show = (props) => {
     console.log(data)
     setFundAPIData(data)
   }
+  
+
+
+  // accessing the api data
+  console.log("here is the api data", fundAPIData)
+  const keys = Object.keys(fundAPIData)
+  console.log("getting the time series data first", fundAPIData['Time Series (Daily)'])
+  // now we are able to get the dates and their respective prices and information 
+  // now lets see how we can console log using a for loop to get the date and the object on each line
+  
+
+  // for (const date in fundAPIData['Time Series (Daily)']) {
+  //   console.log('here is the date and the respective informaiton')
+  //   console.log(date, fundAPIData['Time Series (Daily)'][date])
+  // }
+
+
+
 
   React.useEffect(()=> {
     getAPIData()
@@ -60,7 +78,7 @@ const Show = (props) => {
         <p>{fund.price}</p>
 
         {/* first just see if we can render the fundAPIData on the Page */}
-        <p>{fundAPIData}</p>
+        {/* <p>{fundAPIData}</p> */}
 
 
 
