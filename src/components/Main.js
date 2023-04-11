@@ -73,8 +73,8 @@ const Main = (props) => {
                 {/* route to hit the landing page of the app  */}
                 <Route path="/" element={
                     funds && (
-                    <Landing
-                        funds={funds}
+                    <Landing 
+                        funds={funds} 
                     />)} />
 
 
