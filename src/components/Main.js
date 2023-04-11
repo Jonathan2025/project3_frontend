@@ -5,8 +5,8 @@ import Index from "../pages/Index";
 import Show from "../pages/Show";
 import Edit from "../pages/Edit";
 import Landing from "../pages/Landing";
+import About from "../pages/About";
 import Account from "../pages/Account";
-// import { getUser } from "../../../backend_jxfunds/controllers/usersCtrls";
 
 const Main = (props) => {
     //state to hold list of funds 
@@ -85,7 +85,8 @@ const Main = (props) => {
                 {/* route to hit the landing page of the app  */}
                 <Route path="/" element={<Landing />} />
 
-
+                {/* route to hit the landing page of the app  */}
+                <Route path="/about" element={<About />} />
 
                 {/* route to hit index page of posted funds */}
                 <Route path="/jxfunds" element={<Index 
