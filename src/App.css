@@ -181,3 +181,14 @@ label{
 .account {
   color: white
 }
+/* Account page styling */
+.account{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: whitesmoke;
+  border-radius:10px;
+  height: 300px;
+  margin: 0px 90px 0px 90px;
+  color:black
+}
