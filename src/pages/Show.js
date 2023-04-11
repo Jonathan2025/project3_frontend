@@ -31,16 +31,16 @@ const Show = (props) => {
   
 
 
-  // accessing the api data
-  console.log("here is the new api data", fundAPIData)
-  // now access just the meta data 
-  const metaData = fundAPIData['Meta Data']
-  console.log("this is the meta data", metaData)
+ 
+  
 
-  // then access just the time series data 
-  const timeSeriesData = fundAPIData['Time Series (Daily)']
-  console.log("This is time series data ", timeSeriesData)
-    
+  // now for time series data, we will use the for loop to get both the date and the close edjusted price 
+  // for (let i=0; i<timeSeriesData.length; i++){
+  //   console.log(i)
+  // }
+
+
+
   // for (const fundAPI in fundAPIData){
   //   const timeSeriesData = fundAPIData['Time Series (Daily)']
   //   console.log("This is the meta data and the time series", timeSeriesData)
@@ -54,13 +54,22 @@ const Show = (props) => {
   // now lets see how we can console log using a for loop to get the date and the object on each line
   
 
-
-
-
-
   React.useEffect(()=> {
     getAPIData()
   }, [])
+
+   // accessing the api data
+   console.log("here is the new api data", fundAPIData)
+   // now access just the meta data 
+   const metaData = fundAPIData['Meta Data']
+   console.log("this is the meta data", metaData)
+ 
+   // then access just the time series data 
+   const timeSeriesData = fundAPIData['Time Series (Daily)']
+   console.log("This is time series data ", timeSeriesData)
+
+  
+
 
   //linking edit btn to edit route
   const editForm = (e) => {
