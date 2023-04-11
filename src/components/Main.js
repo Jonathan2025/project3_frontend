@@ -6,15 +6,18 @@ import Show from "../pages/Show";
 import Edit from "../pages/Edit";
 import Landing from "../pages/Landing";
 import About from "../pages/About";
-
+import Account from "../pages/Account";
 
 const Main = (props) => {
     //state to hold list of funds 
     const [funds, setFunds] = useState(null);
+    const [users, setUsers] = useState(null);
     //url for backend
     // const URL = process.env.REACT_APP_BACKEND_URL;
     const URL = "http://localhost:4000/jxfunds/"
     console.log(URL)
+    const URL2 = "http://localhost:4000/users/"
+    console.log(URL2)
 
     //function to make the api call 
     const getFunds = async () => {
@@ -22,6 +25,14 @@ const Main = (props) => {
         const data = await response.json();
         setFunds(data.data);
         console.log("API Call complete")
+        console.log(data.data);
+    }
+    //function to make the call for users 
+    const getUsers = async () => {
+        const response = await fetch(URL2);
+        const data = await response.json();
+        setUsers(data.data);
+        console.log("Call for Users complete", data)
         console.log(data.data);
     }
 
@@ -65,6 +76,7 @@ const Main = (props) => {
     useEffect(()=> {
         console.log("Getting funds...")
         getFunds()
+        getUsers()
     }, [])
 
     return(
@@ -101,6 +113,11 @@ const Main = (props) => {
                     funds && (
                       <Edit funds={funds} updateFund={updateFund} />
                     )}/>
+               {/* route to hit the account page of that specific fund */}
+	            <Route path="/account" 
+                element={<Account
+                users={users}
+                />} />
 
 
              </Routes>
