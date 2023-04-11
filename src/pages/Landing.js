@@ -47,6 +47,13 @@ function Landing(props) {
   inputRef.current.value = "";
 }
 
+function handleKeyDown(e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    onSubmit(e);
+  }
+}
+
     return(
       <>
         <div className='landing'>
@@ -56,6 +63,7 @@ function Landing(props) {
             onChange={(e) => setQuery(e.target.value)}
             type="search"
             ref={inputRef}
+            onKeyDown={handleKeyDown} 
           ></input>
 
           {filteredItems.map((item) => (
