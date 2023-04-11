@@ -49,6 +49,19 @@ const Main = (props) => {
         //update list of funds
         getFunds();
     };
+    // makes a post request to create a fund
+    const createUser = async (user) => {
+        //make post request to create a fund
+        await fetch(URL2, {
+            method: "POST",
+            headers:{
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
+        });
+        //update list of funds
+        getUsers();
+    };
 
     //makes a request to update fund
     const updateFund = async (fund, id) => {
@@ -117,6 +130,7 @@ const Main = (props) => {
 	            <Route path="/account" 
                 element={<Account
                 users={users}
+                createUser={createUser}
                 />} />
 
 
