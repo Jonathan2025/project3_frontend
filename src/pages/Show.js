@@ -32,17 +32,28 @@ const Show = (props) => {
 
 
   // accessing the api data
-  console.log("here is the api data", fundAPIData)
-  const keys = Object.keys(fundAPIData)
-  console.log("getting the time series data first", fundAPIData['Time Series (Daily)'])
+  console.log("here is the new api data", fundAPIData)
+  // now access just the meta data 
+  const metaData = fundAPIData['Meta Data']
+  console.log("this is the meta data", metaData)
+
+  // then access just the time series data 
+  const timeSeriesData = fundAPIData['Time Series (Daily)']
+  console.log("This is time series data ", timeSeriesData)
+    
+  // for (const fundAPI in fundAPIData){
+  //   const timeSeriesData = fundAPIData['Time Series (Daily)']
+  //   console.log("This is the meta data and the time series", timeSeriesData)
+    
+  // }
+
+
+  // const keys = Object.keys(fundAPIData)
+  
   // now we are able to get the dates and their respective prices and information 
   // now lets see how we can console log using a for loop to get the date and the object on each line
   
 
-  // for (const date in fundAPIData['Time Series (Daily)']) {
-  //   console.log('here is the date and the respective informaiton')
-  //   console.log(date, fundAPIData['Time Series (Daily)'][date])
-  // }
 
 
 
