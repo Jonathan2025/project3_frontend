@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import Landing from "./Landing"
 
 const Show = (props) => {
   const params = useParams();

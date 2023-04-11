@@ -70,7 +70,11 @@ const Main = (props) => {
         <main>
              <Routes>
                 {/* route to hit the landing page of the app  */}
-                <Route path="/" element={<Landing />} />
+                <Route path="/" element={
+                    funds && (
+                    <Landing
+                        funds={funds}
+                    />)} />
 
 
 
