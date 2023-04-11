@@ -29,22 +29,23 @@ const Show = (props) => {
     <>
       <div className="fundInfo">
         <h1> {fund.name} </h1>
-        <p>{fund.company}</p>
-        <p>{fund.symbol}</p>
-        <p>{fund.description}</p>
-        <p>{fund.recommendation}</p>
-        <p>{fund.date}</p>
-        <p>{fund.timezone}</p>
-        <p>{fund.price}</p>
-        <p>{fund.dividends}</p>
+        <h3> Company: <br/>{fund.company}</h3>
+        <h3>Symbol: <br/>{fund.symbol}</h3>
+        <h3> Description: <br/>{fund.description}</h3>
+        <h3> Recommendation: <br/>{fund.recommendation}</h3>
+        <h3>Date: <br/>{fund.date}</h3>
+        <h3>Timezone: <br/>{fund.timezone}</h3>
+        <h3> Price: <br/>{fund.price}</h3>
+        <h3> Dividends: <br/>{fund.dividends}</h3>
     
+       <button className='editBtn' onClick={editForm}>Edit</button>
+      <button className='deleteBtn' onClick = {removeFund}>Delete</button>
       </div>
 
-      <button className='editBtn' onClick={editForm}>Edit</button>
-      <button className='deleteBtn' onClick = {removeFund}>Delete</button>
+   
 
       <div className="comments">
-        <h1>comments will go here</h1>
+        <h1 className='commentsTitle'>comments will go here</h1>
       </div>
     </>
   );

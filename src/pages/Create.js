@@ -59,7 +59,7 @@ const Create = (props) => {
     return (
         <section className='createForm'>
             <div>
-                <h1>Welcome to the Create Page!</h1>
+                <h1>Create a Jx-Fund </h1>
             </div>
             <form onSubmit={handleSubmit}>
     
@@ -102,7 +102,7 @@ const Create = (props) => {
           type="text"
           value={newForm.date}
           name="date"
-          placeholder="Date"
+          placeholder="Year/Month/Day"
           onChange={handleChange}
         />
        <br/>

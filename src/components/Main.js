@@ -5,6 +5,7 @@ import Index from "../pages/Index";
 import Show from "../pages/Show";
 import Edit from "../pages/Edit";
 import Landing from "../pages/Landing";
+import About from "../pages/About";
 
 
 const Main = (props) => {
@@ -72,7 +73,8 @@ const Main = (props) => {
                 {/* route to hit the landing page of the app  */}
                 <Route path="/" element={<Landing />} />
 
-
+                {/* route to hit the landing page of the app  */}
+                <Route path="/about" element={<About />} />
 
                 {/* route to hit index page of posted funds */}
                 <Route path="/jxfunds" element={<Index 

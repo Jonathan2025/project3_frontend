@@ -45,8 +45,7 @@ const Edit = (props) => {
 
     return (
         <div className = "editFund">
-          <h1>Jx-Funds Edit Form</h1>
-        <hr/>
+          <h1>Edit {fund.name}?</h1>
             <form onSubmit={handleSubmit}>
                 <label>Description: </label><br/>
                 <input
