@@ -1,8 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Landing from "./Landing"
-
-import React from "react"
 
 const Show = (props) => {
   const params = useParams();
@@ -22,37 +20,38 @@ const Show = (props) => {
   
   // Now we need to set up a state hook to our component 
   const [fundAPIData, setFundAPIData] = useState(null)
-  const getAPIData = async () => {
-    const response = await fetch(URL)
-    const data = await response.json()
-    console.log(data)
-    setFundAPIData(data)
 
-    // accessing the api data
-   console.log("here is the new api data", fundAPIData)
-   // now access just the meta data 
-   const metaData = fundAPIData['Meta Data']
-   console.log("this is the meta data", metaData)
- 
-   // then access just the time series data 
-   const timeSeriesData = fundAPIData['Time Series (Daily)']
-   console.log("This is time series data ", timeSeriesData)
-
-    // now see if we can access each date and then the value 
-    for (const date in timeSeriesData) {
-      console.log("Date", date)
-      // access the close price
-      console.log(timeSeriesData[date]['4. close'])
-      // access dividends if any 
-      console.log(timeSeriesData[date])
+  // this useEffect will only run once the component mounts
+  useEffect(() => {
+    const getAPIData = async () => {
+      const response = await fetch(URL)
+      const data = await response.json()
+      console.log(data)
+      setFundAPIData(data)
     }
-
-  }
-  
-
-  React.useEffect(()=> {
     getAPIData()
   }, [])
+
+  // the following useeffect will run every time fundAPIdata Changes
+  //add another useEffect that will return the timeseriesdata and metadata when it updates
+  useEffect(()=> {
+      // first accessing the metaData 
+      const metaData = fundAPIData['Meta Data']
+      console.log("this is the meta data", metaData)
+
+      // next accessing the time series data
+      const timeSeriesData = fundAPIData['Time Series (Daily)']
+      console.log("This is time series data ", timeSeriesData)
+
+      // now see if we can access each date and then the value 
+      for (const date in timeSeriesData) {
+        console.log("Date", date)
+        // access the close price
+        console.log("Close price", timeSeriesData[date]['4. close'])
+        // access dividends if any 
+        console.log(timeSeriesData[date])
+      }
+  }, [fundAPIData])
 
 
   //linking edit btn to edit route
@@ -60,8 +59,6 @@ const Show = (props) => {
     navigate(`/jxfunds/edit/${fund._id}`)
   }
   
-
-
   //handling for delete
   const removeFund = (e) => {
     e.preventDefault()
