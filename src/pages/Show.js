@@ -49,7 +49,7 @@ const Show = (props) => {
         // access the close price
         console.log("Close price", timeSeriesData[date]['4. close'])
         // access dividends if any 
-        console.log(timeSeriesData[date])
+        console.log(timeSeriesData[date]['7. dividend amount'])
       }
   }, [fundAPIData])
 
