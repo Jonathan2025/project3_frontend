@@ -33,9 +33,14 @@ const Show = (props) => {
       const data = await response.json()
       console.log(data)
       setFundAPIData(data)
+      
+      //set the metadata state variable
+      setMetaData(data['Meta Data'])
 
-      // set the timeSeriesData state variable and the metadata state variable
+      // set the timeSeriesData state variable 
       setTimeSeriesData(data["Time Series (Daily)"])
+
+      
     }
     getAPIData()
   }, [])
@@ -88,7 +93,17 @@ const Show = (props) => {
         <h3> Price: <br/>{fund.price}</h3>
         <h3> Dividends: <br/>{fund.dividends}</h3>
 
-        {/* if the timeSeriesData exist (which it will), then use the date as the unique key and then return the close price and dividend amount */}
+        {/* now lets try to get the specific parts of the metaData  */}
+        {/* only show the information when the metaData has been updated by the state */}
+        {metaData && (
+          <>
+            <p>Symbol: {metaData['2. Symbol']}</p>
+            <p>Last Refreshed: {metaData['3. Last Refreshed']}</p>
+            <p>Time Zone: {metaData['5. Time Zone']}</p>
+          </>
+        )}
+
+        {/* if the timeSeriesData exist/ state has been updated, then use the date as the unique key and then return the close price and dividend amount */}
         {timeSeriesData &&
         Object.keys(timeSeriesData).map((date) => (
           <div key={date}>
