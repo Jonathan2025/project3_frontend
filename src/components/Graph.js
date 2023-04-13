@@ -54,6 +54,9 @@ const Graph = ({fund}) => {
     datasets: [{
         labels: 'Price of Index Fund',
         data: timeSeriesData ? Object.values(timeSeriesData).map((item) => item['4. close']) : [],
+        backgroundColor: 'aqua',
+        borderColor: 'black',
+        pointBorderColor: 'aqua'
     }]
 
   }
