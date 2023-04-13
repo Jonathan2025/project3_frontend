@@ -33,7 +33,9 @@ const Graph = ({fund}) => {
   const [fundAPIData, setFundAPIData] = useState(null)
   const [metaData, setMetaData] = useState(null)
   const [timeSeriesData, setTimeSeriesData] = useState(null)
-  
+  // lets create a state where the user gets to decide if they want to see 90 datapoints, 60 or 30
+  const [numDataPoints, setNumDataPoints] = useState(90) // default to 90 datapoints
+
   // this useEffect will only run once the component mounts
   useEffect(() => {
     const getAPIData = async () => {
@@ -52,12 +54,24 @@ const Graph = ({fund}) => {
     }
     getAPIData()
   }, [])
+
+  //if the timeseriesData exists, which it will, then get the data
+  // what selectedData will do is take in the timeseriesData and then slice only the number of data points specified by the user
+  const selectedData = timeSeriesData ? Object.entries(timeSeriesData)
+    // then we will show only from 0 to the number of datapoints that the user wants to show
+    // from the state above, it is set to 90 by default
+    .slice(0, numDataPoints)
+    // now we use the reduce method, takes 2 arguments 
+    // 1) a callback function --> takes 2 agruments 'obj' which is the accumulator and a [key, value] (the current eleemnt in an array)
+    // 2) an initial value for an accumulator {}
+    .reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {})
+    : {} // the default value that is returned in case timeSeriesData is null or undefined
     
   const data = {
-    labels: timeSeriesData ? Object.keys(timeSeriesData) : [], 
+    labels: timeSeriesData ? Object.keys(selectedData) : [], 
     datasets: [{
         label: 'Price of Index Fund',
-        data: timeSeriesData ? Object.values(timeSeriesData).map((date) => date['4. close']) : [],
+        data: timeSeriesData ? Object.values(selectedData).map((date) => date['4. close']) : [],
         backgroundColor: 'aqua',
         borderColor: 'black',
         pointBorderColor: 'aqua',
@@ -78,6 +92,12 @@ const Graph = ({fund}) => {
     }
   }
 
+
+  const handleNumDataPointsChange = (event) => {
+    setNumDataPoints(parseInt(event.target.value))
+  }
+
+
   return (
     <>
         {/* only show the metaData information when the metaData has been updated by the state */}
@@ -88,6 +108,13 @@ const Graph = ({fund}) => {
             <p>Time Zone: {metaData['5. Time Zone']}</p>
           </>
         )}
+        
+        {/* add options for 90, 60 and 30 datapoints */}
+        <select onChange={handleNumDataPointsChange}>
+            <option value="30">30</option>
+            <option value="60">60</option>
+            <option value="90">90</option>
+        </select>
 
          {/* render the Line component only when timeSeriesData is not null */}
         <div className="lineGraph" style={
