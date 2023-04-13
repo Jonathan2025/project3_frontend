@@ -1,4 +1,14 @@
 import { useState, useEffect } from "react";
+import {Line} from 'react-chartjs-2'
+import {
+    Chart as ChartJS,
+    LineElement,
+    CategoryScale, // for x axis
+    Linearscale, // for the y axis
+    PointElement
+} from 'chart.js'
+
+
 
 // pass in the fund prop from the Show.js
 const Graph = ({fund}) => {
