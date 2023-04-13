@@ -23,7 +23,7 @@ const Show = (props) => {
   const [metaData, setMetaData] = useState(null)
   const [timeSeriesData, setTimeSeriesData] = useState(null)
   
-
+  
 
 
   // this useEffect will only run once the component mounts
