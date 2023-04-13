@@ -111,6 +111,8 @@ const Graph = ({fund}) => {
         
         {/* add options for 90, 60 and 30 datapoints */}
         <select onChange={handleNumDataPointsChange}>
+            <option value="5">5</option>
+            <option value="10">10</option>
             <option value="30">30</option>
             <option value="60">60</option>
             <option value="90">90</option>
