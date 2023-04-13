@@ -4,11 +4,16 @@ import {
     Chart as ChartJS,
     LineElement,
     CategoryScale, // for x axis
-    Linearscale, // for the y axis
+    LinearScale, // for the y axis
     PointElement
 } from 'chart.js'
 
-
+ChartJS.register(
+    LineElement,
+    CategoryScale,
+    LinearScale,
+    PointElement
+)
 
 // pass in the fund prop from the Show.js
 const Graph = ({fund}) => {
@@ -43,11 +48,21 @@ const Graph = ({fund}) => {
     }
     getAPIData()
   }, [])
+    
+  const data = {
+    labels: timeSeriesData ? Object.keys(timeSeriesData) : [], 
+    datasets: [{
+        labels: 'Price of Index Fund',
+        data: timeSeriesData ? Object.values(timeSeriesData).map((item) => item['4. close']) : [],
+    }]
+
+  }
+
+
 
   return (
     <>
-        {/* now lets try to get the specific parts of the metaData  */}
-        {/* only show the information when the metaData has been updated by the state */}
+        {/* only show the metaData information when the metaData has been updated by the state */}
         {metaData && (
           <>
             <p>Symbol: {metaData['2. Symbol']}</p>
@@ -55,6 +70,15 @@ const Graph = ({fund}) => {
             <p>Time Zone: {metaData['5. Time Zone']}</p>
           </>
         )}
+
+        <Line>
+            data = {data}
+            options = {options}
+        </Line>
+
+
+        
+      
 
         {/* if the timeSeriesData exist/ state has been updated, then use the date as the unique key and then return the close price and dividend amount */}
         {/* {timeSeriesData &&
