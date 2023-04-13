@@ -53,15 +53,24 @@ const Graph = ({fund}) => {
     labels: timeSeriesData ? Object.keys(timeSeriesData) : [], 
     datasets: [{
         labels: 'Price of Index Fund',
-        data: timeSeriesData ? Object.values(timeSeriesData).map((item) => item['4. close']) : [],
+        data: timeSeriesData ? Object.values(timeSeriesData).map((date) => date['4. close']) : [],
         backgroundColor: 'aqua',
         borderColor: 'black',
         pointBorderColor: 'aqua'
     }]
-
   }
 
-
+  const options = {
+    plugins:{
+        legend: true
+    }, 
+    scales: {
+        y: {
+            min: 0,
+            max: 1000
+        }
+    }
+  }
 
   return (
     <>
@@ -74,10 +83,10 @@ const Graph = ({fund}) => {
           </>
         )}
 
-        <Line>
-            data = {data}
-            options = {options}
-        </Line>
+         {/* render the Line component only when timeSeriesData is not null */}
+        {timeSeriesData && (
+            <Line data={data} options={options} />
+        )}
 
 
         
