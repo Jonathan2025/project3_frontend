@@ -56,7 +56,10 @@ const Graph = ({fund}) => {
         data: timeSeriesData ? Object.values(timeSeriesData).map((date) => date['4. close']) : [],
         backgroundColor: 'aqua',
         borderColor: 'black',
-        pointBorderColor: 'aqua'
+        pointBorderColor: 'aqua',
+        fill: true,
+
+    
     }]
   }
 
@@ -67,7 +70,7 @@ const Graph = ({fund}) => {
     scales: {
         y: {
             min: 0,
-            max: 1000
+            max: 200
         }
     }
   }
@@ -84,9 +87,17 @@ const Graph = ({fund}) => {
         )}
 
          {/* render the Line component only when timeSeriesData is not null */}
-        {timeSeriesData && (
-            <Line data={data} options={options} />
-        )}
+        <div className="lineGraph" style={
+            {
+                width: '600px',
+                height: '300px'
+            }
+        }>
+            {timeSeriesData && (
+                <Line data={data} options={options} />
+            )}
+        </div>
+        
 
 
         
