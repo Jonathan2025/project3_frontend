@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-
 
 // pass in the fund prop from the Show.js
 const Graph = ({fund}) => {

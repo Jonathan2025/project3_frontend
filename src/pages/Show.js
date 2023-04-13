@@ -36,33 +36,8 @@ const Show = (props) => {
         <h3>Timezone: <br/>{fund.timezone}</h3>
         <h3> Price: <br/>{fund.price}</h3>
         <h3> Dividends: <br/>{fund.dividends}</h3>
-
-
         
         <Graph fund={fund}/> 
-
-
-        {/* now lets try to get the specific parts of the metaData  */}
-        {/* only show the information when the metaData has been updated by the state */}
-        {/* {metaData && (
-          <>
-            <p>Symbol: {metaData['2. Symbol']}</p>
-            <p>Last Refreshed: {metaData['3. Last Refreshed']}</p>
-            <p>Time Zone: {metaData['5. Time Zone']}</p>
-          </>
-        )}
-
-        {/* if the timeSeriesData exist/ state has been updated, then use the date as the unique key and then return the close price and dividend amount */}
-        {/* {timeSeriesData &&
-        Object.keys(timeSeriesData).map((date) => (
-          <div key={date}>
-            <p>Date: {date}</p>
-            <p>Close price: {timeSeriesData[date]["4. close"]}</p>
-            <p>Dividend amount: {timeSeriesData[date]["7. dividend amount"]}</p>
-          </div>
-        ))}  */}
-
-
 
        <button className='editBtn' onClick={editForm}>Edit</button>
       <button className='deleteBtn' onClick = {removeFund}>Delete</button>
