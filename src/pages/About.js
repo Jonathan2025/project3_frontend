@@ -16,7 +16,7 @@ const About = () => {
                 <h3> Release Manager <br/> Jonathan Liang</h3>
             </div >
             <div className='dev'>
-                <img className='joey' src="https://media.licdn.com/dms/image/C4E03AQHBMBm3TRYbQw/profile-displayphoto-shrink_200_200/0/1605588927062?e=1686787200&v=beta&t=8JzDpkxzRuhgHWHmj4x6dtAmV2BoYRScJ5GxJcGuqgM" alt='joey'/>
+                <img className='joey' src={require('../images/joey.jpg')} alt='joey'/>
                 <h3> Product Manager <br/> Joey Cheng</h3>
             </div >
             <div className='dev'>
