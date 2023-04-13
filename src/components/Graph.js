@@ -80,14 +80,24 @@ const Graph = ({fund}) => {
     }]
   }
 
+    // getting the min and max from the data points and then rounding them to the nearest whole number
+    const minPrice = Math.min(...Object.values(selectedData).map((date) => parseFloat(date['4. close'])));
+    const maxPrice = Math.max(...Object.values(selectedData).map((date) => parseFloat(date['4. close'])));
+    const roundedMin = Math.floor(minPrice);
+    const roundedMax = Math.ceil(maxPrice)
+
+
   const options = {
     plugins:{
         legend: true
     }, 
     scales: {
         y: {
-            min: 0,
-            max: 200
+            min: roundedMin,
+            max: roundedMax,
+            ticks: {
+                stepSize: 10
+              }
         }
     }
   }
@@ -124,13 +134,11 @@ const Graph = ({fund}) => {
                 width: '600px',
                 height: '300px'
             }
-        }>
+            }>
             {timeSeriesData && (
                 <Line data={data} options={options} />
             )}
         </div>
-        
-  
     </>
   );
 };
