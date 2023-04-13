@@ -5,14 +5,18 @@ import {
     LineElement,
     CategoryScale, // for x axis
     LinearScale, // for the y axis
-    PointElement
+    PointElement,
+    Legend, 
+    Tooltip
 } from 'chart.js'
 
 ChartJS.register(
     LineElement,
     CategoryScale,
     LinearScale,
-    PointElement
+    PointElement, 
+    Legend,
+    Tooltip
 )
 
 // pass in the fund prop from the Show.js
@@ -52,13 +56,12 @@ const Graph = ({fund}) => {
   const data = {
     labels: timeSeriesData ? Object.keys(timeSeriesData) : [], 
     datasets: [{
-        labels: 'Price of Index Fund',
+        label: 'Price of Index Fund',
         data: timeSeriesData ? Object.values(timeSeriesData).map((date) => date['4. close']) : [],
         backgroundColor: 'aqua',
         borderColor: 'black',
         pointBorderColor: 'aqua',
         fill: true,
-
     
     }]
   }
@@ -98,21 +101,6 @@ const Graph = ({fund}) => {
             )}
         </div>
         
-
-
-        
-      
-
-        {/* if the timeSeriesData exist/ state has been updated, then use the date as the unique key and then return the close price and dividend amount */}
-        {/* {timeSeriesData &&
-        Object.keys(timeSeriesData).map((date) => (
-          <div key={date}>
-            <p>Date: {date}</p>
-            <p>Close price: {timeSeriesData[date]["4. close"]}</p>
-            <p>Dividend amount: {timeSeriesData[date]["7. dividend amount"]}</p>
-          </div>
-        ))}  */}
-
   
     </>
   );
