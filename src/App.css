@@ -192,3 +192,8 @@ label{
   margin: 0px 90px 0px 90px;
   color:black
 }
+
+/* styling the graph */
+.lineGraph{
+  background-color:white;
+}
