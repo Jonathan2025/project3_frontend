@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Landing from "./Landing"
 import Graph from "../components/Graph";
+import Comments from "../components/Comments";
+
+
 
 const Show = (props) => {
   const params = useParams();
@@ -44,7 +47,7 @@ const Show = (props) => {
 
       </div>
 
-   
+      <Comments />
 
       <div className="comments">
         <h1 className='commentsTitle'>comments will go here</h1>
