@@ -10,10 +10,8 @@ function Landing(props) {
   const navigate = useNavigate()
   const id = params.id;
   const funds = props.funds;
-  console.log(funds);
+  console.log("here are the funds", funds);
 
-
-  console.log(props)
   const [query, setQuery] = useState("");
   const [items, setItems] = useState([]);
   const inputRef = useRef();

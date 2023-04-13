@@ -96,7 +96,9 @@ const Main = (props) => {
         <main>
              <Routes>
                 {/* route to hit the landing page of the app  */}
-                <Route path="/" element={<Landing />} />
+                <Route path="/" element={<Landing 
+                funds={funds}
+                />} />
 
                 {/* route to hit the landing page of the app  */}
                 <Route path="/about" element={<About />} />
