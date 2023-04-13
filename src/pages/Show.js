@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Landing from "./Landing"
+import Graph from "../components/Graph";
 
 const Show = (props) => {
   const params = useParams();
@@ -23,9 +24,6 @@ const Show = (props) => {
   const [metaData, setMetaData] = useState(null)
   const [timeSeriesData, setTimeSeriesData] = useState(null)
   
-  
-
-
   // this useEffect will only run once the component mounts
   useEffect(() => {
     const getAPIData = async () => {
@@ -93,9 +91,14 @@ const Show = (props) => {
         <h3> Price: <br/>{fund.price}</h3>
         <h3> Dividends: <br/>{fund.dividends}</h3>
 
+
+        
+        <Graph/> 
+
+
         {/* now lets try to get the specific parts of the metaData  */}
         {/* only show the information when the metaData has been updated by the state */}
-        {metaData && (
+        {/* {metaData && (
           <>
             <p>Symbol: {metaData['2. Symbol']}</p>
             <p>Last Refreshed: {metaData['3. Last Refreshed']}</p>
@@ -104,14 +107,14 @@ const Show = (props) => {
         )}
 
         {/* if the timeSeriesData exist/ state has been updated, then use the date as the unique key and then return the close price and dividend amount */}
-        {timeSeriesData &&
+        {/* {timeSeriesData &&
         Object.keys(timeSeriesData).map((date) => (
           <div key={date}>
             <p>Date: {date}</p>
             <p>Close price: {timeSeriesData[date]["4. close"]}</p>
             <p>Dividend amount: {timeSeriesData[date]["7. dividend amount"]}</p>
           </div>
-        ))}
+        ))}  */}
 
 
 
