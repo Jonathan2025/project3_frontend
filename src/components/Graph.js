@@ -67,11 +67,14 @@ const Graph = ({fund}) => {
     .reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {})
     : {} // the default value that is returned in case timeSeriesData is null or undefined
     
+  
+
+    // we need to reverse the data points so that the data goes from older dates to most recent
   const data = {
-    labels: timeSeriesData ? Object.keys(selectedData) : [], 
+    labels: timeSeriesData ? Object.keys(selectedData).reverse() : [], 
     datasets: [{
         label: 'Price of Index Fund',
-        data: timeSeriesData ? Object.values(selectedData).map((date) => date['4. close']) : [],
+        data: timeSeriesData ? Object.values(selectedData).map((date) => date['4. close']).reverse() : [],
         backgroundColor: 'aqua',
         borderColor: 'black',
         pointBorderColor: 'aqua',
