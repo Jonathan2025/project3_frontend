@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Searchbar from "./Search";
 
 const Header = (props) => {
   return (
@@ -9,19 +8,24 @@ const Header = (props) => {
      
       <nav className="navBar">
 
+        <Link to="/">
+          <div>Home</div>
+        </Link>
         <Link to="/about">
-          <div>About</div>
+            <div>About</div>
         </Link>
-        <Link to="/jxfunds">
-            <div>Funds</div>
-        </Link>
-        <Link to="/jxfunds/create">
-          <div>Create</div>
+        <Link to="/search">
+          <div>Search</div>
         </Link>
         <Link to="/" className='logo'>
           <div className='logo'>JxFUNDS</div>
         </Link>
-        <Searchbar />
+        <Link to="/jxfunds">
+          <div>Funds</div>
+        </Link>
+        <Link to="/jxfunds/create">
+          <div>Create</div>
+        </Link>
         <Link to="/account">
           <div>Account</div>
         </Link>
