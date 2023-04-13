@@ -2,7 +2,10 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Landing from "./Landing"
 import Graph from "../components/Graph";
-import Comments from "../components/Comments";
+
+// import readct-facebook packages for the comment section
+// import { FacebookProvider, useFacebook } from 'react-facebook';
+// import CommentSection from "../components/Comments";
 
 
 
@@ -47,7 +50,11 @@ const Show = (props) => {
 
       </div>
 
-      <Comments />
+
+      {/* leave this commented out for now as we will need to deploy the site and then create teh comment box */}
+      {/* <FacebookProvider appId="OUR APP ID">
+        <CommentSection />
+      </FacebookProvider> */}
 
       <div className="comments">
         <h1 className='commentsTitle'>comments will go here</h1>
