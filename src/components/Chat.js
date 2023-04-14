@@ -1,4 +1,5 @@
-import { CometChat } from "@cometchat-pro/chat";
+import { CometChat } from "@cometchat-pro/chat"
+import { CometChatUsersWithMessages } from "@cometchat-pro/react-ui-kit";
 
 // initialize the Comet Chat
 const appID = process.env.REACT_APP_COMETCHAT_APP_ID
@@ -47,7 +48,9 @@ CometChat.login(uid, authKey).then(
 
 function Chat() {
     return (
-        <h1>This will be the Chat section</h1>
+      <div style={{width: '800px', height:'800px' }}>
+        <CometChatUsersWithMessages />
+      </div>
     )
 }
 export default Chat
