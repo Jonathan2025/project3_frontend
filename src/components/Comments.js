@@ -44,7 +44,9 @@ CometChat.login(uid, authKey).then(
 
 function Chat(){
   return (
-    <h1>This is where the comme</h1>
+    <div style={{width: '800px', height:'800px' }}>
+      <CometChatUI />
+    </div>
   )
 }
 

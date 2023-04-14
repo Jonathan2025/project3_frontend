@@ -1,0 +1,3 @@
+[submodule "cometchat-pro-react-ui-kit"]
+	path = cometchat-pro-react-ui-kit
+	url = https://github.com/cometchat-pro/cometchat-pro-react-ui-kit.git
