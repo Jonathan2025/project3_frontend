@@ -18,17 +18,29 @@ CometChat.init(appID, appSetting).then(
 // Now we want to create a user function 
 const authKey = process.env.REACT_APP_COMETCHAT_AUTH_KEY
 const uid = "user1"
-const name = "Jonathan"
+// const name = "Jonathan"
 
-let user = new CometChat.User(uid)
-user.setName(name)
-CometChat.createUser(user, authKey).then(
+// let user = new CometChat.User(uid)
+// user.setName(name)
+// CometChat.createUser(user, authKey).then(
+//   user => {
+//     console.log("User created", user)
+//   }, error => {
+//     console.log("Error creating a new user", error)
+//   }
+// )
+
+// The login user function 
+CometChat.login(uid, authKey).then(
   user => {
-    console.log("User created", user)
-  }, error => {
-    console.log("Error creating a new user", error)
+    console.log("user logged in successfully", {user})
+  }, 
+  error => {
+    console.log("Login failed", {error})
   }
 )
+
+
 
 function Chat(){
   return (
