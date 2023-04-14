@@ -13,3 +13,10 @@ CometChat.init(appID, appSetting).then(
   }
 )
 
+function Chat(){
+  return (
+    <h1>This is where the comme</h1>
+  )
+}
+
+export default Chat
