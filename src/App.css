@@ -141,7 +141,7 @@ button:hover{
 }
 
 /* about page styling */
-.aboutPhrase{
+.aboutPhrase, .faqPg{
   color: black;
   font-size: 20px;
   text-align: center;
@@ -201,7 +201,7 @@ label{
   flex-wrap: wrap;
  justify-content: center;
 }
-.twitter, .youtube, .contacts{
+.twitter, .youtube, .contacts,.faq{
   max-width: 50px;
   border:solid white;
   border-radius: 50%;
