@@ -2,9 +2,6 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom"
 
-
-// First step is just to create a basic boilerplate and access it 
-
 const Edit = (props) => {
 
     const params = useParams()
@@ -32,8 +29,7 @@ const Edit = (props) => {
         setEditForm({ ...editForm, [event.target.name]: event.target.value });
     }
 
-
-    // 28 handlesubmit function which is called when use submits the form by clicking a button
+    // handlesubmit function which is called when use submits the form by clicking a button
     const handleSubmit = (event) => {
         event.preventDefault() // prevent the default form submission behavior that would cause the page to reload
         // updateFunds takes 2 arguments: an object representing the edited form data and the id of the fund being edited
@@ -41,7 +37,6 @@ const Edit = (props) => {
         // redirect people back to index page AFTER the user edits the information
         navigate(`/jxfunds/${fund._id}`);
     }
-
 
     return (
         <div className = "editFund">
@@ -80,6 +75,5 @@ const Edit = (props) => {
     )
 
 }
-
 
 export default Edit
