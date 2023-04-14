@@ -47,15 +47,15 @@ const Edit = (props) => {
         <div className = "editFund">
           <h1>Edit {fund.name}?</h1>
             <form onSubmit={handleSubmit}>
-                <label>Description: </label><br/>
+                <label>Symbol: </label><br/>
                 <input
-                   label='Description: '
                     type="text"
                     value={editForm.symbol}
                     name="symbol"
                     placeholder="Fund symbol"
                     onChange={handleChange}
-                />
+                /><br/>
+                 <label>Description: </label><br/>
                 <input
                     type="text"
                     value={editForm.description}
