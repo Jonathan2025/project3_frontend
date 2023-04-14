@@ -24,35 +24,35 @@ const Account = (props) => {
       });
     };
     
-    // const changePage = () =>{
-    //     window.location.href = 'http://localhost:3000/jxfunds'
-    // }
+    const changePage = () =>{
+        window.location.href = 'http://localhost:3000/jxfunds'
+    }
 
 
 return (
     <section className='account'>
         <div>
-            <h1>Sign in </h1>
+            <h1>Sign Up</h1>
         </div>
         <form onSubmit={handleSubmit}>
 
     <input
       type="text"
-      value={newForm.name}
+      value={newForm.username}
       name="username"
       placeholder="username"
       onChange={handleChange}
     />
     <input
       type="text"
-      value={newForm.company}
+      value={newForm.password}
       name="password"
       placeholder="password"
       onChange={handleChange}
     />
     
    <br/>
-    <input type="submit" value="Create User" />
+    <input type="submit" value="Create User" onClick={changePage}/>
 
   </form>
     
