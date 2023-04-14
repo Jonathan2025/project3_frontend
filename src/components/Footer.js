@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = (props) => {
   return (
     <>
@@ -17,13 +19,21 @@ const Footer = (props) => {
               alt="youtube"
             />
           </a>
-          <a href="http://localhost:3000/about">
+          <Link to = '/about'>
             <img
               className="contacts"
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeRJgCii7XmtgDqTliN-6mv4xDDm7co8uXHg&usqp=CAU"
               alt="contacts"
             />
-          </a>
+          </Link>
+          <Link to= '/faq'>
+          <img
+              className="faq"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkYsKlObc1Ewsk3XUcKPSshiS4uwYHZpG8GQ&usqp=CAU"
+              alt="faq"
+            />
+          </Link>
+            
         </div>
         <h5 className="footerTag">@Jx-FUNDS</h5>
       </div>
