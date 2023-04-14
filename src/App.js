@@ -9,6 +9,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Main from './components/Main';
 
+
+
 function App() {
   const [funds, setFunds] = useState(null);
   const URL = 'http://localhost:4000/jxfunds/'
