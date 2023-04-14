@@ -15,9 +15,15 @@ const Main = (props) => {
     // const URL = process.env.REACT_APP_BACKEND_URL;
     const URL = 'http://localhost:4000/jxfunds/'
     console.log(URL)
+    
     const URL2 = 'http://localhost:4000/users/'
     console.log(URL2)
-    //function to make the api call
+
+    const URL3 = "http://localhost:4000/users/signup"
+    console.log(URL3)
+
+    //function to make the api call 
+
     const getFunds = async () => {
         const response = await fetch(URL);
         const data = await response.json();
@@ -46,17 +52,18 @@ const Main = (props) => {
         //update list of funds
         getFunds();
     };
-    // makes a post request to create a fund
+    // makes a post request to create a user
     const createUser = async (user) => {
-        //make post request to create a fund
-        await fetch(URL2, {
-            method: 'POST',
+
+        //make post request to create a user
+        await fetch(URL3, {
+            method: "POST",
             headers:{
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(user),
         });
-        //update list of funds
+        //update list of Users
         getUsers();
     };
     //makes a request to update fund
@@ -81,7 +88,7 @@ const Main = (props) => {
     };
     // Need useEffect in order to fetch the data and diplay it as soon as the component is rendered on the page
     useEffect(()=> {
-        console.log('Getting funds...')
+        console.log("Getting funds & Users...")
         getFunds()
         getUsers()
     }, [])
@@ -116,8 +123,9 @@ const Main = (props) => {
                     funds && (
                       <Edit funds={funds} updateFund={updateFund} />
                     )}/>
-               {/* route to hit the account page of that specific fund */}
-                <Route path='/account'
+
+               {/* route to hit the sign up page of User */}
+	            <Route path="/account" 
                 element={<Account
                 users={users}
                 createUser={createUser}
