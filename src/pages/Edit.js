@@ -2,9 +2,6 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom"
 
-
-// First step is just to create a basic boilerplate and access it 
-
 const Edit = (props) => {
 
     const params = useParams()
