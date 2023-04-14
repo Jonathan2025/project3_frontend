@@ -77,7 +77,7 @@ const Graph = ({fund}) => {
         data: timeSeriesData ? Object.values(selectedData).map((date) => date['4. close']).reverse() : [],
         backgroundColor: 'aqua',
         borderColor: 'black',
-        pointBorderColor: 'aqua',
+        pointBorderColor: 'black',
         fill: true,
     
     }]
@@ -112,7 +112,7 @@ const Graph = ({fund}) => {
 
 
   return (
-    <>
+    <div className="data">
         {/* only show the metaData information when the metaData has been updated by the state */}
         {metaData && (
           <>
@@ -142,7 +142,7 @@ const Graph = ({fund}) => {
                 <Line data={data} options={options} />
             )}
         </div>
-    </>
+    </div>
   );
 };
 
