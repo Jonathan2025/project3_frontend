@@ -19,6 +19,7 @@ body{
   color: white; 
   margin: 20px;
   text-decoration: none;
+  font-size:20px;
 }
 a:hover{
   cursor: pointer;
@@ -26,12 +27,24 @@ a:hover{
   text-decoration-color: whitesmoke;
 }
 .logo{
-font-size: 25px;
+font-size: 30px;
 
 }
 .logo:hover{
  text-decoration: none;
 }
+
+/* search bar styling  */
+.submitBtn{
+  max-width: 30px;
+  max-height: 25px;
+  position: relative;top: -20px;
+}
+input[type = search]{
+  position: relative; top:-20px;
+
+}
+
 /* landing styling  */
 .landing{
   color: whitesmoke;
@@ -84,7 +97,7 @@ input[type=text]{
   margin: 5px 20px 10px 20px;
   border: none;
 }
-input[type=submit]{
+input[type=submit]:not(.submitBtn){
   font-family: 'PT Serif', serif;
   font-size: 18px;
   padding: 7px;
@@ -126,6 +139,7 @@ button:hover{
   background-color: whitesmoke;
   opacity: .9;
 }
+
 /* about page styling */
 .aboutPhrase{
   color: black;
@@ -172,15 +186,27 @@ label{
   font-size: 18px;
   font-weight: bold;
 }
+
 /* footer styling */
 .footer{
   margin-top: 60px;
   text-align:center;
   color: whitesmoke;
 }
-.account {
-  color: white
+.footerTag{
+  margin-top: 0px;
 }
+.socials{
+  display: flex;
+  flex-wrap: wrap;
+ justify-content: center;
+}
+.twitter, .youtube, .contacts{
+  max-width: 50px;
+  border:solid white;
+  border-radius: 50%;
+}
+
 /* Account page styling */
 .account{
   display: flex;
@@ -194,6 +220,14 @@ label{
 }
 
 /* styling the graph */
+.data{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
 .lineGraph{
-  background-color:white;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  padding: 15px;
 }
