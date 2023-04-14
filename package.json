@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@cometchat-pro/chat": "^3.0.10",
+    "@cometchat-pro/react-ui-kit": "^3.0.10-pluto.beta.1.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
