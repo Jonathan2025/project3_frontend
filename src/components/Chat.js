@@ -31,6 +31,19 @@ CometChat.init(appID, appSetting).then(
 // )
 
 
+// Now we will add a login function
+const authKey = process.env.REACT_APP_COMETCHAT_AUTH_KEY
+const uid = "user1" // will eventually be replaced so that it can be any user
+
+CometChat.login(uid, authKey).then(
+    user => {
+      console.log("Login Successful:", { user });    
+    },
+    error => {
+      console.log("Login failed with exception:", { error });    
+    }
+  )
+
 
 function Chat() {
     return (
