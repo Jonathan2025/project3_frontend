@@ -1,5 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import Graph from "../components/Graph";
+import Chat from "../components/Chat";
+
 
 const Show = (props) => {
   const params = useParams();
@@ -36,6 +38,8 @@ const Show = (props) => {
         <h3> Dividends: <br/>{fund.dividends}</h3>
         
         <Graph fund={fund}/> 
+
+        <Chat/>
 
        <button className='editBtn' onClick={editForm}>Edit</button>
       <button className='deleteBtn' onClick = {removeFund}>Delete</button>
