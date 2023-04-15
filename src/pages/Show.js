@@ -39,16 +39,16 @@ const Show = (props) => {
         
         <Graph fund={fund}/> 
 
-        <Chat/>
+       
 
        <button className='editBtn' onClick={editForm}>Edit</button>
       <button className='deleteBtn' onClick = {removeFund}>Delete</button>
 
       </div>
 
-      <div className="comments">
+      {/* <div className="comments">
         <h1 className='commentsTitle'>comments will go here</h1>
-      </div>
+      </div> */}
     </>
   );
 };
