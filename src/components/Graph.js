@@ -75,8 +75,8 @@ const Graph = ({fund}) => {
     datasets: [{
         label: 'Price of Index Fund',
         data: timeSeriesData ? Object.values(selectedData).map((date) => date['4. close']).reverse() : [],
-        backgroundColor: 'aqua',
-        borderColor: 'black',
+        backgroundColor: '#1E90FF',
+        borderColor: '#1E90FF',
         pointBorderColor: 'black',
         fill: true,
     
@@ -116,9 +116,7 @@ const Graph = ({fund}) => {
         {/* only show the metaData information when the metaData has been updated by the state */}
         {metaData && (
           <>
-            <p>Symbol: {metaData['2. Symbol']}</p>
-            <p>Last Refreshed: {metaData['3. Last Refreshed']}</p>
-            <p>Time Zone: {metaData['5. Time Zone']}</p>
+            <h2>Last Refreshed: {metaData['3. Last Refreshed']}</h2>
           </>
         )}
         
@@ -132,12 +130,7 @@ const Graph = ({fund}) => {
         </select>
 
          {/* render the Line component only when timeSeriesData is not null */}
-        <div className="lineGraph" style={
-            {
-                width: '600px',
-                height: '300px'
-            }
-            }>
+        <div className="lineGraph">
             {timeSeriesData && (
                 <Line data={data} options={options} />
             )}

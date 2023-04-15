@@ -1,7 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
 import Graph from "../components/Graph";
-import Chat from "../components/Chat";
-
 
 const Show = (props) => {
   const params = useParams();
@@ -25,30 +23,28 @@ const Show = (props) => {
 
   return (
     <>
-      <div className="fundInfo">
+      <div className="showFundContainer">
         <h1> {fund.name} </h1>
+          <div className="fundInfo">
+            <h3> Company: <br/>{fund.company}</h3>
+            <h3> Symbol: <br/>{fund.symbol}</h3>
+            <h3> Description: <br/>{fund.description}</h3>
+            <h3> Recommendation: <br/>{fund.recommendation}</h3>
+            <h3> Date: <br/>{fund.date}</h3>
+            <h3> Timezone: <br/>{fund.timezone}</h3>
+            <h3> Price: <br/>{fund.price}</h3>
+            <h3> Dividends: <br/>{fund.dividends}</h3>
+          </div>
 
-        <h3> Company: <br/>{fund.company}</h3>
-        <h3>Symbol: <br/>{fund.symbol}</h3>
-        <h3> Description: <br/>{fund.description}</h3>
-        <h3> Recommendation: <br/>{fund.recommendation}</h3>
-        <h3>Date: <br/>{fund.date}</h3>
-        <h3>Timezone: <br/>{fund.timezone}</h3>
-        <h3> Price: <br/>{fund.price}</h3>
-        <h3> Dividends: <br/>{fund.dividends}</h3>
-        
-        <Graph fund={fund}/> 
+          <div className="graph">
+            <Graph fund={fund}/>
+          </div>
 
-       
-
-       <button className='editBtn' onClick={editForm}>Edit</button>
-      <button className='deleteBtn' onClick = {removeFund}>Delete</button>
-
+        <div className="editDltButtons">
+          <button className='editBtn' onClick={editForm}>Edit</button>
+          <button className='deleteBtn' onClick = {removeFund}>Delete</button>
+        </div>
       </div>
-
-      {/* <div className="comments">
-        <h1 className='commentsTitle'>comments will go here</h1>
-      </div> */}
     </>
   );
 };

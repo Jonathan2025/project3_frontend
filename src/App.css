@@ -111,13 +111,33 @@ input[type=submit]:hover{
 }
 
 /* show page styling */
-.fundInfo{
+.showFundContainer{
   color: whitesmoke;
   text-align: center;
   border: solid whitesmoke;
   margin: 10px 80px 10px 80px;
   height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
+
+.fundInfo {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.graph {
+  flex: 1;
+}
+
+.editDltButtons{
+  flex: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
 .editBtn,.deleteBtn{
   font-family: 'PT Serif', serif;
   font-size: 15px;
@@ -230,6 +250,8 @@ label{
   background-color: whitesmoke;
   border-radius: 20px;
   padding: 15px;
+  width: 600px;
+  height: 300px;
 }
 
 
@@ -269,7 +291,7 @@ label{
 .fund{
   border: 1px solid white;
   text-align: center;
-  
+  background-color: rgba(96, 130, 182, 0.6);
 }
 
 .fund a {
@@ -286,3 +308,4 @@ label{
   background-color: #0068C8;
   color: #FFFFFF;
 }
+
