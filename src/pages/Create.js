@@ -1,6 +1,9 @@
 import { useState } from "react"
+// import useNavigate so tha tonce the form is created we can return to the index page
+import { useNavigate } from "react-router-dom"
 
 const Create = (props) => {
+        const navigate = useNavigate()
 
         // state to hold formData
         const [newForm, setNewForm] = useState({
@@ -32,12 +35,8 @@ const Create = (props) => {
             price: "", 
             dividends: ""
           });
+          navigate("/jxfunds")
         };
-        
-        const changePage = () =>{
-            window.location.href = 'http://localhost:3000/jxfunds'
-        }
-
 
     return (
         <section className='createForm'>
@@ -52,6 +51,7 @@ const Create = (props) => {
           name="name"
           placeholder="Name"
           onChange={handleChange}
+          required
         />
         <input
           type="text"
@@ -59,6 +59,7 @@ const Create = (props) => {
           name="company"
           placeholder="Company"
           onChange={handleChange}
+          required
         />
         <input
           type="text"
@@ -66,6 +67,7 @@ const Create = (props) => {
           name="symbol"
           placeholder="Symbol"
           onChange={handleChange}
+          required
         />
         <input
           type="text"
@@ -73,6 +75,7 @@ const Create = (props) => {
           name="description"
           placeholder="Description"
           onChange={handleChange}
+          required
         />
         <input
           type="text"
@@ -80,20 +83,21 @@ const Create = (props) => {
           name="recommendation"
           placeholder="Recommendation"
           onChange={handleChange}
+          required
         />
         <input
-          type="text"
+          type="date"
           value={newForm.date}
           name="date"
-          placeholder="Year/Month/Day"
           onChange={handleChange}
+          required
         />
        <br/>
-        <input type="submit" value="Create Fund" onClick={changePage}/>
+        <input type="submit" value="Create Fund" /> 
 
       </form>
         
-        {props.fund}
+        {/* {props.fund} */}
         </section>
         )
 }
