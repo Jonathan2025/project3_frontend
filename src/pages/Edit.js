@@ -53,6 +53,7 @@ const Edit = (props) => {
                     onChange={handleChange}
                     required
                 /><br/>
+
                  <label>Description: </label><br/>
                 <input
                     type="text"
