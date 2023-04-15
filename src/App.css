@@ -77,7 +77,7 @@ opacity: 0.9;
 display: grid;
 grid-template-columns: repeat(3,1fr);
 grid-gap: 20px;
-
+color: white;
 }
 
 /* create page styling */
@@ -243,4 +243,5 @@ label{
 /* editing of the funds containers in the index page */
 .fund{
   border: 1px solid white;
+  text-align: center;
 }
