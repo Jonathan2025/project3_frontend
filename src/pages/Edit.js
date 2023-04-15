@@ -54,6 +54,24 @@ const Edit = (props) => {
                     required
                 /><br/>
 
+                <label>Company: </label><br/>
+                <select value={editForm.company} name="company" onChange={handleChange} required>
+                    <option value="">Select a company</option>
+                    <option value="Fidelity">Fidelity</option>
+                    <option value="Charles Schwab">Charles Schwab</option>
+                    <option value="Vanguard">Vanguard</option>
+                    <option value="BlackRock">BlackRock</option>
+                    <option value="State Street">State Street</option>
+                    <option value="Invesco">Invesco</option>
+                    <option value="Amundi">Amundi</option>
+                    <option value="Northern Trust">Northern Trust</option>
+                    <option value="Legal & General">Legal & General</option>
+                    <option value="DWS Group">DWS Group</option>
+                    <option value="Other">Other</option>
+                </select>
+                <br></br>
+                <br></br>
+
                  <label>Description: </label><br/>
                 <input
                     type="text"
