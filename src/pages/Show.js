@@ -6,14 +6,26 @@ const Show = (props) => {
   const navigate = useNavigate()
   const id = params.id;
   const funds = props.funds;
-  console.log(funds);
   const fund = funds.find((f) => f._id === id);
+
+  console.log("this is the fund", fund)
+
+
+  const dateAdded = new Date(fund.date.slice(0, 10));
+  const formattedDate = dateAdded.toLocaleDateString();
+  const [month, day, year] = formattedDate.split('/');
+  const reversedDate = `${month}/${day}/${year}`
+
+
 
   //linking edit btn to edit route
   const editForm = (e) => {
     navigate(`/jxfunds/edit/${fund._id}`)
   }
   
+
+
+
   //handling for delete
   const removeFund = (e) => {
     e.preventDefault()
@@ -30,10 +42,7 @@ const Show = (props) => {
             <h3> Symbol: <br/>{fund.symbol}</h3>
             <h3> Description: <br/>{fund.description}</h3>
             <h3> Recommendation: <br/>{fund.recommendation}</h3>
-            <h3> Date: <br/>{fund.date}</h3>
-            <h3> Timezone: <br/>{fund.timezone}</h3>
-            <h3> Price: <br/>{fund.price}</h3>
-            <h3> Dividends: <br/>{fund.dividends}</h3>
+            <h3> Date Added: <br/>{reversedDate}</h3>
           </div>
 
           <div className="graph">
