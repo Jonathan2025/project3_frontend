@@ -10,21 +10,15 @@ const Show = (props) => {
 
   console.log("this is the fund", fund)
 
-
   const dateAdded = new Date(fund.date.slice(0, 10));
   const formattedDate = dateAdded.toLocaleDateString();
   const [month, day, year] = formattedDate.split('/');
   const reversedDate = `${month}/${day}/${year}`
 
-
-
   //linking edit btn to edit route
   const editForm = (e) => {
     navigate(`/jxfunds/edit/${fund._id}`)
   }
-  
-
-
 
   //handling for delete
   const removeFund = (e) => {
