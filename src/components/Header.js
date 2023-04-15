@@ -15,12 +15,22 @@ const Header = (props) => {
         <Link to="/jxfunds/create">
           <div>Create</div>
         </Link>
-        <Link to="/">
-          <div className="logo">JxFUNDS</div>
+
+        <Link to='/jxfunds/chat'>
+          <div>Chat</div>
         </Link>
-        <Search funds={funds} />
-        <Link to="/account">
+        <Link to='/' className='logo'>
+          <div className='logo'>JxFUNDS</div>
+        </Link>
+        <Search funds={funds}/>
+        <Link to='/blog'>
+          <div>Blog</div>
+        </Link>
+        <Link to='/account'>
           <div>Account</div>
+        </Link>
+        <Link to='/login'>
+          <div>Login</div>
         </Link>
       </nav>
     </div>

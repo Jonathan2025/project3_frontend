@@ -27,7 +27,7 @@ const Graph = ({fund}) => {
 
   // Now we will get the URL of the API when ready please remove the comment for the first url. BUT for testing please use the second url
   //const URL = ADD IN THE ACTUAL URL WHEN READY
-  const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=IBM&apikey=demo`
+  const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=${API_KEY}`
   
   // Now we need to set up a state hook to our component and then state for the timeSeriesData
   const [fundAPIData, setFundAPIData] = useState(null)
@@ -75,8 +75,8 @@ const Graph = ({fund}) => {
     datasets: [{
         label: 'Price of Index Fund',
         data: timeSeriesData ? Object.values(selectedData).map((date) => date['4. close']).reverse() : [],
-        backgroundColor: 'aqua',
-        borderColor: 'black',
+        backgroundColor: '#1E90FF',
+        borderColor: '#1E90FF',
         pointBorderColor: 'black',
         fill: true,
     
@@ -116,28 +116,22 @@ const Graph = ({fund}) => {
         {/* only show the metaData information when the metaData has been updated by the state */}
         {metaData && (
           <>
-            <p>Symbol: {metaData['2. Symbol']}</p>
-            <p>Last Refreshed: {metaData['3. Last Refreshed']}</p>
-            <p>Time Zone: {metaData['5. Time Zone']}</p>
+            <h2>Last Refreshed: {metaData['3. Last Refreshed']}</h2>
           </>
         )}
         
         {/* add options for 90, 60 and 30 datapoints */}
         <select onChange={handleNumDataPointsChange}>
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="30">30</option>
-            <option value="60">60</option>
-            <option value="90">90</option>
+            <option value="5">5 Days</option>
+            <option value="10">10 Days</option>
+            <option value="30">30 Days</option>
+            <option value="60">60 Days</option>
+            <option value="90">90 Days</option>
         </select>
+        <br></br>
 
          {/* render the Line component only when timeSeriesData is not null */}
-        <div className="lineGraph" style={
-            {
-                width: '600px',
-                height: '300px'
-            }
-            }>
+        <div className="lineGraph">
             {timeSeriesData && (
                 <Line data={data} options={options} />
             )}

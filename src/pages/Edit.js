@@ -2,9 +2,6 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom"
 
-
-// First step is just to create a basic boilerplate and access it 
-
 const Edit = (props) => {
 
     const params = useParams()
@@ -54,7 +51,27 @@ const Edit = (props) => {
                     name="symbol"
                     placeholder="Fund symbol"
                     onChange={handleChange}
+                    required
                 /><br/>
+
+                <label>Company: </label><br/>
+                <select value={editForm.company} name="company" onChange={handleChange} required>
+                    <option value="">Select a company</option>
+                    <option value="Fidelity">Fidelity</option>
+                    <option value="Charles Schwab">Charles Schwab</option>
+                    <option value="Vanguard">Vanguard</option>
+                    <option value="BlackRock">BlackRock</option>
+                    <option value="State Street">State Street</option>
+                    <option value="Invesco">Invesco</option>
+                    <option value="Amundi">Amundi</option>
+                    <option value="Northern Trust">Northern Trust</option>
+                    <option value="Legal & General">Legal & General</option>
+                    <option value="DWS Group">DWS Group</option>
+                    <option value="Other">Other</option>
+                </select>
+                <br></br>
+                <br></br>
+
                  <label>Description: </label><br/>
                 <input
                     type="text"
@@ -62,6 +79,7 @@ const Edit = (props) => {
                     name="description"
                     placeholder="Description about the fund"
                     onChange={handleChange}
+                    required
                 /><br/>
                 <label> Recommendation: </label><br/>
                 <input
@@ -70,6 +88,7 @@ const Edit = (props) => {
                     name="recommendation"
                     placeholder="Recommendation for the Fund"
                     onChange={handleChange}
+                    required
                 /><br/>
                 <br/>
             
