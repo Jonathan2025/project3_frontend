@@ -8,6 +8,8 @@ import Landing from '../pages/Landing';
 import About from '../pages/About';
 import Account from '../pages/Account';
 import Faq from '../pages/Faq';
+import Login from '../pages/Login';
+
 const Main = (props) => {
     //state to hold list of funds
     const [funds, setFunds] = useState(null);
@@ -22,6 +24,9 @@ const Main = (props) => {
 
     const URL3 = "http://localhost:4000/users/signup"
     console.log(URL3)
+
+    const URL4 = "http://localhost:4000/users/signin"
+    console.log(URL4)
 
     //function to make the api call 
 
@@ -67,6 +72,21 @@ const Main = (props) => {
         //update list of Users
         getUsers();
     };
+    // makes a post to sign in user
+    const signInUser = async (user) => {
+
+        //make post request to create a user
+        await fetch(URL4, {
+            method: "POST",
+            headers:{
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
+        });
+        //update list of Users
+        getUsers();
+    };
+
     //makes a request to update fund
     const updateFund = async (fund, id) => {
         await fetch(URL + id, {
@@ -132,6 +152,12 @@ const Main = (props) => {
                 element={<Account
                 users={users}
                 createUser={createUser}
+                />} />
+               {/* route to hit the sign in page of User */}
+	            <Route path="/login" 
+                element={<Login
+                users={users}
+                signInUser={signInUser}
                 />} />
              </Routes>
         </main>
