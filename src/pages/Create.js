@@ -53,14 +53,21 @@ const Create = (props) => {
           onChange={handleChange}
           required
         />
-        <input
-          type="text"
-          value={newForm.company}
-          name="company"
-          placeholder="Company"
-          onChange={handleChange}
-          required
-        />
+        <select value={newForm.company} name="company" onChange={handleChange} required>
+          <option value="">Select a company</option>
+          <option value="Fidelity">Fidelity</option>
+          <option value="Charles Schwab">Charles Schwab</option>
+          <option value="iShares">iShares</option>
+          <option value="Vanguard">Vanguard</option>
+          <option value="BlackRock">BlackRock</option>
+          <option value="State Street">State Street</option>
+          <option value="Invesco">Vanguard</option>
+          <option value="Amundi">Vanguard</option>
+          <option value="Northern Trust Asset ">Northern Trust Asset </option>
+          <option value="Legal & General">Legal & General</option>
+          <option value="DWS Group">DWS Group</option>
+          <option value="Other">Other</option>
+        </select>
         <input
           type="text"
           value={newForm.symbol}
@@ -97,7 +104,6 @@ const Create = (props) => {
 
       </form>
         
-        {/* {props.fund} */}
         </section>
         )
 }
