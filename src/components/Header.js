@@ -25,6 +25,9 @@ const Header = (props) => {
         <Link to='/account'>
           <div>Account</div>
         </Link>
+        <Link to='/login'>
+          <div>Login</div>
+        </Link>
       </nav>
     </div>
   );

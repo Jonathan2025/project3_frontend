@@ -232,6 +232,7 @@ label{
   padding: 15px;
 }
 
+
 .selection{
   margin-top: 6px;
   margin-bottom: 6px;
@@ -255,4 +256,16 @@ label{
 }
 .choose {
   color:white;
+
+
+.companyLogo {
+  width: 200px;
+  height: 100px;
+  border: 1px solid white;
+  background-color: white;
+}
+
+/* editing of the funds containers in the index page */
+.fund{
+  border: 1px solid white;
 }

@@ -27,7 +27,7 @@ const Graph = ({fund}) => {
 
   // Now we will get the URL of the API when ready please remove the comment for the first url. BUT for testing please use the second url
   //const URL = ADD IN THE ACTUAL URL WHEN READY
-  const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=IBM&apikey=demo`
+  const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=${API_KEY}`
   
   // Now we need to set up a state hook to our component and then state for the timeSeriesData
   const [fundAPIData, setFundAPIData] = useState(null)
