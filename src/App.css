@@ -256,11 +256,11 @@ label{
 }
 .choose {
   color:white;
-
+}
 
 .companyLogo {
-  width: 200px;
-  height: 100px;
+  width: 250px;
+  height: 125px;
   border: 1px solid white;
   background-color: white;
 }
@@ -269,4 +269,20 @@ label{
 .fund{
   border: 1px solid white;
   text-align: center;
+  
+}
+
+.fund a {
+  display: block;
+  text-align: center;
+  background-color: #005A9C;
+  color: #FFFFFF;
+  padding: 2px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.fund a:hover {
+  background-color: #0068C8;
+  color: #FFFFFF;
 }
