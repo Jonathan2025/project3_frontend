@@ -12,7 +12,7 @@ const Index = (props) => {
                 <Link to={`/jxfunds/${fund._id}`}>
                     <h1>{fund.name}({fund.symbol})</h1>
                 </Link>
-                <CompanyLogo />
+                <CompanyLogo fund={fund}/>
             </div>
         ))}
         </div>

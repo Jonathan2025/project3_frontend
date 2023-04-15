@@ -1,6 +1,6 @@
 const CompanyLogo = (props) => {
     return(
-        <h1>Company Name</h1>
+        <h1>{props.fund.company}</h1>
     )
 }
 
