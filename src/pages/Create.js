@@ -68,6 +68,7 @@ const Create = (props) => {
           <option value="DWS Group">DWS Group</option>
           <option value="Other">Other</option>
         </select>
+        
         <input
           type="text"
           value={newForm.symbol}
