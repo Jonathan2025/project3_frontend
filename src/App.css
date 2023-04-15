@@ -146,16 +146,17 @@ input[type=submit]:hover{
   margin-top: 10px;
   display: flex;
   justify-content: flex-start;
+  justify-content: center;
 }
 
 .editBtn,.deleteBtn{
   font-family: 'PT Serif', serif;
-  font-size: 15px;
+  font-size: 25px;
   font-weight: bold;
   justify-self: center;
   margin: 10px 10px 10px 0px;
   padding: 3px;
-  width: 100px;
+  width: 250px;
 }
 
 .deleteBtn{

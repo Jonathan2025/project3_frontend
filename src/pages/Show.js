@@ -41,8 +41,8 @@ const Show = (props) => {
           </div>
 
         <div className="editDltButtons">
-          <button className='editBtn' onClick={editForm}>Edit</button>
-          <button className='deleteBtn' onClick = {removeFund}>Delete</button>
+          <button className='editBtn' onClick={editForm}>Edit Fund</button>
+          <button className='deleteBtn' onClick = {removeFund}>Delete Fund</button>
         </div>
       </div>
     </>
