@@ -48,8 +48,8 @@ CometChat.login(uid, authKey).then(
 
 function Chat() {
     return (
-      <div style={{width: '800px', height:'800px' }}>
-        <CometChatUsersWithMessages />
+      <div className="cometchat-container" style={{width: '500px', height:'500px' }}>
+        <CometChatUsersWithMessages className="chat"/>
       </div>
     )
 }

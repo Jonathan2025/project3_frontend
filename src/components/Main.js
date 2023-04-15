@@ -10,6 +10,7 @@ import Account from '../pages/Account';
 import Faq from '../pages/Faq';
 import Blog from '../pages/Blog';
 import Login from '../pages/Login';
+import Chat from './Chat';
 
 const Main = (props) => {
     //state to hold list of funds
@@ -166,6 +167,11 @@ const Main = (props) => {
                 users={users}
                 signInUser={signInUser}
                 />} />
+
+                {/* route to hit the chat functionality feature */}
+                <Route path="/jxfunds/chat" element={<Chat/>} />
+
+
              </Routes>
         </main>
     );
