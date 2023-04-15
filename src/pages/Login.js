@@ -1,37 +1,41 @@
 import { useState } from "react"
 
-const Account = (props) => {
+const Login = (props) => {
 
     // state to hold formData
     const [newForm, setNewForm] = useState({
         username: "",
         password: "",
     });
-  
+    
     // handleChange function for form
     const handleChange = (event) => {
-      setNewForm({ ...newForm, [event.target.name]: event.target.value });
+      setNewForm({ ...newForm, [event.target.name]: event.target.value});
     };
   
     // handle submit function for form
     const handleSubmit = (event) => {
       event.preventDefault();
-      props.createUser(newForm);
+      props.signInUser(newForm);
       setNewForm({
         username: "",
         password: "",
       });
+      console.log(event, 'this is the event')
+      console.log(newForm)
+      console.log(props)
     };
     
-    const changePage = () =>{
-        window.location.href = 'http://localhost:3000/jxfunds'
-    }
+    
+    // const changePage = () =>{
+    //     window.location.href = 'http://localhost:3000/jxfunds'
+    // }
 
 
 return (
-    <section className='account'>
+    <section className='login'>
         <div>
-            <h1>Sign Up</h1>
+            <h1>Sign In</h1>
         </div>
         <form onSubmit={handleSubmit}>
 
@@ -51,7 +55,7 @@ return (
     />
     
    <br/>
-    <input type="submit" value="Create User" onClick={changePage}/>
+    <input type="submit" value="Sign In" />
 
   </form>
     
@@ -59,4 +63,4 @@ return (
     </section>
     )
 } 
-export default Account;
+export default Login;
