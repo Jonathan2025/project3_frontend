@@ -8,6 +8,8 @@ import Landing from '../pages/Landing';
 import About from '../pages/About';
 import Account from '../pages/Account';
 import Faq from '../pages/Faq';
+import Blog from '../pages/Blog';
+
 const Main = (props) => {
     //state to hold list of funds
     const [funds, setFunds] = useState(null);
@@ -105,6 +107,12 @@ const Main = (props) => {
                 {/* route to hit the FAQ pg */}
                 <Route path='/faq' element={<Faq />}></Route>
                 {/* route to hit index page of posted funds */}
+
+
+                <Route path='/blog' element={<Blog />}></Route>
+                {/* route to hit index page of posted funds */}
+
+
                 <Route path='/jxfunds' element={<Index
                 funds={funds}
                 createFund={createFund}/>}/>
