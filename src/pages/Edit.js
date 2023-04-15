@@ -51,6 +51,7 @@ const Edit = (props) => {
                     name="symbol"
                     placeholder="Fund symbol"
                     onChange={handleChange}
+                    required
                 /><br/>
                  <label>Description: </label><br/>
                 <input
@@ -59,6 +60,7 @@ const Edit = (props) => {
                     name="description"
                     placeholder="Description about the fund"
                     onChange={handleChange}
+                    required
                 /><br/>
                 <label> Recommendation: </label><br/>
                 <input
@@ -67,6 +69,7 @@ const Edit = (props) => {
                     name="recommendation"
                     placeholder="Recommendation for the Fund"
                     onChange={handleChange}
+                    required
                 /><br/>
                 <br/>
             
