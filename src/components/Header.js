@@ -19,9 +19,25 @@ const Header = (props) => {
           <div className="logo">JxFUNDS</div>
         </Link>
         <Search funds={funds} />
-        <Link to="/account">
-          <div>Account</div>
+        <Link to='/blog'>
+          <div>Blog</div>
         </Link>
+        <div className="dropDown">
+           <button className="dropBtn">Account <span className="unicodeArrow">{`\u25BC`}</span></button>
+           <div className="dropLinks">
+            <Link className='dropLink' to='/login'>
+              Sign In
+            </Link>
+            <br/>
+            <Link className='dropLink' to='/account'>
+              Sign Up
+            </Link>
+           </div>
+        </div>
+       
+        {/* <Link to="/account">
+          <div>Account</div>
+        </Link> */}
       </nav>
     </div>
   );
