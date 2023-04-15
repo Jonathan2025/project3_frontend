@@ -2,7 +2,10 @@
 const Faq = () => {
     return(
         <div className="faqPg">
-            This is the FAQ page!
+            <h1> Frequently Asked Questions:</h1>
+            <div>
+                What is an index fund?
+            </div>
         </div>
     );
 };

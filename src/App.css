@@ -1,34 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
-
-body{
-  margin: 20px;
-  background-color: black;
-  font-family: 'PT Serif', serif;
-  background-image: url('https://images.unsplash.com/photo-1636953056323-9c09fdd74fa6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: auto;
+body{ 
+  background-color: whitesmoke;
+  font-family: "gotham narrow",Georgia,serif;
 }
 
 /* nav bar styling */
-.navBar,a{
+.navBar{
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-end;
-  color: white; 
-  margin: 20px;
+  background-color:rgba(245,245,245,.6);
+  margin:10px 10px 0px 10px;
+  padding: 20px;
   text-decoration: none;
   font-size:20px;
 }
-a:hover{
+a:not(.logo){
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(43, 43, 43);
+}
+a:hover :not(.logo){
   cursor: pointer;
-  text-decoration: underline 3px;
-  text-decoration-color: whitesmoke;
+  color: #bbb;
 }
 .logo{
-font-size: 30px;
-
+font-size: 40px;
+color:rgb(43, 43, 43);
 }
 .logo:hover{
  text-decoration: none;
@@ -42,34 +39,35 @@ font-size: 30px;
 }
 input[type = search]{
   position: relative; top:-20px;
-
 }
 
 /* landing styling  */
 .landing{
-  color: whitesmoke;
+  margin: 0;
   text-align: center;
   font-size: 40px;
+  -webkit-animation: fadeIn 4s;
+  animation:fadeIn 4s;
 }
-.containerTitle{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;top: 50%;
+@keyframes fadeIn{
+  0% {opacity: 0}
+  100% {opacity: 1;}
 }
-.title{
-color:whitesmoke;
-font-size: 80px;
-font: bolder;
-height: 50%;
-margin: 0px 30px 0px 30px;
-opacity: 0.9;
+.landing_img{
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
 }
-.search{
-  font-size: 50px;
-  border-radius: 5px;
-  width:300px;
-  height: 60px;
+.landing_phrase {
+  color: whitesmoke;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.aboutLink{
+  font-size: 25px;
+  color: whitesmoke;
 }
 
 /* index styling */
@@ -135,7 +133,7 @@ button:hover{
 /* comment section styling */
 .comments{
   margin: 20px;
-   color: black;
+  color: black;
   background-color: whitesmoke;
   opacity: .9;
 }
@@ -189,12 +187,13 @@ label{
 
 /* footer styling */
 .footer{
-  margin-top: 60px;
+  margin-top: 20px;
   text-align:center;
-  color: whitesmoke;
+  color: #bbb;
 }
 .footerTag{
   margin-top: 0px;
+  font-size: 15px;
 }
 .socials{
   display: flex;
@@ -202,7 +201,8 @@ label{
  justify-content: center;
 }
 .twitter, .youtube, .contacts,.faq{
-  max-width: 50px;
+  max-width: 45px;
+  margin-left: 5px;
   border:solid white;
   border-radius: 50%;
 }
