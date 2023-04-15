@@ -122,12 +122,13 @@ const Graph = ({fund}) => {
         
         {/* add options for 90, 60 and 30 datapoints */}
         <select onChange={handleNumDataPointsChange}>
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="30">30</option>
-            <option value="60">60</option>
-            <option value="90">90</option>
+            <option value="5">5 Days</option>
+            <option value="10">10 Days</option>
+            <option value="30">30 Days</option>
+            <option value="60">60 Days</option>
+            <option value="90">90 Days</option>
         </select>
+        <br></br>
 
          {/* render the Line component only when timeSeriesData is not null */}
         <div className="lineGraph">

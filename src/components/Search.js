@@ -44,7 +44,7 @@ const Search = (props) => {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         type='search'
-        placeholder='Search...'
+        placeholder='Search Symbol ...'
         ref={inputRef}
         onKeyDown={handleKeyDown}
       />

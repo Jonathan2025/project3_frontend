@@ -58,12 +58,12 @@ input[type = search]{
   position: relative;top: 50%;
 }
 .title{
-color:whitesmoke;
-font-size: 80px;
-font: bolder;
-height: 50%;
-margin: 0px 30px 0px 30px;
-opacity: 0.9;
+  color:whitesmoke;
+  font-size: 80px;
+  font: bolder;
+  height: 50%;
+  margin: 0px 30px 0px 30px;
+  opacity: 0.9;
 }
 .search{
   font-size: 50px;
@@ -74,10 +74,10 @@ opacity: 0.9;
 
 /* index styling */
 .containerIndex{
-display: grid;
-grid-template-columns: repeat(3,1fr);
-grid-gap: 20px;
-color: white;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 20px;
+  color: white;
 }
 
 /* create page styling */
@@ -122,13 +122,23 @@ input[type=submit]:hover{
   flex-wrap: wrap;
 }
 
+.showFundContainer h1 {
+  width: 100%;
+  background-color: #005A9C;
+}
+
+
 .fundInfo {
   flex: 1;
   margin-right: 20px;
+  margin-left: 20px;
+  border: 1px solid white;
+  padding: 10px;
 }
 
 .graph {
   flex: 1;
+  margin: 20px;
 }
 
 .editDltButtons{
@@ -147,6 +157,16 @@ input[type=submit]:hover{
   padding: 3px;
   width: 100px;
 }
+
+.deleteBtn{
+  background-color:	#FFA500;
+}
+
+.editBtn{
+  background-color: #7CB9E8;
+}
+
+
 button:hover{
   cursor: pointer;
   background-color: gainsboro;
