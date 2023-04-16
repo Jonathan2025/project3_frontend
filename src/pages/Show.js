@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
-import PriceGraph from "../components/PriceGraph";
-import DividendGraph from "../components/DividendGraph";
-import SectorsGraph from "../components/SectorsGraph";
+import PriceGraph from "../components/graphs/PriceGraph";
+import DividendGraph from "../components/graphs/DividendGraph";
+import SectorsGraph from "../components/graphs/SectorsGraph";
 
 const Show = (props) => {
   const params = useParams();
