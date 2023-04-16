@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import PriceGraph from "../components/PriceGraph";
+import DividendGraph from "../components/DividendGraph";
 
 const Show = (props) => {
   const params = useParams();
@@ -41,6 +42,10 @@ const Show = (props) => {
 
           <div className="graph">
             <PriceGraph fund={fund}/>
+          </div>
+
+          <div className="dividendGraph">
+            <DividendGraph fund={fund}/>
           </div>
 
         <div className="editDltButtons">
