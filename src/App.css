@@ -86,6 +86,7 @@ input[type = search]{
   -webkit-animation: fadeIn 4s;
   animation:fadeIn 4s;
 }
+
 @keyframes fadeIn{
   0% {opacity: 0}
   100% {opacity: 1;}
@@ -105,14 +106,35 @@ input[type = search]{
 .aboutLink{
   font-size: 25px;
   color: whitesmoke;
+
+.containerTitle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;top: 50%;
+}
+.title{
+  color:whitesmoke;
+  font-size: 80px;
+  font: bolder;
+  height: 50%;
+  margin: 0px 30px 0px 30px;
+  opacity: 0.9;
+}
+.search{
+  font-size: 50px;
+  border-radius: 5px;
+  width:300px;
+  height: 60px;
+
 }
 
 /* index styling */
 .containerIndex{
-display: grid;
-grid-template-columns: repeat(3,1fr);
-grid-gap: 20px;
-
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 20px;
+  color: white;
 }
 
 /* create page styling */
@@ -146,34 +168,77 @@ input[type=submit]:hover{
 }
 
 /* show page styling */
-.fundInfo{
+.showFundContainer{
   color: whitesmoke;
   text-align: center;
   border: solid whitesmoke;
   margin: 10px 80px 10px 80px;
   height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
+
+.showFundContainer h1 {
+  width: 100%;
+  background-color: #005A9C;
+}
+
+
+.fundInfo {
+  flex: 1;
+  margin-right: 20px;
+  margin-left: 20px;
+  border: 1px solid white;
+  padding: 10px;
+}
+
+.graph {
+  flex: 1;
+  margin: 20px;
+}
+
+.editDltButtons{
+  flex: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  justify-content: center;
+}
+
 .editBtn,.deleteBtn{
   font-family: 'PT Serif', serif;
-  font-size: 15px;
+  font-size: 25px;
   font-weight: bold;
   justify-self: center;
   margin: 10px 10px 10px 0px;
   padding: 3px;
-  width: 100px;
+  width: 250px;
 }
+
+.deleteBtn{
+  background-color:	#FFA500;
+}
+
+.editBtn{
+  background-color: #7CB9E8;
+}
+
+
 button:hover{
   cursor: pointer;
   background-color: gainsboro;
 }
 
 /* comment section styling */
+
 .comments{
   margin: 20px;
   color: black;
   background-color: whitesmoke;
   opacity: .9;
 }
+
 
 /* about page styling */
 .aboutPhrase, .faqPg{
@@ -267,6 +332,7 @@ label{
   background-color: whitesmoke;
   border-radius: 20px;
   padding: 15px;
+
 }
 
 /* FAQ styling */
@@ -290,3 +356,69 @@ hr{
   padding: 10px;
   margin: 10px 0px 10px 0px;
 }
+
+
+
+.selection{
+  margin-top: 6px;
+  margin-bottom: 6px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.blogger-card{
+  color:white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  width: 1050px;
+  height: 500px;
+
+}
+.choose {
+  color:white;
+}
+
+.companyLogo {
+  width: 250px;
+  height: 125px;
+  border: 1px solid white;
+  background-color: white;
+}
+
+/* editing of the funds containers in the index page */
+.fund{
+  border: 1px solid white;
+  text-align: center;
+  background-color: rgba(96, 130, 182, 0.6);
+}
+
+.fund a {
+  display: block;
+  text-align: center;
+  background-color: #005A9C;
+  color: #FFFFFF;
+  padding: 2px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.fund a:hover {
+  background-color: #0068C8;
+  color: #FFFFFF;
+}
+
+/* added styling for the comet chat */
+.cometchat-container {
+  max-width: 100%;
+  max-height: 100%;
+  height: 500px;
+  width: 500px;
+}
+
+
