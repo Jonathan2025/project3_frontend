@@ -1,5 +1,13 @@
 import { useState, useEffect } from "react";
-import {Line} from 'react-chartjs-2'
+import { Bar } from "react-chartjs-2";
+import {
+    Chart as ChartJS,
+    BarElement,
+    CategoryScale, // for x axis
+    LinearScale, // for the y axis
+    Legend
+} from 'chart.js'
+
 
 // pass in the fund prop from the Show.js
 const DividendGraph = ({fund}) => {
@@ -29,14 +37,31 @@ const DividendGraph = ({fund}) => {
     getAPIData()
   }, [])
 
-  console.log(timeSeriesData)
+  console.log("here is the dividends timeseries data", timeSeriesData)
    
+  const data = {
+    labels: timeSeriesData ? Object.keys(timeSeriesData) : [], 
+    // datasets: [{
+    //     label: 'Price of Index Fund',
+    //     data: timeSeriesData ? Object.values.map((date) => date['7. dividend amount']).reverse() : [],
+    //     backgroundColor: '#1E90FF',
+    //     borderColor: '#1E90FF',
+    //     pointBorderColor: 'black',
+    //     fill: true,
+    
+    // }]
+  }
 
+  console.log("lets see the data labels", data.labels)
 
 
   return (
-    <div className="data">
-
+    <div className="dividendData">
+        <h1>Just a simple boiler plate</h1>
+        {/* <Bar
+            // data={data}
+            // options={options}    
+        ></Bar> */}
    
     </div>
   );
