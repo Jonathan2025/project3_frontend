@@ -58,7 +58,8 @@ const HistoricalGraph = ({fund}) => {
             borderColor: '#1E90FF',
             pointBorderColor: 'black',
             fill: true,
-            tension: 0 // Add this option to make the lines continuous
+            borderJoinStyle: 'round'
+           
         
         }]
       }
@@ -72,6 +73,7 @@ const HistoricalGraph = ({fund}) => {
 
 
       const options = {
+
         plugins:{
             legend: true
         }, 
