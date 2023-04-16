@@ -39,20 +39,64 @@ const HistoricalGraph = ({fund}) => {
         const getAPIData = async () => {
             const response = await fetch(URL)
             const data = await response.json()
-            console.log(data)
-            setMonthlyAdjustedCloseData(data)
-            
-
-            
+            console.log("this will be the historical", data)
+            setMonthlyAdjustedCloseData(data["Monthly Adjusted Time Series"])
             }
         getAPIData()
     }, [])
 
-    console.log(monthlyAdjustedCloseData)
+    
+    console.log("monthly close data", monthlyAdjustedCloseData)
+
+
+    const data = {
+        labels: monthlyAdjustedCloseData ? Object.keys(monthlyAdjustedCloseData).reverse() : [], 
+        datasets: [{
+            label: 'Historical Prices',
+            data: monthlyAdjustedCloseData ? Object.values(monthlyAdjustedCloseData).map((date) => date['4. close']).reverse() : [],
+            backgroundColor: '#1E90FF',
+            borderColor: '#1E90FF',
+            pointBorderColor: 'black',
+            fill: true,
+            tension: 0 // Add this option to make the lines continuous
+        
+        }]
+      }
+
+      // getting the min and max from the data points and then rounding them to the nearest whole number
+    // const minPrice = Math.min(...Object.values(monthlyAdjustedCloseData).map((date) => parseFloat(date['4. close'])));
+    // const maxPrice = Math.max(...Object.values(monthlyAdjustedCloseData).map((date) => parseFloat(date['4. close'])));
+    // const roundedMin = Math.floor(minPrice);
+    // const roundedMax = Math.ceil(maxPrice)
+
+
+
+      const options = {
+        plugins:{
+            legend: true
+        }, 
+        scales: {
+            y: {
+                min: 0,
+                max: 500,
+                ticks: {
+                    stepSize: 10
+                  }
+            }
+        }
+      }
 
     return(
-        <h1>This will be the Historical graph </h1>
-    )
+            <div className="data">
+                <div className="HistoricalGraph">
+                    <h1>Historical Price</h1>
+                        {/* Render the Line component only when monthlyAdjustedCloseData is not null */}
+                        {monthlyAdjustedCloseData && (
+                            <Line data={data} options={options} />
+                        )}
+                </div>
+        </div>
+    )   
 }
 
 export default HistoricalGraph
