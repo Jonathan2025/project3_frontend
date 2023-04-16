@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import PriceGraph from "../components/graphs/PriceGraph";
 import DividendGraph from "../components/graphs/DividendGraph";
-import SectorsGraph from "../components/graphs/SectorsGraph";
+import HistoricalGraph from "../components/graphs/HistoricalGraph";
 
 const Show = (props) => {
   const params = useParams();
@@ -48,10 +48,11 @@ const Show = (props) => {
           <div className="dividendGraph">
             <DividendGraph fund={fund}/>
           </div>
-          <div className="SectorsGraph">
-            <SectorsGraph fund={fund}/>
+
+          <div className="HistoricalGraph">
+            <HistoricalGraph fund={fund}/>
           </div>
-          
+         
 
 
 
