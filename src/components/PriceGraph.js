@@ -20,7 +20,7 @@ ChartJS.register(
 )
 
 // pass in the fund prop from the Show.js
-const Graph = ({fund}) => {
+const PriceGraph = ({fund}) => {
   // To use the API we will need the API KEY and the symbol of the fund we want to see info on
   const API_KEY = process.env.REACT_APP_API_KEY
   const symbol = fund.symbol
@@ -140,4 +140,4 @@ const Graph = ({fund}) => {
   );
 };
 
-export default Graph;
+export default PriceGraph;

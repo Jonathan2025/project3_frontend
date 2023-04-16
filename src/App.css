@@ -69,6 +69,7 @@ input[type = search]{
 .aboutLink{
   font-size: 25px;
   color: whitesmoke;
+}
 
 .containerTitle{
   display: flex;
