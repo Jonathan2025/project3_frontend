@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import PriceGraph from "../components/graphs/PriceGraph";
 import DividendGraph from "../components/graphs/DividendGraph";
 import HistoricalGraph from "../components/graphs/HistoricalGraph";
+import Card from "../components/graphs/ChangeCard";
 
 const Show = (props) => {
   const params = useParams();
@@ -52,7 +53,9 @@ const Show = (props) => {
           <div className="HistoricalGraph">
             <HistoricalGraph fund={fund}/>
           </div>
-         
+         <div className="card">
+            <Card />
+         </div>
 
 
 
