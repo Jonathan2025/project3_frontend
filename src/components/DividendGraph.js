@@ -8,7 +8,6 @@ import {
     Legend
 } from 'chart.js'
 
-
 ChartJS.register(
     BarElement,
     CategoryScale, // for x axis
@@ -45,36 +44,40 @@ const DividendGraph = ({fund}) => {
 
   console.log("here is the dividends timeseries data", timeSeriesData)
    
+
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+  // we only want the dates that have a dividend that was distributed
+  const nonZeroLabels = timeSeriesData
+  ? Object.entries(timeSeriesData)
+      .filter(([_, data]) => parseFloat(data['7. dividend amount']) > 0)
+      .map(([date]) => date)
+      .reverse()
+  : [];
+
   const data = {
-    labels: timeSeriesData ? Object.keys(timeSeriesData) : [], 
+    labels: nonZeroLabels,
     datasets: [{
-        label: 'Dividends Distributed',
-        data: timeSeriesData
-        ? Object.values(timeSeriesData)
-            .map((date) => date['7. dividend amount'])
-            .reverse()
-            .filter((amount) => amount !== "0.0000") // filter out zero values
-        : [],
-        backgroundColor: '#1E90FF',
-        borderColor: '#1E90FF',
+        label: 'Dividends (Dollar per Share) Distributed',
+        data: nonZeroLabels.map(
+            (date) => timeSeriesData[date]['7. dividend amount']
+          ),
+        backgroundColor: '#32de84',
+        borderColor: '#32de84',
         borderWidth: 1
     }]
   }
 
-  const options ={
-
-  }
-
-  console.log("lets see the data labels", data.labels)
-  console.log("lets see data.data", data.datasets[0].data)
-
+// console.logs to see what we get as data and how to access them
+//   console.log("lets see the data labels", data.labels)
+//   console.log("lets see data.data", data.datasets[0].data)
+//   console.log("Non-zero labels:", nonZeroLabels);
 
   return (
     <div className="dividendData">
-        <h1>Just a simple boiler plate</h1>
+        <h1>Dividends</h1>
         <Bar
             data={data}
-            options={options}    
+   
         ></Bar>
    
     </div>

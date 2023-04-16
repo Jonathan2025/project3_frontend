@@ -132,6 +132,7 @@ const PriceGraph = ({fund}) => {
 
          {/* render the Line component only when timeSeriesData is not null */}
         <div className="lineGraph">
+          <h1>Price</h1>
             {timeSeriesData && (
                 <Line data={data} options={options} />
             )}
