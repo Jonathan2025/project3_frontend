@@ -9,6 +9,13 @@ import {
 } from 'chart.js'
 
 
+ChartJS.register(
+    BarElement,
+    CategoryScale, // for x axis
+    LinearScale, // for the y axis
+    Legend
+)
+
 // pass in the fund prop from the Show.js
 const DividendGraph = ({fund}) => {
   // To use the API we will need the API KEY and the symbol of the fund we want to see info on
@@ -42,14 +49,20 @@ const DividendGraph = ({fund}) => {
     labels: timeSeriesData ? Object.keys(timeSeriesData) : [], 
     datasets: [{
         label: 'Dividends Distributed',
-        data: timeSeriesData ? Object.values(timeSeriesData).map((date) => date['7. dividend amount']).reverse() : [],
-        //.map((date) => date['7. dividend amount']).reverse() : [],
+        data: timeSeriesData
+        ? Object.values(timeSeriesData)
+            .map((date) => date['7. dividend amount'])
+            .reverse()
+            .filter((amount) => amount !== "0.0000") // filter out zero values
+        : [],
         backgroundColor: '#1E90FF',
         borderColor: '#1E90FF',
-        pointBorderColor: 'black',
-        fill: true,
-    
+        borderWidth: 1
     }]
+  }
+
+  const options ={
+
   }
 
   console.log("lets see the data labels", data.labels)
@@ -59,10 +72,10 @@ const DividendGraph = ({fund}) => {
   return (
     <div className="dividendData">
         <h1>Just a simple boiler plate</h1>
-        {/* <Bar
-            // data={data}
-            // options={options}    
-        ></Bar> */}
+        <Bar
+            data={data}
+            options={options}    
+        ></Bar>
    
     </div>
   );
