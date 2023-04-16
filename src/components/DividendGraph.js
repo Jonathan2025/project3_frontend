@@ -15,8 +15,7 @@ const DividendGraph = ({fund}) => {
   const API_KEY = process.env.REACT_APP_API_KEY
   const symbol = fund.symbol
 
-  // Now we will get the URL of the API when ready please remove the comment for the first url. BUT for testing please use the second url
-  //const URL = ADD IN THE ACTUAL URL WHEN READY
+  // When ready we will replace the symbol and the api key to get the actual data
   const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=VFINX&apikey=%7bapikey%7d`
 
   // Now we need to set up a state hook to our component and then state for the timeSeriesData
@@ -41,18 +40,20 @@ const DividendGraph = ({fund}) => {
    
   const data = {
     labels: timeSeriesData ? Object.keys(timeSeriesData) : [], 
-    // datasets: [{
-    //     label: 'Price of Index Fund',
-    //     data: timeSeriesData ? Object.values.map((date) => date['7. dividend amount']).reverse() : [],
-    //     backgroundColor: '#1E90FF',
-    //     borderColor: '#1E90FF',
-    //     pointBorderColor: 'black',
-    //     fill: true,
+    datasets: [{
+        label: 'Dividends Distributed',
+        data: timeSeriesData ? Object.values(timeSeriesData).map((date) => date['7. dividend amount']).reverse() : [],
+        //.map((date) => date['7. dividend amount']).reverse() : [],
+        backgroundColor: '#1E90FF',
+        borderColor: '#1E90FF',
+        pointBorderColor: 'black',
+        fill: true,
     
-    // }]
+    }]
   }
 
   console.log("lets see the data labels", data.labels)
+  console.log("lets see data.data", data.datasets[0].data)
 
 
   return (
