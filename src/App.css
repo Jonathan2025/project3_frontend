@@ -41,6 +41,43 @@ input[type = search]{
   position: relative; top:-20px;
 }
 
+/* Drop Down styling for Account section */
+
+.dropDown, .dropBtn{
+  border: none;
+  background-color: whitesmoke;
+  font-size: 20px;
+  font-family: "gotham narrow",Georgia,serif;
+  font-weight: bold;
+  position: relative
+}
+.dropLinks{
+  display: none;
+  position: absolute;
+  background-color: whitesmoke;
+  color: black;
+  margin-left: -24px;
+  padding: 10px;
+  min-width: 130px;
+  min-height: 100px;
+  text-align:center;
+  box-shadow: 0px 5px 10px 5px rgba(0,0,0,.5);
+}
+.dropBtn:hover ~ .dropLinks, .dropLinks:hover{
+  display: block;
+}
+.dropBtn:hover, .dropLink:hover{
+  background-color: whitesmoke;
+  color: black;
+}
+.dropLink:hover{
+  color: #bbb;
+}
+.unicodeArrow{
+  font-size: 10px;
+  color: black;
+}
+
 /* landing styling  */
 .landing{
   margin: 0;
