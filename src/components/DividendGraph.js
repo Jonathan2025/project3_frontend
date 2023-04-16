@@ -18,20 +18,18 @@ const DividendGraph = ({fund}) => {
   // this useEffect will only run once the component mounts
   useEffect(() => {
     const getAPIData = async () => {
-      const response = await fetch(URL)
-      const data = await response.json()
-      console.log("Getting Dividend Data", data)
-      setFundAPIData(data)
-    
-      // set the timeSeriesData state variable 
-      setTimeSeriesData(data["Time Series (Daily)"])
+        const response = await fetch(URL)
+        const data = await response.json()
+        console.log("Getting Dividend Data", data)
+        setFundAPIData(data)
 
-      
+        // set the timeSeriesData state variable 
+        setTimeSeriesData(data["Time Series (Daily)"])
     }
     getAPIData()
   }, [])
 
-
+  console.log(timeSeriesData)
    
 
 
