@@ -11,8 +11,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
-
-
 const Show = (props) => {
   const params = useParams();
   const navigate = useNavigate()
@@ -20,7 +18,7 @@ const Show = (props) => {
   const funds = props.funds;
   const fund = funds.find((f) => f._id === id);
 
-  console.log("this is the fund", fund)
+  console.log("trying to get the fund after adding in likes", {fund})
 
   //linking edit btn to edit route
   const editForm = (e) => {
@@ -35,29 +33,6 @@ const Show = (props) => {
   }
 
   return (
-      // <div className="allShowPage">
-      //     <div className="fundContainer">
-      //       <FundInformation fund={fund}/>
-      //     </div>
-      //     <div className="priceGraph">
-      //       <PriceGraph fund={fund}/>
-      //     </div>
-      //     <div className="HistoricalGraph">
-      //       <HistoricalGraph fund={fund}/>
-      //     </div>
-      //     <div className="dividendGraph">
-      //       <DividendGraph fund={fund}/>
-      //     </div>
-      //    <div className="card">
-      //       <Card />
-      //    </div>
-      //   <div className="editDltButtons">
-      //     <button className='editBtn' onClick={editForm}>Edit Fund</button>
-      //     <button className='deleteBtn' onClick = {removeFund}>Delete Fund</button>
-      //   </div>
-      // </div>
-
-
       <div className="container">
         <div className="row">
           <div className="col-sm-6">

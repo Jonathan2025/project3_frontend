@@ -5,6 +5,7 @@ const fundInformation = ({fund}) => {
   const [month, day, year] = formattedDate.split('/');
   const reversedDate = `${month}/${day}/${year}`
 
+  console.log("here is the fund information for the lieks", {fund})
     return(
     <div className="showFundContainer">
         <h1> {fund.name} </h1>
@@ -14,6 +15,7 @@ const fundInformation = ({fund}) => {
             <h3> Description: <br/>{fund.description}</h3>
             <h3> Recommendation: <br/>{fund.recommendation}</h3>
             <h3> Date Added: <br/>{reversedDate}</h3>
+            <h3>Likes:{fund.likes}</h3>
         </div>
     </div>
     )
