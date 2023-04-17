@@ -26,9 +26,11 @@ const PriceGraph = ({fund}) => {
   const symbol = fund.symbol
 
   // Now we will get the URL of the API when ready please remove the comment for the first url. BUT for testing please use the second url
-  //const URL = ADD IN THE ACTUAL URL WHEN READY
-  const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=${API_KEY}`
-  
+  //const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=${API_KEY}`
+  const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=IBM&apikey=demo`
+
+
+
   // Now we need to set up a state hook to our component and then state for the timeSeriesData
   const [fundAPIData, setFundAPIData] = useState(null)
   const [metaData, setMetaData] = useState(null)
@@ -131,7 +133,7 @@ const PriceGraph = ({fund}) => {
         <br></br>
 
          {/* render the Line component only when timeSeriesData is not null */}
-        <div className="lineGraph">
+        <div className="priceGraph">
           <h1>Price</h1>
             {timeSeriesData && (
                 <Line data={data} options={options} />

@@ -73,7 +73,7 @@ const DividendGraph = ({fund}) => {
 //   console.log("Non-zero labels:", nonZeroLabels);
 
   return (
-    <div className="dividendData">
+    <div className="dividendGraph">
         <h1>Dividends</h1>
         <Bar
             data={data}
