@@ -23,6 +23,10 @@ const Index = (props) => {
         return <h1>Loading... </h1> 
     }
     return (props.funds ? loaded() : loading())
+
+    
+
+    
 }
 
 export default Index;

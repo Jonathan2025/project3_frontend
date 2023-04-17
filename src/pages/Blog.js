@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 import React, { useState } from "react";
 
 
@@ -56,7 +56,7 @@ const Blog = () => {
     <>
       <div className="selection">
         <div className="choose">
-        Choose your blog :
+        Choose your blog category :
         <select onChange={(e) => setCategory(e.target.value)}>
           <option value="Open an account">Open an account</option>
           <option value="Happy Money">Happy Money</option>
@@ -72,13 +72,16 @@ const Blog = () => {
             <div>Author 🖌   :{blogger.author}</div>
             <div className="p">{blogger.p}</div>
             <div>
-  <button onClick={() => window.location.href = blogger.link}>read more</button>
+  <button onClick={() => window.location.href = blogger.link} className="readbtn">read more</button>
 </div>
 
             
           </div>
         ))}
       </div>
+      <Link to='/jxfunds/chat'>
+          <button className="chatdot">Chat ☎️</button>
+        </Link>
       </div>
  
     </>

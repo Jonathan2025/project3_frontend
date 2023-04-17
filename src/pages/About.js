@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 const About = () => {
     return(
         <> 
@@ -29,6 +29,11 @@ const About = () => {
             </div > 
             </div>
         </section>
+ <div>
+        <Link to='/jxfunds/chat'>
+          <button className="chatdot">Chat ☎️</button>
+        </Link>
+      </div>
     
        
         </>

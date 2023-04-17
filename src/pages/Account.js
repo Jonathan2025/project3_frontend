@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react"
 
 const Account = (props) => {
@@ -29,6 +30,7 @@ const Account = (props) => {
 
 
 return (
+  <>
     <section className='account'>
         <div>
             <h1>Sign Up</h1>
@@ -57,6 +59,16 @@ return (
     
     {props.fund}
     </section>
+
+    <div>
+    <Link to='/jxfunds/chat'>
+    <button className="chatdot">Chat ☎️</button>
+  </Link>
+</div>;
+</>
+
+   
     )
+
 } 
 export default Account;
