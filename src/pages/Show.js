@@ -18,8 +18,6 @@ const Show = (props) => {
   const funds = props.funds;
   const fund = funds.find((f) => f._id === id);
 
-  console.log("trying to get the fund after adding in likes", {fund})
-
   //linking edit btn to edit route
   const editForm = (e) => {
     navigate(`/jxfunds/edit/${fund._id}`)
@@ -34,7 +32,10 @@ const Show = (props) => {
 
   return (
       <div className="container">
-        <div className="row">
+        <div className="row text-center">
+          <h1 className="fundTitle">{fund.name}</h1>
+        </div>
+        <div className="row text-center">
           <div className="col-sm-6">
             <div className="fundContainer">
               <FundInformation fund={fund}/>
@@ -47,7 +48,7 @@ const Show = (props) => {
           </div>
         </div>
         
-        <div className="row">
+        <div className="row text-center">
           <div className="col-sm-6">
             <div className="dividendGraph">
               <DividendGraph fund={fund}/>
@@ -60,8 +61,8 @@ const Show = (props) => {
           </div>
         </div>
         
-        <div className="row">
-        <div className="col-12 col-sm-8">
+        <div className="row text-center">
+        <div className="col-12">
           <div className="HistoricalGraph">
             <HistoricalGraph fund={fund}/>
           </div>
@@ -69,7 +70,7 @@ const Show = (props) => {
       </div>
 
 
-        <div className="row">
+        <div className="row text-center">
           <div className="col">
             <div className="editDltButtons">
               <button className='editBtn' onClick={editForm}>Edit Fund</button>

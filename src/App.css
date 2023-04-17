@@ -339,52 +339,39 @@ hr{
 
 
 /* show page styling */
-
-/* .showFundContainer{
-  color: whitesmoke;
-  text-align: center;
-  border: 1px solid black;
-  margin: 10px 80px 10px 80px;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-} */
-
-/* show page styling */
 .allShowPage{
-  border: 5px solid #005A9C;
+  border: 1px solid #005A9C;
 }
-
-
 
 .showFundContainer h1 {
   width: 100%;
   background-color: #005A9C;
   text-align: center;
+  border-radius: 20px;
 }
 
+.fundTitle{
+  border: 1px solid #005A9C;
+  border-radius: 20px;
+  background-color: #6699CC;
+}
 
 .fundInfo {
-  border: 5px solid #005A9C;
-
   color: black;
-  background-color: #A8A8A8;
+  background-color: #E0E0E0;
+  border-radius: 20px;
 }
 
 .editDltButtons{
   flex: 100%;
   margin-top: 10px;
-  border: 1px solid #005A9C;
 }
 
 .editBtn,.deleteBtn{
-  font-family: 'PT Serif', serif;
   font-size: 25px;
   font-weight: bold;
-  justify-self: center;
-  padding: 3px;
   width: 250px;
+  border-radius: 20px;
 }
 
 .deleteBtn{
@@ -401,37 +388,32 @@ button:hover{
   background-color: gainsboro;
 }
 
-.priceGraphData{
-  border: 1px solid #005A9C;
-}
-
 
 .priceGraph{
-  background-color: whitesmoke;
+  background-color: #E0E0E0;
   border-radius: 20px;
-  border: 1px solid #005A9C;
-
+}
+.priceGraphData{
+  background-color: #E0E0E0;
+  border-radius: 20px;
 }
 
 .HistoricalGraph{
   border-radius: 20px;
-  border: 1px solid #005A9C;
+  background-color: #E0E0E0;
+  margin-top: 10px;
 }
 
 .dividendGraph{
   border-radius: 20px;
-  border: 1px solid #005A9C;
+  background-color: #E0E0E0;
 }
 
 
 /* creating the card for percent changes*/
 .card {
   border-radius: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  height: 200px;
-  width: 300px;
-  border: 1px solid #005A9C;
+  background-color: #E0E0E0;
 }
 
 .card-content {
@@ -442,17 +424,19 @@ button:hover{
   color: black;
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 10px;
 }
-
-
 
 .percent {
   font-size: 64px;
   font-weight: bold;
 }
 
-
+/* this container encompasses all the components on the show page */
+.container{
+  border: 1px solid #005A9C;
+  background-color: 	#9fbfdf;
+  border-radius: 20px;
+}
 
 /* end of show page styling */
 

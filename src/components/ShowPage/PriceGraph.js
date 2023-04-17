@@ -32,7 +32,6 @@ const PriceGraph = ({fund}) => {
 
 
   // Now we need to set up a state hook to our component and then state for the timeSeriesData
-  const [fundAPIData, setFundAPIData] = useState(null)
   const [metaData, setMetaData] = useState(null)
   const [timeSeriesData, setTimeSeriesData] = useState(null)
   // lets create a state where the user gets to decide if they want to see 90 datapoints, 60 or 30
@@ -44,7 +43,6 @@ const PriceGraph = ({fund}) => {
       const response = await fetch(URL)
       const data = await response.json()
       console.log(data)
-      setFundAPIData(data)
       
       //set the metadata state variable
       setMetaData(data['Meta Data'])
@@ -114,12 +112,12 @@ const PriceGraph = ({fund}) => {
 
 
   return (
-    <div className="priceGraphContainer">
+    <>
         <div className="priceGraphData">
         {/* only show the metaData information when the metaData has been updated by the state */}
         {metaData && (
           <>
-            <h2>Last Refreshed: {metaData['3. Last Refreshed']}</h2>
+            <p>Last Refreshed: {metaData['3. Last Refreshed']}</p>
           </>
         )}
         
@@ -141,7 +139,7 @@ const PriceGraph = ({fund}) => {
                 <Line data={data} options={options} />
             )}
         </div>
-    </div>
+    </>      
   );
 };
 
