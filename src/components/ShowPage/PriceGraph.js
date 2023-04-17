@@ -114,7 +114,8 @@ const PriceGraph = ({fund}) => {
 
 
   return (
-    <div className="data">
+    <div className="priceGraphContainer">
+        <div className="priceGraphData">
         {/* only show the metaData information when the metaData has been updated by the state */}
         {metaData && (
           <>
@@ -130,6 +131,7 @@ const PriceGraph = ({fund}) => {
             <option value="60">60 Days</option>
             <option value="90">90 Days</option>
         </select>
+        </div>
         <br></br>
 
          {/* render the Line component only when timeSeriesData is not null */}
