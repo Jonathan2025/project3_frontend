@@ -22,7 +22,7 @@ const DividendGraph = ({fund}) => {
   const symbol = fund.symbol
 
   // When ready we will replace the symbol and the api key to get the actual data
-  // const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=${symbol}`
+  //const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=${symbol}`
   const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=VFINX&apikey=%7bapikey%7d`
 
   // Now we need to set up a state hook to our component and then state for the timeSeriesData
