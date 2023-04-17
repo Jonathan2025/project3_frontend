@@ -7,13 +7,12 @@ const fundInformation = ({fund}) => {
 
     return(
     <div className="showFundContainer">
-        <h1> {fund.name} </h1>
           <div className="fundInfo">
-            <h3> Company: <br/>{fund.company}</h3>
-            <h3> Symbol: <br/>{fund.symbol}</h3>
-            <h3> Description: <br/>{fund.description}</h3>
-            <h3> Recommendation: <br/>{fund.recommendation}</h3>
-            <h3> Date Added: <br/>{reversedDate}</h3>
+            <h4> Company:</h4> <p>{fund.company}</p>
+            <h4> Symbol:</h4> <p>{fund.symbol}</p>
+            <h4> Description:</h4> <p>{fund.description}</p>
+            <h4> Recommendation:</h4> <p>{fund.recommendation}</p>
+            <h4> Date Added:</h4> <p>{reversedDate}</p>
         </div>
     </div>
     )

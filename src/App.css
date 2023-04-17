@@ -340,61 +340,39 @@ hr{
 
 
 /* show page styling */
-
-/* .showFundContainer{
-  color: whitesmoke;
-  text-align: center;
-  border: 1px solid black;
-  margin: 10px 80px 10px 80px;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-} */
-
-/* show page styling */
 .allShowPage{
-  border: 5px solid #005A9C;
+  border: 1px solid #005A9C;
 }
-
-
 
 .showFundContainer h1 {
   width: 100%;
   background-color: #005A9C;
   text-align: center;
+  border-radius: 20px;
 }
 
+.fundTitle{
+  border: 1px solid #005A9C;
+  border-radius: 20px;
+  background-color: #6699CC;
+}
 
 .fundInfo {
-  flex: 1;
-  margin-right: 20px;
-  margin-left: 20px;
-  border: 5px solid #005A9C;
-  padding: 10px;
   color: black;
-  background-color: #A8A8A8;
+  background-color: #E0E0E0;
+  border-radius: 20px;
 }
-
-
 
 .editDltButtons{
   flex: 100%;
   margin-top: 10px;
-  display: flex;
-  justify-content: flex-start;
-  justify-content: center;
-  border: 1px solid #005A9C;
 }
 
 .editBtn,.deleteBtn{
-  font-family: 'PT Serif', serif;
   font-size: 25px;
   font-weight: bold;
-  justify-self: center;
-  margin: 10px 10px 10px 0px;
-  padding: 3px;
   width: 250px;
+  border-radius: 20px;
 }
 
 .deleteBtn{
@@ -411,60 +389,40 @@ button:hover{
   background-color: gainsboro;
 }
 
-.priceGraphData{
-  border: 1px solid #005A9C;
-}
-
 
 .priceGraph{
-  background-color: whitesmoke;
+  background-color: #E0E0E0;
   border-radius: 20px;
-  padding: 15px;
-  width: 500px;
-  border: 1px solid #005A9C;
-
+}
+.priceGraphData{
+  background-color: #E0E0E0;
+  border-radius: 20px;
 }
 
 .HistoricalGraph{
   border-radius: 20px;
-  width: 500px;
-  border: 1px solid #005A9C;
+  background-color: #E0E0E0;
+  margin-top: 10px;
 }
 
 .dividendGraph{
   border-radius: 20px;
-  width: 500px;
-  border: 1px solid #005A9C;
+  background-color: #E0E0E0;
 }
 
 
 /* creating the card for percent changes*/
 .card {
   border-radius: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  height: 200px;
-  justify-content: center;
-  width: 300px;
-  border: 1px solid #005A9C;
+  background-color: #E0E0E0;
 }
 
 .card-content {
   padding: 20px;
 }
 
-.card-title {
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.card-body {
-  display: flex;
-  justify-content: center;
+.lastClosePrice{
+  font-size: 30px;
 }
 
 .percent {
@@ -472,6 +430,12 @@ button:hover{
   font-weight: bold;
 }
 
+/* this container encompasses all the components on the show page */
+.container{
+  border: 1px solid #005A9C;
+  background-color: 	#9fbfdf;
+  border-radius: 20px;
+}
 
 /* end of show page styling */
 
@@ -499,6 +463,18 @@ button:hover{
 background-color: #f8aa18;
 border-radius: 5px;
 }
+/* styling of the chat we use the !important to override the styling from the comet-chat packages */
+.cometchat__users__with__messages {
+  width: 90vh !important;
+  height: 50vh !important;
+  border: 1px solid #005A9C !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 
 
 
