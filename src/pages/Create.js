@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react"
 // import useNavigate so tha tonce the form is created we can return to the index page
 import { useNavigate } from "react-router-dom"
@@ -39,6 +40,7 @@ const Create = (props) => {
         };
 
     return (
+      <>
         <section className='createForm'>
             <div>
                 <h1>Create a Jx-Fund </h1>
@@ -105,6 +107,14 @@ const Create = (props) => {
       </form>
         
         </section>
+
+        <div>
+        <Link to='/jxfunds/chat'>
+          <button className="chatdot">Chat ☎️</button>
+        </Link>
+      </div>
+    
+        </>
         )
 }
 

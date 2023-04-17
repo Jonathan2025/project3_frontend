@@ -6,6 +6,7 @@ const Index = (props) => {
     //loaded function
     const loaded = () => {
         return (
+            
         <div className="containerIndex">  
         {props.funds.map((fund)=>(
             <div key={fund._id} className='fund'>
@@ -17,15 +18,28 @@ const Index = (props) => {
 
                  {/* Only show the percent */}
                  <Card fund={fund} showPercent={true} />
+
+          
             </div>
         ))}
-        </div>
+           
+   </div>
+    
+     
         )
     }
     const loading = () => {
         return <h1>Loading... </h1> 
     }
-    return (props.funds ? loaded() : loading())
+    return (props.funds ? loaded() : loading()
+  
+    
+ 
+    )
+
+    
+
+    
 }
 
 export default Index;
