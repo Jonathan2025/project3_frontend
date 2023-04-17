@@ -20,7 +20,7 @@ const Landing = (props) => {
         </Link>
       </div>
 
-      <h3>Investing made social, join the conversation.</h3>
+   
  
 
     </div>
