@@ -5,6 +5,14 @@ import HistoricalGraph from "../components/ShowPage/HistoricalGraph";
 import Card from "../components/ShowPage/ChangeCard";
 import FundInformation from "../components/ShowPage/FundContainer";
 
+// importing bootstrap so that we can use the grid layout for the components on the page 
+// Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
+
+
 const Show = (props) => {
   const params = useParams();
   const navigate = useNavigate()
@@ -27,28 +35,65 @@ const Show = (props) => {
   }
 
   return (
-      <div className="allShowPage">
-          <div className="fundContainer">
-            <FundInformation fund={fund}/>
+      // <div className="allShowPage">
+      //     <div className="fundContainer">
+      //       <FundInformation fund={fund}/>
+      //     </div>
+      //     <div className="priceGraph">
+      //       <PriceGraph fund={fund}/>
+      //     </div>
+      //     <div className="HistoricalGraph">
+      //       <HistoricalGraph fund={fund}/>
+      //     </div>
+      //     <div className="dividendGraph">
+      //       <DividendGraph fund={fund}/>
+      //     </div>
+      //    <div className="card">
+      //       <Card />
+      //    </div>
+      //   <div className="editDltButtons">
+      //     <button className='editBtn' onClick={editForm}>Edit Fund</button>
+      //     <button className='deleteBtn' onClick = {removeFund}>Delete Fund</button>
+      //   </div>
+      // </div>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <div className="fundContainer">
+              <FundInformation fund={fund}/>
+            </div>
           </div>
-          <div className="priceGraph">
-            <PriceGraph fund={fund}/>
+          <div className="col">
+            <div className="priceGraph">
+              <PriceGraph fund={fund}/>
+            </div>
           </div>
-          <div className="HistoricalGraph">
-            <HistoricalGraph fund={fund}/>
+          <div className="col">
+            <div className="HistoricalGraph">
+              <HistoricalGraph fund={fund}/>
+            </div>
           </div>
-          <div className="dividendGraph">
-            <DividendGraph fund={fund}/>
+        </div>
+        <div className="row">
+          <div className="col">
+            <div className="dividendGraph">
+              <DividendGraph fund={fund}/>
+            </div>
           </div>
-         <div className="card">
-            <Card />
-         </div>
-        <div className="editDltButtons">
-          <button className='editBtn' onClick={editForm}>Edit Fund</button>
-          <button className='deleteBtn' onClick = {removeFund}>Delete Fund</button>
+          <div className="col">
+            <div className="card">
+              <Card />
+            </div>
+          </div>
+          <div className="col">
+            <div className="editDltButtons">
+              <button className='editBtn' onClick={editForm}>Edit Fund</button>
+              <button className='deleteBtn' onClick = {removeFund}>Delete Fund</button>
+            </div>
+          </div>
         </div>
       </div>
- 
+      
   );
 };
 

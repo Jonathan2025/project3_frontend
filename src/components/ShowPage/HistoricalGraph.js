@@ -54,8 +54,8 @@ const HistoricalGraph = ({fund}) => {
         datasets: [{
             label: 'Historical Prices',
             data: monthlyAdjustedCloseData ? Object.values(monthlyAdjustedCloseData).map((date) => date['4. close']).reverse() : [],
-            backgroundColor: '#1E90FF',
-            borderColor: '#1E90FF',
+            backgroundColor: 'orange',
+            borderColor: 'orange',
             pointBorderColor: 'black',
             fill: true,
             borderJoinStyle: 'round'
@@ -65,12 +65,13 @@ const HistoricalGraph = ({fund}) => {
       }
 
       // getting the min and max from the data points and then rounding them to the nearest whole number
-    // const minPrice = Math.min(...Object.values(monthlyAdjustedCloseData).map((date) => parseFloat(date['4. close'])));
-    // const maxPrice = Math.max(...Object.values(monthlyAdjustedCloseData).map((date) => parseFloat(date['4. close'])));
-    // const roundedMin = Math.floor(minPrice);
-    // const roundedMax = Math.ceil(maxPrice)
+    const minPrice = Math.min(...Object.values(monthlyAdjustedCloseData).map((date) => parseFloat(date['4. close'])));
+    const maxPrice = Math.max(...Object.values(monthlyAdjustedCloseData).map((date) => parseFloat(date['4. close'])));
+    const roundedMin = Math.floor(minPrice);
+    const roundedMax = Math.ceil(maxPrice)
 
-
+      console.log(maxPrice)
+      console.log(minPrice)
 
       const options = {
 
@@ -79,8 +80,8 @@ const HistoricalGraph = ({fund}) => {
         }, 
         scales: {
             y: {
-                min: 0,
-                max: 500,
+                min: roundedMin,
+                max: roundedMax,
                 ticks: {
                     stepSize: 10
                   }
