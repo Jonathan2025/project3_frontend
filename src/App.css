@@ -438,6 +438,18 @@ button:hover{
 
 /* end of show page styling */
 
+/* styling of the chat we use the !important to override the styling from the comet-chat packages */
+.cometchat__users__with__messages {
+  width: 90vh !important;
+  height: 60vh !important;
+  border: 1px solid #005A9C !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 
 
 
