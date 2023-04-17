@@ -49,8 +49,6 @@ const PriceGraph = ({fund}) => {
 
       // set the timeSeriesData state variable 
       setTimeSeriesData(data["Time Series (Daily)"])
-
-      
     }
     getAPIData()
   }, [])

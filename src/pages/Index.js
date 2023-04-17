@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 import CompanyLogo from '../components/CompanyLogo';
-
+import Card from '../components/ShowPage/ChangeCard';
 const Index = (props) => {
     console.log(props.funds) // we get the data from the backend BUT its an object instead of an array 
     //loaded function
@@ -14,6 +14,9 @@ const Index = (props) => {
                 </Link>
                 <h3>{fund.symbol}</h3>
                 <CompanyLogo fund={fund}/>
+
+                 {/* Only show the percent */}
+                 <Card fund={fund} showPercent={true} />
             </div>
         ))}
         </div>
