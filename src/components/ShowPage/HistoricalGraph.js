@@ -64,9 +64,10 @@ const HistoricalGraph = ({fund}) => {
         }]
       }
 
-      // getting the min and max from the data points and then rounding them to the nearest whole number
-    const minPrice = Math.min(...Object.values(monthlyAdjustedCloseData).map((date) => parseFloat(date['4. close'])));
-    const maxPrice = Math.max(...Object.values(monthlyAdjustedCloseData).map((date) => parseFloat(date['4. close'])));
+    // getting the min and max from the data points and then rounding them to the nearest whole number. Basically we need to make sure that the monthly data renders first
+    // then we can get the min and max price, else set them to 0 and 500 respectively
+    const minPrice = monthlyAdjustedCloseData ? Math.min(...Object.values(monthlyAdjustedCloseData).map((date) => parseFloat(date['4. close']))) : 0;
+    const maxPrice = monthlyAdjustedCloseData ? Math.max(...Object.values(monthlyAdjustedCloseData).map((date) => parseFloat(date['4. close']))) : 500;
     const roundedMin = Math.floor(minPrice);
     const roundedMax = Math.ceil(maxPrice)
 
@@ -80,8 +81,8 @@ const HistoricalGraph = ({fund}) => {
         }, 
         scales: {
             y: {
-                min: roundedMin,
-                max: roundedMax,
+                min: minPrice,
+                max: maxPrice,
                 ticks: {
                     stepSize: 10
                   }

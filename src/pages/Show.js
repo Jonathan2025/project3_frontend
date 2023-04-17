@@ -56,35 +56,45 @@ const Show = (props) => {
       //     <button className='deleteBtn' onClick = {removeFund}>Delete Fund</button>
       //   </div>
       // </div>
+
+
       <div className="container">
         <div className="row">
-          <div className="col">
+          <div className="col-sm-6">
             <div className="fundContainer">
               <FundInformation fund={fund}/>
             </div>
           </div>
-          <div className="col">
+          <div className="col-sm-6">
             <div className="priceGraph">
               <PriceGraph fund={fund}/>
             </div>
           </div>
-          <div className="col">
-            <div className="HistoricalGraph">
-              <HistoricalGraph fund={fund}/>
-            </div>
-          </div>
         </div>
+        
         <div className="row">
-          <div className="col">
+          <div className="col-sm-6">
             <div className="dividendGraph">
               <DividendGraph fund={fund}/>
             </div>
           </div>
-          <div className="col">
+          <div className="col-sm-6">
             <div className="card">
-              <Card />
+              <Card fund={fund}/>
             </div>
           </div>
+        </div>
+        
+        <div className="row">
+        <div className="col-12 col-sm-8">
+          <div className="HistoricalGraph">
+            <HistoricalGraph fund={fund}/>
+          </div>
+        </div>
+      </div>
+
+
+        <div className="row">
           <div className="col">
             <div className="editDltButtons">
               <button className='editBtn' onClick={editForm}>Edit Fund</button>
@@ -98,3 +108,5 @@ const Show = (props) => {
 };
 
 export default Show;
+
+
