@@ -27,11 +27,11 @@ const Show = (props) => {
   }
 
   return (
-    <>  
+      <div className="allShowPage">
           <div className="fundContainer">
             <FundInformation fund={fund}/>
           </div>
-          <div className="graph">
+          <div className="priceGraph">
             <PriceGraph fund={fund}/>
           </div>
           <div className="HistoricalGraph">
@@ -43,15 +43,12 @@ const Show = (props) => {
          <div className="card">
             <Card />
          </div>
-
-
-
         <div className="editDltButtons">
           <button className='editBtn' onClick={editForm}>Edit Fund</button>
           <button className='deleteBtn' onClick = {removeFund}>Delete Fund</button>
         </div>
-   
-    </>
+      </div>
+ 
   );
 };
 
