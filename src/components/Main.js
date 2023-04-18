@@ -130,7 +130,7 @@ const Main = (props) => {
     return(
         <main>
              <Routes>
-                {/* Here are the routes to hit the specific pages in the application, in which the user will need to authenticate in some of them */}
+                {/* Here are the routes to hit the specific pages in the application, in which the user will need to be authenticated to access some of them */}
                 <Route path='/' element={<Landing />} />
                 {/* route to hit the landing page of the app  */}
                 <Route path='/about' element={<AuthAbout><About /></AuthAbout>} />
@@ -139,31 +139,15 @@ const Main = (props) => {
 
                 <Route path='/blog' element={<AuthBlog><Blog /></AuthBlog>} />
 
-                {/* route to hit index page of posted funds */}
                 <Route path='/jxfunds' element={<AuthIndex><Index funds={funds} createFund={createFund} /></AuthIndex>} />
 
-                {/* route to hit create page */}
-                <Route path='/jxfunds/create' component={AuthCreate} element={<Create
-                funds={funds}
-                createFund={createFund}/>}/>
-                
+                <Route path='/jxfunds/create' element={<AuthCreate><Create funds={funds} createFund={createFund} /></AuthCreate>} />
 
+                <Route path='/jxfunds/:id' element={<AuthShow>{funds && <Show funds={funds} updateFund={updateFund} deleteFund={deleteFund} />}</AuthShow>} />
 
+                <Route path='/jxfunds/edit/:id' element={<AuthEdit>{funds && <Edit funds={funds} updateFund={updateFund} />}</AuthEdit>} />
 
-                {/* route to hit show page of specific funds post */}
-                <Route path='/jxfunds/:id' component={AuthShow} element={
-                    funds && (
-                    <Show
-                        funds={funds}
-                        updateFund={updateFund}
-                        deleteFund={deleteFund}
-                        />)} />
-               {/* route to hit the edit page of that specific fund */}
-                <Route path='/jxfunds/edit/:id'component={AuthEdit}
-                element={
-                    funds && (
-                      <Edit funds={funds} updateFund={updateFund} />
-                    )}/>
+                <Route path='/jxfunds/chat' element={<AuthChat><Chat /></AuthChat>} />
 
                {/* route to hit the sign up page of User */}
 	            <Route path="/account" 
@@ -177,10 +161,6 @@ const Main = (props) => {
                 users={users}
                 signInUser={signInUser}
                 />} />
-
-                {/* route to hit the chat functionality feature */}
-                <Route path="/jxfunds/chat" component={AuthChat} element={<Chat/>} />
-
 
              </Routes>
         </main>
