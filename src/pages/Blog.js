@@ -40,7 +40,7 @@ const Blog = () => {
       title: "How to Invest in Index Funds: NEW Step-by-Step Guide [2023]",
       date: "February 13, 2023",
       author: "Fiona Smith",
-      p:"As you begin investing in index funds, there are a few things you should keep in mind:Expense Ratio – The lower the expense ratio, the lower the cost to you Long Term Mindset – It will take time and you’ll likely see your money go up and down with the stock market fluctuations.Dollar Cost Averaging – Dollar Cost Averaging (aka DCA) is a surefire way to grow your investments over period investments, over time Monitor the Fund’s Performance – Yourfund should ultimately be mirroring the performance of your chosen index",
+      p:"As you begin investing in index funds, there are a few things you should keep in mind:Expense Ratio – The lower the expense ratio, the lower the cost to you .Long Term Mindset – It will take time and you’ll likely see your money go up and down with the stock market fluctuations.Dollar Cost Averaging.  – Dollar Cost Averaging (aka DCA) is a surefire way to grow your investments over period investments, over time Monitor the Fund’s Performance. – Your fund should ultimately be mirroring the performance of your chosen index .",
       link: "https://themillennialmoneywoman.com/how-to-invest-in-index-funds/",
     },
   ]);

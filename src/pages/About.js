@@ -13,19 +13,19 @@ const About = () => {
             <div className="aboutUs">
             <div className="dev">
                 <img className='jonathan' src= {require('../images/jonathan.png')} alt='jonathan'/>
-                <h3> Release Manager <br/> Jonathan Liang</h3>
+                <h3 className="title-name"> Release Manager <br/> Jonathan Liang</h3>
             </div >
             <div className='dev'>
                 <img className='joey' src={require('../images/joey.jpg')} alt='joey'/>
-                <h3> Product Manager <br/> Joey Cheng</h3>
+                <h3 className="title-name"> Product Manager <br/> Joey Cheng</h3>
             </div >
             <div className='dev'>
                 <img className='john' src= {require('../images/johnfrick.jpg')} alt='john'/>
-                <h3> Lead Back-End Developer <br/> John Frick</h3>
+                <h3 className="title-name"> Lead Back-End Developer <br/> John Frick</h3>
             </div >
             <div className='dev'>
                 <img className='joseline' src= {require('../images/joseline.jpg')} alt='joseline'/>
-                <h3> Lead Front-End Developer <br/> Joseline Cedano </h3>
+                <h3 className="title-name"> Lead Front-End Developer <br/> Joseline Cedano </h3>
             </div > 
             </div>
         </section>

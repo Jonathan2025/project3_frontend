@@ -22,9 +22,11 @@ const Index = (props) => {
           
             </div>
         ))}
+  
+    
            
    </div>
-    
+
      
         )
     }
@@ -38,7 +40,7 @@ const Index = (props) => {
     )
 
     
-
+ 
     
 }
 

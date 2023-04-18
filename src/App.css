@@ -174,24 +174,31 @@ input[type=submit]:hover{
   color: black;
   font-size: 14px;
   text-align: center;
-  background-color: rgb(195, 188, 188);
+  background-color: rgb(218, 220, 206);
   border-radius: 25px;
   padding: 5px;
 }
-.about{
-  color: rgb(141, 130, 130);
-  text-align: center;
+.title-name{
   font-size: 14px;
+  margin-top: 10px;
+}
+.about{
+  margin-top: 5px;
+  color: rgb(45, 40, 40);
+  text-align: center;
+  font-size: 12px;
 }
 .aboutUs{
-  color:rgb(15, 14, 14);
+  color:rgb(17, 14, 14);
   text-align: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  font-size: 15px;
+  font-size: 17px;
+  margin-top: 5px;
 }
 .dev{
+  margin-top: 6px;
   width:300px;
   font-size: 11px;
 }
@@ -301,6 +308,7 @@ hr{
 }
 .choose {
   color:rgb(9, 8, 8);
+  margin-left: 18px;
 }
 
 .companyLogo {
@@ -320,7 +328,7 @@ hr{
 .fund a {
   display: block;
   text-align: center;
-  background-color: #005A9C;
+  background-color: #4f575d;
   color: #FFFFFF;
   padding: 2px;
   border-radius: 5px;
@@ -348,7 +356,7 @@ hr{
 
 .showFundContainer h1 {
   width: 100%;
-  background-color: #005A9C;
+  background-color: #71797f;
   text-align: center;
   border-radius: 20px;
 }
@@ -356,7 +364,7 @@ hr{
 .fundTitle{
   border: 1px solid #005A9C;
   border-radius: 20px;
-  background-color: #6699CC;
+  background-color: #646e78;
 }
 
 .fundInfo {
@@ -477,9 +485,6 @@ margin-top:13px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-
-
 
 
 
