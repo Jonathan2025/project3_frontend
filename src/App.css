@@ -228,15 +228,15 @@ input[type=submit]:hover{
   border-radius: 40%;
 }
 
-/* edit page styling */
 .editFund{
-  color: black;
+  font-size: 11px;
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: whitesmoke;
+  background-color: rgb(208, 216, 205);
   border-radius:10px;
-  height: 350px;
+  height: 450px;
+  width: 88%;
   margin: 0px 90px 0px 90px;
 }
 label{
