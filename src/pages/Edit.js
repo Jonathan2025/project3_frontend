@@ -53,8 +53,6 @@ const Edit = (props) => {
         navigate(`/jxfunds/${fund._id}`);
     }
 
-
-
     return (
         <div className = "editFund">
           <h1>Edit {fund.name}?</h1>

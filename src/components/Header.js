@@ -33,16 +33,8 @@ const Header = (props) => {
         <div className="dropDown">
            <button className="dropBtn">Account <span className="unicodeArrow">{`\u25BC`}</span></button>
            <div className="dropLinks">
-            {/* <Link className='dropLink' to='/login'>
-              Sign In
-            </Link> */}
-            {/* <br/> */}
-            {/* <Link className='dropLink' to='/account'>
-              Sign Up
-            </Link> */}
             <LoginButton />
             <LogoutButton/>
-
            </div>
         </div>
      
