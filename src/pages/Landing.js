@@ -14,15 +14,12 @@ const Landing = (props) => {
         alt=""
       />
       <div className="landing_phrase">
-        <h3>Investing made social, join the conversation.</h3>
+        <h3 className="phraseL">Investing made social, join the conversation.</h3>
         <Link to="/about">
           <div className="aboutLink"> {'\u2015'} About Us</div>
         </Link>
       </div>
-
-   
- 
-
+  
     </div>
     
   );

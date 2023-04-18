@@ -1,8 +1,7 @@
-body{ 
-  background-color: whitesmoke;
+/* body{ 
+  background-color: red;
   font-family: "gotham narrow",Georgia,serif;
- 
-}
+} */
 
 /* nav bar styling */
 .searchbar{
@@ -18,11 +17,13 @@ body{
   
 }
 .navBar{
+  font-family: "gotham narrow",Georgia,serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 20px;
   background-color:rgba(245,245,245,.6);
-  margin:10px 10px 0px 10px;
+
   text-decoration: none;
   font-size:20px;
   margin-bottom:10px;
@@ -31,15 +32,18 @@ body{
 a:not(.logo){
   font-weight: bold;
   text-decoration: none;
-  color: rgb(43, 43, 43);
+  color: rgb(29, 29, 29);
 }
 a:hover :not(.logo){
   cursor: pointer;
   color: #bbb;
 }
 .logo{
+font-family: "gotham narrow",Georgia,serif;
 font-size: 40px;
+position: relative; left: 20px;
 color:rgb(43, 43, 43);
+text-decoration: none;
 }
 .logo:hover{
  text-decoration: none;
@@ -56,14 +60,12 @@ color:rgb(43, 43, 43);
 }
 input[type = search]{
   position: relative; 
-
 }
 
-/* Drop Down styling for Account section */
-
+/* drop down styling */
 .dropDown, .dropBtn{
   border: none;
-  background-color: whitesmoke;
+  background-color: inherit;
   font-size: 20px;
   font-family: "gotham narrow",Georgia,serif;
   font-weight: bold;
@@ -88,6 +90,9 @@ input[type = search]{
   background-color: whitesmoke;
   color: black;
 }
+.dropBtn:hover{
+background: inherit;
+}
 .dropLink:hover{
   color: #bbb;
 }
@@ -98,9 +103,10 @@ input[type = search]{
 
 /* landing styling  */
 .landing{
+  font-family: "gotham narrow",Georgia,serif;
   margin: 0;
   text-align: center;
-  font-size: 40px;
+  font-size: 45px;
   -webkit-animation: fadeIn 4s;
   animation:fadeIn 4s;
 }
@@ -121,32 +127,15 @@ input[type = search]{
   left: 50%;
   transform: translate(-50%,-50%);
 }
+.phraseL{
+  font-size: 50px;
+  font-weight: bold;
+}
 .aboutLink{
   font-size: 25px;
   color: whitesmoke;
 }
 
-.containerTitle{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;top: 50%;
-}
-.title{
-  color:whitesmoke;
-  font-size: 80px;
-  font: bolder;
-  height: 50%;
-  margin: 0px 30px 0px 30px;
-  opacity: 0.9;
-}
-.search{
-  font-size: 20px;
-  border-radius: 5px;
-  width:300px;
-  height: 60px;
-
-}
 
 /* index styling */
 .containerIndex{
@@ -278,8 +267,6 @@ label{
   color:black
 }
 
-
-
 /* FAQ styling */
 hr{
   margin-left:800px;
@@ -293,7 +280,6 @@ hr{
 }
 .faq_phrase, hr{
   text-align: center;
-  
   color: black;
 }
 .question{
@@ -303,13 +289,12 @@ hr{
 }
 
 
-
+/* blog styling */
 .selection{
   margin-top: 6px;
   margin-bottom: 6px;
   justify-content: center;
   align-items: center;
-
 }
 
 .blogger-card{
@@ -324,8 +309,8 @@ hr{
   border-radius: 0.5rem;
   width: 95%;
   height: 450px;
-
 }
+
 .choose {
   color:rgb(9, 8, 8);
   margin-left: 18px;
@@ -342,13 +327,13 @@ hr{
 .fund{
   border: 1px solid white;
   text-align: center;
-  background-color: rgba(96, 130, 182, 0.6);
+  background-color: #bbb;
 }
 
 .fund a {
   display: block;
   text-align: center;
-  background-color: #4f575d;
+  background-color: #4b5053;
   color: #FFFFFF;
   padding: 2px;
   border-radius: 5px;
@@ -356,7 +341,7 @@ hr{
 }
 
 .fund a:hover {
-  background-color: #0068C8;
+  background-color: #227721;
   color: #FFFFFF;
 }
 
@@ -371,7 +356,7 @@ hr{
 
 /* show page styling */
 .allShowPage{
-  border: 1px solid #005A9C;
+  border: 1px solid #000203;
 }
 
 .showFundContainer h1 {
@@ -382,9 +367,10 @@ hr{
 }
 
 .fundTitle{
-  border: 1px solid #005A9C;
+  border: 2px solid #000;
   border-radius: 20px;
-  background-color: #646e78;
+  background-color: #4b5053;
+  color: rgb(215, 214, 214);
 }
 
 .fundInfo {
@@ -462,8 +448,8 @@ button:hover{
 
 /* this container encompasses all the components on the show page */
 .container{
-  border: 1px solid #005A9C;
-  background-color: 	#9fbfdf;
+  border: 2px solid #000;
+  background-color: 	#9d9fa1;
   border-radius: 20px;
 }
 
