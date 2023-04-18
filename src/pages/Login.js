@@ -35,7 +35,7 @@ const Login = (props) => {
 
 return (
   <>
-    <section className='login'>
+    <section className='createForm'>
         <div>
             <h1>Sign In</h1>
         </div>

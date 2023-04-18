@@ -31,7 +31,7 @@ const Account = (props) => {
 
 return (
   <>
-    <section className='account'>
+    <section className='createForm'>
         <div>
             <h1>Sign Up</h1>
         </div>
