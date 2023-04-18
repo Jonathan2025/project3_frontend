@@ -3,14 +3,16 @@ import { Navigate } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const withAuth = (Component) => {
-  return () => {
+   
+  return (props) => {
     const { isAuthenticated } = useAuth0();
 
     if (!isAuthenticated) {
       return <Navigate to="/login" />;
     }
 
-    return <Component />;
+    console.log("here are the props", props)
+    return <Component {...props} />;
   };
 };
 

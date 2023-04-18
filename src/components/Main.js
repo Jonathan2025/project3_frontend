@@ -123,10 +123,13 @@ const Main = (props) => {
     };
     // Need useEffect in order to fetch the data and diplay it as soon as the component is rendered on the page
     useEffect(()=> {
-        console.log("Getting funds & Users...")
+        // console.log("Getting funds & Users...")
         getFunds()
         getUsers()
     }, [])
+
+    console.log("these are the funds being got", funds)
+
     return(
         <main>
              <Routes>
@@ -138,9 +141,14 @@ const Main = (props) => {
                 <Route path='/faq' element={<AuthFaq><Faq /></AuthFaq>} />
 
                 <Route path='/blog' element={<AuthBlog><Blog /></AuthBlog>} />
-
-                <Route path='/jxfunds' element={<AuthIndex><Index funds={funds} createFund={createFund} /></AuthIndex>} />
-
+                
+                <Route path='/jxfunds' element={funds && <Index funds={funds} createFund={createFund} />}/>
+                {/* <Route path='/jxfunds' element={funds ? <AuthIndex><Index funds={funds} createFund={createFund} /></AuthIndex> : null} /> */}
+                {/* <Route
+                    path='/jxfunds'
+                    element={<AuthIndex>{funds && <Index createFund={createFund} {...props} />}</AuthIndex>}
+                    /> */}
+                
                 <Route path='/jxfunds/create' element={<AuthCreate><Create funds={funds} createFund={createFund} /></AuthCreate>} />
 
                 <Route path='/jxfunds/:id' element={<AuthShow>{funds && <Show funds={funds} updateFund={updateFund} deleteFund={deleteFund} />}</AuthShow>} />

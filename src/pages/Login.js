@@ -4,29 +4,29 @@ import LoginButton from "../components/Authentication/Login";
 import LogoutButton from "../components/Authentication/Logout";
 const Login = (props) => {
 
-    // state to hold formData
-    const [newForm, setNewForm] = useState({
-        username: "",
-        password: "",
-    });
+    // //state to hold formData
+    // const [newForm, setNewForm] = useState({
+    //     username: "",
+    //     password: "",
+    // });
     
-    // handleChange function for form
-    const handleChange = (event) => {
-      setNewForm({ ...newForm, [event.target.name]: event.target.value});
-    };
+    // // handleChange function for form
+    // const handleChange = (event) => {
+    //   setNewForm({ ...newForm, [event.target.name]: event.target.value});
+    // };
   
-    // handle submit function for form
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      props.signInUser(newForm);
-      setNewForm({
-        username: "",
-        password: "",
-      });
-      console.log(event, 'this is the event')
-      console.log(newForm)
-      console.log(props)
-    };
+    // // handle submit function for form
+    // const handleSubmit = (event) => {
+    //   event.preventDefault();
+    //   props.signInUser(newForm);
+    //   setNewForm({
+    //     username: "",
+    //     password: "",
+    //   });
+    //   console.log(event, 'this is the event')
+    //   console.log(newForm)
+    //   console.log(props)
+    // };
     
     
     // const changePage = () =>{
@@ -36,15 +36,18 @@ const Login = (props) => {
 
 return (
   <>
-    <LoginButton/>
-    <LogoutButton/>
-    {/* <section className='createForm'>
-        <div>
-            <h1>Sign In</h1>
-        </div>
-        <form onSubmit={handleSubmit}>
 
-    <input
+    {/* <LoginButton/>
+    <LogoutButton/> */}
+    <section className='loginForm'>
+        <div>
+            <h1>Sign In to Access JXFunds!</h1>
+            <LoginButton className="loginButton"/>
+        </div>
+      </section>
+      {/* <form onSubmit={handleSubmit}> */}
+
+    {/* <input
       type="text"
       value={newForm.username}
       name="username"
@@ -64,10 +67,10 @@ return (
 
   </form>
     
-    {props.fund}
-    </section>
+    {props.fund} */}
+    {/* </section> */}
 
-    <div>
+    {/* <div>
     <Link to='/jxfunds/chat'>
     <button className="chatdot">Chat ☎️</button>
   </Link>

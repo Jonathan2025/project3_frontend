@@ -140,7 +140,7 @@ background: inherit;
   color: white;
 }
 
-/* create page styling */
+/* create page styling (Please note this will also serve as the LoginPage as well*/
 .createForm{
   font-family: "gotham narrow",Georgia,serif;
   display: flex;
@@ -497,7 +497,6 @@ margin-top:13px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 
 
 
