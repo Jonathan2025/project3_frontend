@@ -1,8 +1,3 @@
-/* body{ 
-  background-color: red;
-  font-family: "gotham narrow",Georgia,serif;
-} */
-
 /* nav bar styling */
 .searchbar{
   max-width: 280px;
@@ -147,6 +142,7 @@ background: inherit;
 
 /* create page styling */
 .createForm{
+  font-family: "gotham narrow",Georgia,serif;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -216,8 +212,9 @@ input[type=submit]:hover{
   height: 150px;
   border-radius: 40%;
 }
-
+/* edit pg styling */
 .editFund{
+  font-family: "gotham narrow",Georgia,serif;
   font-size: 11px;
   display: flex;
   flex-direction: column;
@@ -232,9 +229,16 @@ label{
   font-size: 18px;
   font-weight: bold;
 }
+select[name="company"]{
+width: 180px;
+height: 35px;
+font-size: 15px;
+border: none;
+}
 
 /* footer styling */
 .footer{
+  font-family: "gotham narrow",Georgia,serif;
   margin-top: 20px;
   text-align:center;
   color: #bbb;
@@ -255,7 +259,7 @@ label{
   border-radius: 50%;
 }
 
-/* Account page styling */
+/* account page styling */
 .account{
   display: flex;
   flex-direction: column;
@@ -325,6 +329,7 @@ hr{
 
 /* editing of the funds containers in the index page */
 .fund{
+  font-family: "gotham narrow",Georgia,serif;
   border: 1px solid white;
   text-align: center;
   background-color: #bbb;
@@ -367,10 +372,10 @@ hr{
 }
 
 .fundTitle{
-  border: 2px solid #000;
-  border-radius: 20px;
+  border: 4px solid #000;
+  border-radius: 17px;
   background-color: #4b5053;
-  color: rgb(215, 214, 214);
+  color: rgb(237, 237, 237);
 }
 
 .fundInfo {
@@ -448,6 +453,7 @@ button:hover{
 
 /* this container encompasses all the components on the show page */
 .container{
+  font-family: "gotham narrow",Georgia,serif;
   border: 2px solid #000;
   background-color: 	#9d9fa1;
   border-radius: 20px;
