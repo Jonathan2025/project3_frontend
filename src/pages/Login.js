@@ -24,6 +24,7 @@ const Login = (props) => {
       console.log(event, 'this is the event')
       console.log(newForm)
       console.log(props)
+      console.log()
     };
     
     
