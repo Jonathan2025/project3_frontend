@@ -144,8 +144,13 @@ const Main = (props) => {
                 
                 <Route path='/jxfunds/create' element={<Create funds={funds} createFund={createFund}/>}/>
 
-                <Route path='/jxfunds/:id' element={<AuthShow>{funds && <Show funds={funds} updateFund={updateFund} deleteFund={deleteFund} />}</AuthShow>} />
+                <Route path='/jxfunds/:id' element={funds && (<Show funds={funds} updateFund={updateFund} deleteFund={deleteFund} />)} />
+                
 
+
+
+
+                
                 <Route path='/jxfunds/edit/:id' element={<AuthEdit>{funds && <Edit funds={funds} updateFund={updateFund} />}</AuthEdit>} />
 
                 <Route path='/jxfunds/chat' element={<AuthChat><Chat /></AuthChat>} />

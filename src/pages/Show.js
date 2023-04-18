@@ -4,6 +4,8 @@ import DividendGraph from "../components/ShowPage/DividendGraph";
 import HistoricalGraph from "../components/ShowPage/HistoricalGraph";
 import Card from "../components/ShowPage/ChangeCard";
 import FundInformation from "../components/ShowPage/FundContainer";
+import { useAuth0 } from "@auth0/auth0-react";
+import LoginButton from "../components/Authentication/Login";
 
 // importing bootstrap so that we can use the grid layout for the components on the page 
 // Bootstrap CSS
@@ -17,6 +19,20 @@ const Show = (props) => {
   const id = params.id;
   const funds = props.funds;
   const fund = funds.find((f) => f._id === id);
+
+
+  // see if the user is authenticated first
+  const { isAuthenticated } = useAuth0();
+  if (!isAuthenticated) {
+      return (
+          <section className='createForm'>
+              <div>
+                  <h1>Sign In to Access JXFunds!</h1>
+                  <LoginButton className="loginButton"/>
+              </div>
+          </section>
+      );
+  }
 
   //linking edit btn to edit route
   const editForm = (e) => {
