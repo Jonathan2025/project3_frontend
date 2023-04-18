@@ -22,10 +22,10 @@ const DividendGraph = ({fund}) => {
   const symbol = fund.symbol
 
   // When ready we will replace the symbol and the api key to get the actual data
+  // const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=${symbol}`
   const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=VFINX&apikey=%7bapikey%7d`
 
   // Now we need to set up a state hook to our component and then state for the timeSeriesData
-  const [fundAPIData, setFundAPIData] = useState(null)
   const [timeSeriesData, setTimeSeriesData] = useState(null)
 
   // this useEffect will only run once the component mounts
@@ -34,7 +34,6 @@ const DividendGraph = ({fund}) => {
         const response = await fetch(URL)
         const data = await response.json()
         console.log("Getting Dividend Data", data)
-        setFundAPIData(data)
 
         // set the timeSeriesData state variable 
         setTimeSeriesData(data["Time Series (Daily)"])
@@ -77,7 +76,6 @@ const DividendGraph = ({fund}) => {
         <h1>Dividends</h1>
         <Bar
             data={data}
-   
         ></Bar>
    
     </div>
