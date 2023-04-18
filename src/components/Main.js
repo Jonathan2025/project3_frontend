@@ -11,7 +11,6 @@ import Blog from '../pages/Blog';
 import Chat from './Chat';
 import withAuth from './Authentication/Authenticated';
 
-
 // lets add authentication for most of the routes, the other routes will already have the user authentication function in the component
 const AuthAbout = withAuth(About)
 const AuthFaq = withAuth(Faq)
