@@ -21,8 +21,8 @@ const Main = (props) => {
     //state to hold list of funds
     const [funds, setFunds] = useState(null);
     //url for backend
-    const URL = process.env.REACT_APP_BACKEND_URL;
-
+    //const URL = process.env.REACT_APP_BACKEND_URL
+    const URL = "http://localhost:4000/jxfunds/" 
     //function to make the api call 
     const getFunds = async () => {
         const response = await fetch(URL);

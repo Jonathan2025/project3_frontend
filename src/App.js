@@ -24,6 +24,7 @@ function App() {
     console.log('Getting funds...')
     getFunds()
   }, [])
+  
   return (
     <div className='jx-funds'>
       <Header funds={funds} />

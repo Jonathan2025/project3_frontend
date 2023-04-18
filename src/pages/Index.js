@@ -5,7 +5,6 @@ import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from '../components/Authentication/Login';
 const Index = (props) => {
   const { isAuthenticated } = useAuth0();
-  console.log("we are now in the index page", props) // we get the data from the backend BUT its an object instead of an array 
 
   //loaded function
   const loaded = () => {
@@ -39,7 +38,6 @@ const Index = (props) => {
   };
 
   const loading = () => {
-    console.log("loading in the index page")
     return <h1>Loading... </h1> 
   };
 
