@@ -1,20 +1,34 @@
 import { Link } from "react-router-dom";
 import { useState } from "react"
-// import useNavigate so tha tonce the form is created we can return to the index page
 import { useNavigate } from "react-router-dom"
+import { useAuth0 } from "@auth0/auth0-react";
+import LoginButton from "../components/Authentication/Login";
 
 const Create = (props) => {
-        const navigate = useNavigate()
+    const navigate = useNavigate()
 
-        // state to hold formData
-        const [newForm, setNewForm] = useState({
-            name: "",
-            company: "",
-            symbol: "",
-            description: "", 
-            recommendation: "", 
-            date: ""
-        });
+     // state to hold formData
+     const [newForm, setNewForm] = useState({
+      name: "",
+      company: "",
+      symbol: "",
+      description: "", 
+      recommendation: "", 
+      date: ""
+      });
+
+    //see if the user is authenticated first
+    const { isAuthenticated } = useAuth0();
+        if (!isAuthenticated) {
+          return (
+            <section className='createForm'>
+              <div>
+                  <h1>Sign In to Access JXFunds!</h1>
+                  <LoginButton className="loginButton"/>
+              </div>
+          </section>
+          );
+        }
       
         // handleChange function for form
         const handleChange = (event) => {

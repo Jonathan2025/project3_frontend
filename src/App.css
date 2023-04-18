@@ -115,6 +115,7 @@ background: inherit;
   height: 80vh;
   object-fit: cover;
 }
+
 .landing_phrase {
   color: whitesmoke;
   position: absolute;
@@ -140,7 +141,7 @@ background: inherit;
   color: white;
 }
 
-/* create page styling */
+/* create page styling (Please note this will also serve as the LoginPage as well*/
 .createForm{
   font-family: "gotham narrow",Georgia,serif;
   display: flex;
@@ -151,7 +152,6 @@ background: inherit;
   height: 300px;
   width: 88%;
   margin: 0px 90px 0px 90px;
-  
 }
 
 input[type=text]{
@@ -497,7 +497,6 @@ margin-top:13px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 
 
 

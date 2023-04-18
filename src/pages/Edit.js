@@ -1,6 +1,8 @@
 // import the necessary useParams, usestate etc
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom"
+import { useAuth0 } from "@auth0/auth0-react";
+import LoginButton from "../components/Authentication/Login";
 
 const Edit = (props) => {
 
@@ -21,6 +23,18 @@ const Edit = (props) => {
     const [editForm, setEditForm] = useState(fund)
     console.log("this is the editform", editForm)
     
+    //see if the user is authenticated first
+    const { isAuthenticated } = useAuth0();
+        if (!isAuthenticated) {
+          return (
+            <section className='createForm'>
+              <div>
+                  <h1>Sign In to Access JXFunds!</h1>
+                  <LoginButton className="loginButton"/>
+              </div>
+          </section>
+          );
+        }
 
     // HandleChange and HandleSubmit functions for the edit form 
     const handleChange = (event) => {
@@ -38,7 +52,6 @@ const Edit = (props) => {
         // redirect people back to index page AFTER the user edits the information
         navigate(`/jxfunds/${fund._id}`);
     }
-
 
     return (
         <div className = "editFund">

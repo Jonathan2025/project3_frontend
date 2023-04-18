@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import Search from "./Search";
+import LogoutButton from "./Authentication/Logout";
+import LoginButton from "./Authentication/Login";
+
 const Header = (props) => {
   const { funds } = props;
   return (
@@ -30,13 +33,8 @@ const Header = (props) => {
         <div className="dropDown">
            <button className="dropBtn">Account <span className="unicodeArrow">{`\u25BC`}</span></button>
            <div className="dropLinks">
-            <Link className='dropLink' to='/login'>
-              Sign In
-            </Link>
-            <br/>
-            <Link className='dropLink' to='/account'>
-              Sign Up
-            </Link>
+            <LoginButton />
+            <LogoutButton/>
            </div>
         </div>
      
