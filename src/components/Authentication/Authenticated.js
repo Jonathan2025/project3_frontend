@@ -12,7 +12,7 @@ const withAuth = (Component) => {
     }
 
     console.log("here are the props", props)
-    return <Component {...props} />;
+    return <Component />;
   };
 };
 

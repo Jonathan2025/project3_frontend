@@ -15,8 +15,6 @@ import withAuth from './Authentication/Authenticated';
 
 
 // lets add authentication for most of the routes 
-const AuthCreate = withAuth(Create)
-const AuthIndex = withAuth(Index)
 const AuthShow = withAuth(Show)
 const AuthEdit = withAuth(Edit)
 const AuthAbout = withAuth(About)
@@ -143,13 +141,8 @@ const Main = (props) => {
                 <Route path='/blog' element={<AuthBlog><Blog /></AuthBlog>} />
                 
                 <Route path='/jxfunds' element={funds && <Index funds={funds} createFund={createFund} />}/>
-                {/* <Route path='/jxfunds' element={funds ? <AuthIndex><Index funds={funds} createFund={createFund} /></AuthIndex> : null} /> */}
-                {/* <Route
-                    path='/jxfunds'
-                    element={<AuthIndex>{funds && <Index createFund={createFund} {...props} />}</AuthIndex>}
-                    /> */}
                 
-                <Route path='/jxfunds/create' element={<AuthCreate><Create funds={funds} createFund={createFund} /></AuthCreate>} />
+                <Route path='/jxfunds/create' element={<Create funds={funds} createFund={createFund}/>}/>
 
                 <Route path='/jxfunds/:id' element={<AuthShow>{funds && <Show funds={funds} updateFund={updateFund} deleteFund={deleteFund} />}</AuthShow>} />
 
