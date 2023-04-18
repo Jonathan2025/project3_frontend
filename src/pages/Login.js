@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react"
-
+import LoginButton from "../components/Authentication/Login";
+import LogoutButton from "../components/Authentication/Logout";
 const Login = (props) => {
 
     // state to hold formData
@@ -35,7 +36,9 @@ const Login = (props) => {
 
 return (
   <>
-    <section className='createForm'>
+    <LoginButton/>
+    <LogoutButton/>
+    {/* <section className='createForm'>
         <div>
             <h1>Sign In</h1>
         </div>
@@ -68,7 +71,7 @@ return (
     <Link to='/jxfunds/chat'>
     <button className="chatdot">Chat ☎️</button>
   </Link>
-</div>;
+</div>; */}
 
     </>
     )

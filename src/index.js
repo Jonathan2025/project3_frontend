@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { Auth0Provider } from "@auth0/auth0-react";
+
 
 //importing BrowserRouter as Router
 import { BrowserRouter as Router } from "react-router-dom";
@@ -12,7 +13,15 @@ root.render(
   //enables use of router in App
   <Router>
     <React.StrictMode>
+    <Auth0Provider
+    domain={process.env.REACT_APP_AUTH0_DOMAIN}
+    clientId={process.env.REACT_APP_AUTH0_CLIENTID}
+    authorizationParams={{
+      redirect_uri: process.env.REACT_APP_FRONTEND_URI
+    }}
+    >
       <App />
+    </Auth0Provider>
     </React.StrictMode>
   </Router>
 );

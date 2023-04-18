@@ -11,6 +11,18 @@ import Faq from '../pages/Faq';
 import Blog from '../pages/Blog';
 import Login from '../pages/Login';
 import Chat from './Chat';
+import withAuth from './Authentication/Authenticated';
+
+
+// lets add authentication for most of the routes 
+const AuthCreate = withAuth(Create)
+const AuthIndex = withAuth(Index)
+const AuthShow = withAuth(Show)
+const AuthEdit = withAuth(Edit)
+const AuthAbout = withAuth(About)
+const AuthFaq = withAuth(Faq)
+const AuthBlog = withAuth(Blog)
+const AuthChat = withAuth(Chat)
 
 const Main = (props) => {
     //state to hold list of funds
@@ -118,30 +130,28 @@ const Main = (props) => {
     return(
         <main>
              <Routes>
+                {/* Here are the routes to hit the specific pages in the application, in which the user will need to authenticate in some of them */}
+                <Route path='/' element={<Landing />} />
                 {/* route to hit the landing page of the app  */}
-                <Route path='/' element={<Landing
-                funds={funds}
-                />} />
-                {/* route to hit the landing page of the app  */}
-                <Route path='/about' element={<About />} />
-                {/* route to hit the FAQ pg */}
-                <Route path='/faq' element={<Faq />}></Route>
+                <Route path='/about' element={<AuthAbout><About /></AuthAbout>} />
+
+                <Route path='/faq' element={<AuthFaq><Faq /></AuthFaq>} />
+
+                <Route path='/blog' element={<AuthBlog><Blog /></AuthBlog>} />
+
                 {/* route to hit index page of posted funds */}
+                <Route path='/jxfunds' element={<AuthIndex><Index funds={funds} createFund={createFund} /></AuthIndex>} />
 
-
-                <Route path='/blog' element={<Blog />}></Route>
-                {/* route to hit index page of posted funds */}
-
-
-                <Route path='/jxfunds' element={<Index
-                funds={funds}
-                createFund={createFund}/>}/>
                 {/* route to hit create page */}
-                <Route path='/jxfunds/create' element={<Create
+                <Route path='/jxfunds/create' component={AuthCreate} element={<Create
                 funds={funds}
                 createFund={createFund}/>}/>
+                
+
+
+
                 {/* route to hit show page of specific funds post */}
-                <Route path='/jxfunds/:id' element={
+                <Route path='/jxfunds/:id' component={AuthShow} element={
                     funds && (
                     <Show
                         funds={funds}
@@ -149,7 +159,7 @@ const Main = (props) => {
                         deleteFund={deleteFund}
                         />)} />
                {/* route to hit the edit page of that specific fund */}
-                <Route path='/jxfunds/edit/:id'
+                <Route path='/jxfunds/edit/:id'component={AuthEdit}
                 element={
                     funds && (
                       <Edit funds={funds} updateFund={updateFund} />
@@ -169,7 +179,7 @@ const Main = (props) => {
                 />} />
 
                 {/* route to hit the chat functionality feature */}
-                <Route path="/jxfunds/chat" element={<Chat/>} />
+                <Route path="/jxfunds/chat" component={AuthChat} element={<Chat/>} />
 
 
              </Routes>
