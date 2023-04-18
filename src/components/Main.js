@@ -14,8 +14,7 @@ import Chat from './Chat';
 import withAuth from './Authentication/Authenticated';
 
 
-// lets add authentication for most of the routes 
-const AuthShow = withAuth(Show)
+// lets add authentication for most of the routes, the other routes will already have the user authentication function in the component
 const AuthEdit = withAuth(Edit)
 const AuthAbout = withAuth(About)
 const AuthFaq = withAuth(Faq)
@@ -150,17 +149,18 @@ const Main = (props) => {
 
 
 
-                
-                <Route path='/jxfunds/edit/:id' element={<AuthEdit>{funds && <Edit funds={funds} updateFund={updateFund} />}</AuthEdit>} />
+
+                <Route path='/jxfunds/edit/:id'element={funds && ( <Edit funds={funds} updateFund={updateFund} />)}/>
 
                 <Route path='/jxfunds/chat' element={<AuthChat><Chat /></AuthChat>} />
 
                {/* route to hit the sign up page of User */}
-	            <Route path="/account" 
+	            {/* <Route path="/account" 
                 element={<Account
                 users={users}
                 createUser={createUser}
-                />} />
+                />} /> */}
+
                {/* route to hit the sign in page of User */}
 	            <Route path="/login" 
                 element={<Login
