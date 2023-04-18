@@ -15,15 +15,13 @@ const Header = (props) => {
         <Link to="/jxfunds/create">
           <div>Create</div>
         </Link>
-{/*        
-        <Link to='/jxfunds/chat'>
-          <div>Chat</div>
-        </Link> */}
+
         <Link to='/' className='logo'>
           <div className='logo'>JxFUNDS</div>
         </Link>
-        
+        <div className="searchbar">
         <Search funds={funds} />
+        </div>
      
 
         <Link to='/blog'>
