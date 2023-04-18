@@ -7,7 +7,7 @@ function Card({fund, showPercent}) {
     const symbol = fund.symbol
   
     // Now we will get the URL of the API when ready please remove the comment for the first url. BUT for testing please use the second url
-    // const URL = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${API_KEY}`
+    //const URL = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${API_KEY}`
     const URL = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo`
 
 
@@ -35,12 +35,15 @@ function Card({fund, showPercent}) {
 
   const percent = parseFloat(percentChangeData);
 
+  const percent2 = [0.35, 0.89, 1.27, 0.534, -0.68, -0.44, -0.234, 1.34, -0.456, 0.746, 1.45, 0.91]
+  const randomPercent = percent2[Math.floor(Math.random() * percent2.length)]
   // set color of percent based on its value
   const percentColor = percent > 0.0 ? 'green' : 'red';
+  const percentColor2 = randomPercent > 0.0 ? 'green' : 'red';
   
   //for the index page we only want to show the percent change 
   if (showPercent) {
-    return <div className="percent" style={{ color: percentColor }}>{percent}%</div>;
+    return <div className="percent" style={{ color: percentColor2 }}>{randomPercent}%</div>;
   // for the show page we want to show the full card
   } else {
   return (
