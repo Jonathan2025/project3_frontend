@@ -48,7 +48,7 @@ const About = () => {
         </section>
  <div>
         <Link to='/jxfunds/chat'>
-          <button className="chatdot">Chat ☎️</button>
+          <button className="chatdot" >Chat ☎️</button>
         </Link>
       </div>
     

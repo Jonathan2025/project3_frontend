@@ -6,9 +6,9 @@ import LoginButton from "./Authentication/Login";
 const Header = (props) => {
   const { funds } = props;
   return (
-    <div className="header">
+    <div className="header sticky-top">
       {/* this will hold our logo and nav bar */}
-      <nav className="navBar">
+      <nav className="navBar ">
         <Link to="/about">
           <div>About</div>
         </Link>
