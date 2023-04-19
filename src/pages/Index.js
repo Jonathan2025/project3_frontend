@@ -28,7 +28,6 @@ const Index = (props) => {
             </Link>
             <h3>{fund.symbol}</h3>
             <CompanyLogo fund={fund}/>
-
             {/* Only show the percent */}
             <Card fund={fund} showPercent={true} />
           </div>

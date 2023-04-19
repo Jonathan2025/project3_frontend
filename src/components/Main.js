@@ -8,14 +8,14 @@ import Landing from '../pages/Landing';
 import About from '../pages/About';
 import Faq from '../pages/Faq';
 import Blog from '../pages/Blog';
-import Chat from './Chat';
+import Profile from './Chat/ChatProfile';
 import withAuth from './Authentication/Authenticated';
 
 // lets add authentication for most of the routes, the other routes will already have the user authentication function in the component
 const AuthAbout = withAuth(About)
 const AuthFaq = withAuth(Faq)
 const AuthBlog = withAuth(Blog)
-const AuthChat = withAuth(Chat)
+const AuthProfile = withAuth(Profile)
 
 const Main = (props) => {
     //state to hold list of funds
@@ -85,7 +85,7 @@ const Main = (props) => {
                 <Route path='/jxfunds/create' element={<Create funds={funds} createFund={createFund}/>}/>
                 <Route path='/jxfunds/:id' element={funds && (<Show funds={funds} updateFund={updateFund} deleteFund={deleteFund} />)} />
                 <Route path='/jxfunds/edit/:id'element={funds && ( <Edit funds={funds} updateFund={updateFund} />)}/>
-                <Route path='/jxfunds/chat' element={<AuthChat><Chat /></AuthChat>} />
+                <Route path='/jxfunds/chat' element={<AuthProfile><Profile /></AuthProfile>} />
              </Routes>
         </main>
     );

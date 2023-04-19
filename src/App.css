@@ -17,12 +17,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background-color:rgba(245,245,245,.6);
-
+  background-color: #9fbfdf;
   text-decoration: none;
   font-size:20px;
   margin-bottom:10px;
-  margin-left: 20px;
+
 }
 a:not(.logo){
   font-weight: bold;
@@ -152,6 +151,7 @@ background: inherit;
   height: 300px;
   width: 88%;
   margin: 0px 90px 0px 90px;
+  justify-content: center;
 }
 
 input[type=text]{
@@ -299,6 +299,7 @@ hr{
   margin-bottom: 6px;
   justify-content: center;
   align-items: center;
+  background-color: rgb(208, 216, 205);
 }
 
 .blogger-card{
@@ -308,16 +309,18 @@ hr{
   align-items: center;
   margin: 1rem;
   padding: 1rem;
+  text-align: center;
   /* border: 1px solid #3a492d; */
   border-style: none;
   border-radius: 0.5rem;
   width: 95%;
   height: 450px;
+  background-color: rgb(208, 216, 205);
 }
 
 .choose {
   color:rgb(9, 8, 8);
-  margin-left: 18px;
+  text-align: center;
 }
 
 .companyLogo {
@@ -497,7 +500,6 @@ margin-top:13px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 
 
 
