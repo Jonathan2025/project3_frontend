@@ -14,7 +14,7 @@ CometChat.init(appID, appSetting).then(
     console.log("Initialization failed with error:", error);
     // Check the reason for error and take appropriate action.
   }
-);
+)
 
 // now we want to have a create user function 
 // const authKey = process.env.REACT_APP_COMETCHAT_AUTH_KEY

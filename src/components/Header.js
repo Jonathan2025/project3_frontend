@@ -25,8 +25,6 @@ const Header = (props) => {
         <div className="searchbar">
         <Search funds={funds} />
         </div>
-     
-
         <Link to='/blog'>
           <div>Blog</div>
         </Link>
