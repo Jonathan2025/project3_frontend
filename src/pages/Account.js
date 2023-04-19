@@ -1,4 +1,5 @@
-// this file is not being used however, in the future if we want to revert back to using a form sign in we can do so
+// ===================== NOTE: this file is not being used, however, we kept it so that in the future we may come back to it and solve the user authentication problem 
+// ==================== Without using the third party Auth0
 
 import { Link } from "react-router-dom";
 import { useState } from "react"
@@ -27,7 +28,7 @@ const Account = (props) => {
     };
     
     const changePage = () =>{
-        window.location.href = 'http://localhost:3000/jxfunds'
+        window.location.href = process.env.REACT_APP_FRONTEND_URL
     }
 
 

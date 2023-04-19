@@ -57,7 +57,7 @@ export default Chat
 
 
 
-// Attempt to link the chat with the user that is logged in the Auth0
+// ============================= Attempt to link the chat with the user that is logged in the Auth0 will come back to as a stretch goal =========================
 // import { CometChat } from "@cometchat-pro/chat";
 // import { CometChatUsersWithMessages } from "@cometchat-pro/react-ui-kit";
 // // import { useAuth0 } from "@auth0/auth0-react"

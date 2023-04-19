@@ -12,17 +12,16 @@ import Profile from './Chat/ChatProfile';
 import withAuth from './Authentication/Authenticated';
 
 // lets add authentication for most of the routes, the other routes will already have the user authentication function in the component
-// const AuthAbout = withAuth(About)
 const AuthFaq = withAuth(Faq)
-// const AuthBlog = withAuth(Blog)
 const AuthProfile = withAuth(Profile)
 
 const Main = (props) => {
     //state to hold list of funds
     const [funds, setFunds] = useState(null);
-    //url for backend
-    //const URL = process.env.REACT_APP_BACKEND_URL
-    const URL = "http://localhost:4000/jxfunds/" 
+    //url for the backend
+    const URL = process.env.REACT_APP_BACKEND_URL
+
+
     //function to make the api call 
     const getFunds = async () => {
         const response = await fetch(URL);
@@ -71,17 +70,13 @@ const Main = (props) => {
         getFunds()
     }, [])
 
-    console.log("these are the funds being got", funds)
-
     return(
         <main>
              <Routes>
                 {/* Here are the routes to hit the specific pages in the application, in which the user will need to be authenticated to access some of them */}
                 <Route path='/' element={<Landing />} />
-                {/* <Route path='/about' element={<AuthAbout><About /></AuthAbout>} /> */}
                 <Route path='/about' element={<About />} />
                 <Route path='/faq' element={<AuthFaq><Faq /></AuthFaq>} />
-                {/* <Route path='/blog' element={<AuthBlog><Blog /></AuthBlog>} /> */}
                 <Route path='/blog' element={<Blog />} />
                 <Route path='/jxfunds' element={funds && <Index funds={funds} createFund={createFund} />}/>
                 <Route path='/jxfunds/create' element={<Create funds={funds} createFund={createFund}/>}/>
