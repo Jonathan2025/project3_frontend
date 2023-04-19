@@ -12,9 +12,9 @@ import Profile from './Chat/ChatProfile';
 import withAuth from './Authentication/Authenticated';
 
 // lets add authentication for most of the routes, the other routes will already have the user authentication function in the component
-const AuthAbout = withAuth(About)
+// const AuthAbout = withAuth(About)
 const AuthFaq = withAuth(Faq)
-const AuthBlog = withAuth(Blog)
+// const AuthBlog = withAuth(Blog)
 const AuthProfile = withAuth(Profile)
 
 const Main = (props) => {
@@ -78,9 +78,11 @@ const Main = (props) => {
              <Routes>
                 {/* Here are the routes to hit the specific pages in the application, in which the user will need to be authenticated to access some of them */}
                 <Route path='/' element={<Landing />} />
-                <Route path='/about' element={<AuthAbout><About /></AuthAbout>} />
+                {/* <Route path='/about' element={<AuthAbout><About /></AuthAbout>} /> */}
+                <Route path='/about' element={<About />} />
                 <Route path='/faq' element={<AuthFaq><Faq /></AuthFaq>} />
-                <Route path='/blog' element={<AuthBlog><Blog /></AuthBlog>} />
+                {/* <Route path='/blog' element={<AuthBlog><Blog /></AuthBlog>} /> */}
+                <Route path='/blog' element={<Blog />} />
                 <Route path='/jxfunds' element={funds && <Index funds={funds} createFund={createFund} />}/>
                 <Route path='/jxfunds/create' element={<Create funds={funds} createFund={createFund}/>}/>
                 <Route path='/jxfunds/:id' element={funds && (<Show funds={funds} updateFund={updateFund} deleteFund={deleteFund} />)} />
