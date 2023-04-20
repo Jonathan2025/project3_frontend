@@ -33,7 +33,9 @@ const Footer = (props) => {
               alt="faq"
             />
           </Link>
-            
+          <Link to='/jxfunds/chat'>
+         <img className='chatIcon'src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9L6Q5rWwQGNk6sG2EC6jnKerEUIgnLgFTnA&usqp=CAU' alt=""/>
+        </Link>
         </div>
         <h5 className="footerTag">@Jx-FUNDS</h5>
       </div>
