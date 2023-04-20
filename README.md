@@ -6,17 +6,29 @@ Scared about investing in the stock market? Not sure how to start? Don’t worry
 
 ## Technologies Used
 CSS
+
 HTML
+
 JavaScript
+
 MongoDB
+
 Bcrypt
+
 Node.js
+
 Mongoose
+
 Express
+
 React
+
 Alpha Advantage API 
+
 GitHub
+
 Auth0 User Authentication Functionality 
+
 Comet Chat Feature
 
 ## User Stories
