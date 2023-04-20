@@ -21,7 +21,6 @@ const Main = (props) => {
     //url for the backend
     const URL = process.env.REACT_APP_BACKEND_URL
 
-
     //function to make the api call 
     const getFunds = async () => {
         const response = await fetch(URL);
