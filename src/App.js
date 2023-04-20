@@ -11,7 +11,7 @@ import Main from './components/Main';
 
 function App() {
   const [funds, setFunds] = useState(null);
-  const URL = 'http://localhost:4000/jxfunds/'
+  const URL = process.env.REACT_APP_BACKEND_URL
 
   const getFunds = async () => {
     const response = await fetch(URL);
