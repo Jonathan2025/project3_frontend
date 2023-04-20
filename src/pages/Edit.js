@@ -55,7 +55,9 @@ const Edit = (props) => {
 
     return (
         <div className = "editFund">
-          <h1>Edit {fund.name}?</h1>
+            <img className="editImg" src="https://images.unsplash.com/photo-1563986768711-b3bde3dc821e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2068&q=80" alt=""/>
+            <div className="editForm">
+                <h1 className="formT" >Edit {fund.name}?</h1>
             <form onSubmit={handleSubmit}>
                 <label>Symbol: </label><br/>
                 <input
@@ -107,7 +109,8 @@ const Edit = (props) => {
             
                 <input type="submit" value="Update Fund" />
                 </form>
-
+                </div>
+          
         </div>
     )
 

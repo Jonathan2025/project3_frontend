@@ -3,23 +3,22 @@
 Scared about investing in the stock market? Not sure how to start? Don’t worry! Jx Funds is a full CRUD application where users can come together as a community and add Index Funds that they want to recommend to others. Index funds have proven to be a safe yet effective investment vehicle that has built wealth for many people for many generations. Users can log in, chat about index funds with others, and view up-to-date information about the recommended funds.
 
 ## Wireframes
-<img width="493" alt="Wireframe" src=".src/images/wireframe.png">
-
+![Screenshot 2023-04-20 at 7 11 05 PM](https://user-images.githubusercontent.com/117129130/233506310-ccb0336e-ecab-4a04-a171-2c73acad7c53.png)
 
 ## Technologies Used
-*CSS
-*HTML
-*JavaScript
-*MongoDB
-*Bcrypt
-*Node.js
-*Mongoose
-*Express
-*React
-*Alpha Advantage API 
-*GitHub
-*Auth0 User Authentication Functionality 
-*Comet Chat Feature
+* CSS
+* HTML
+* JavaScript
+* MongoDB
+* Bcrypt
+* Node.js
+* Mongoose
+* Express
+* React
+* Alpha Advantage API 
+* GitHub
+* Auth0 User Authentication Functionality 
+* Comet Chat Feature
 
 ## User Stories
 * As a user I want to be able to add index funds that I want to recommend to others using
