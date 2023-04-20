@@ -15,18 +15,23 @@ const About = () => {
         );
       }
 
-
+      
 
     return(
         <> 
-        <div className='aboutPhrase'>
-            <h1> About Us </h1>
+        <section className=" allAbout container-fluid">
+            <div className="imgA">
+          <img  className='aboutImg' src="https://images.unsplash.com/39/lIZrwvbeRuuzqOoWJUEn_Photoaday_CSD%20%281%20of%201%29-5.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTN8fHRlYW18ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60" alt="team"/>
+          </div>
+          <div className='aboutPhrase'>
+            <h1 className="aboutT" > Our Vision </h1>
+            <hr className="aboutLine"/>
               <p> Jx-Funds is designed to empower users to learn and grow together by providing a platform for sharing insights and knowledge. We are committed to not only simplifying investing, but also fostering a community of users who can learn from each other. We believe that investing should be accessible to everyone, regardless of their background or experience, and that's why we've created an app that is intuitive, easy to use, and puts the power in the hands of the user. Join us today and become a part of a community that is dedicated to helping each other succeed.</p>
-        </div>
-      
+        </div> 
+       </section>
          <section className="about">
-             <h1> Jx-Fund Team </h1>
-            
+             <h1 className="aboutT"> Meet the Jx Fund Team </h1>
+            <hr className="aboutLine"/>
             <div className="aboutUs">
             <div className="dev">
                 <img className='jonathan' src= {require('../images/jonathan.png')} alt='jonathan'/>
@@ -46,13 +51,7 @@ const About = () => {
             </div > 
             </div>
         </section>
- <div>
-        <Link to='/jxfunds/chat'>
-          <button className="chatdot" >Chat ☎️</button>
-        </Link>
-      </div>
-    
-       
+            
         </>
         
     );

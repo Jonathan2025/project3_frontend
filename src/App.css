@@ -18,6 +18,7 @@
   justify-content: space-between;
   padding: 20px;
   background-color: #dddbd8;
+  opacity: .9;
   text-decoration: none;
   font-size:20px;
   margin-bottom:10px;
@@ -49,11 +50,11 @@ text-decoration: none;
 
 /* search bar styling  */
 .submitBtn{
-  max-width: 30px;
+  max-width: 35px;
   max-height: 30px;
   margin-left: 2px;
   position: relative;
-  background-color: #acccb1;
+  background-color: rgb(98, 114, 122);
   border-style: none;
 }
 input[type = search]{
@@ -108,7 +109,6 @@ background: inherit;
   -webkit-animation: fadeIn 4s;
   animation:fadeIn 4s;
 }
-
 @keyframes fadeIn{
   0% {opacity: 0}
   100% {opacity: 1;}
@@ -118,7 +118,6 @@ background: inherit;
   height: 80vh;
   object-fit: cover;
 }
-
 .landing_phrase {
   color: whitesmoke;
   position: absolute;
@@ -135,7 +134,6 @@ background: inherit;
   color: whitesmoke;
 }
 
-
 /* index styling */
 .containerIndex{
   display: grid;
@@ -145,24 +143,32 @@ background: inherit;
 }
 
 /* create page styling (Please note this will also serve as the LoginPage as well*/
-.createForm{
+.createFund{
   font-family: "gotham narrow",Georgia,serif;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  background-color: rgb(208, 216, 205);
-  border-radius:10px;
-  height: 300px;
-  width: 88%;
   margin: 0px 90px 0px 90px;
-  justify-content: center;
+  display: grid;
+  margin-top: 30px;
+  background-color: rgb(98, 114, 122);
+  max-height: 700px;
 }
-
+.createImg{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  width: 90%;
+}
+.createForm{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  text-align: center;
+  font-size: 1vw;
+  margin-right: 50px;
+  margin-top: 20px;
+}
 input[type=text]{
   font-family: 'PT Serif', serif;
-  font-size: 15px;
+  font-size: 1vw;
   padding: 5px;
-  margin: 5px 20px 10px 20px;
+  margin: 0px 20px 10px 10px;
   border: none;
 }
 input[type=submit]:not(.submitBtn){
@@ -171,31 +177,70 @@ input[type=submit]:not(.submitBtn){
   padding: 7px;
   border-radius: 5px;
   width: 300px;
-
+margin-bottom: 5px
 }
 input[type=submit]:hover{
   cursor: pointer;
   background-color: gainsboro;
 }
+input[type=date]{
+  font-size: 1vw;
+  padding: 2px;
+  margin-bottom: 10px;
+}
+.formT{
+  font-weight: bold;
+  font-size: 30px;
+  color: whitesmoke;
+}
 
 /* about page styling */
+.allAbout{
+  font-family: "gotham narrow",Georgia,serif;
+  animation: fadeIn 2s;
+}
+@keyframes fadeIn{
+0% {opacity: .4;}
+100% {opacity: 1;}
+}
+.aboutImg{
+  width: 100%;
+  height: 50vh;
+}
+.aboutPhrase{
+  background-color: #f1efeb;
+  padding: 15px;
+  margin-top: 10px;
+}
+.aboutLine{
+  margin-left: 400px;
+  margin-right: 400px;
+}
+.aboutT{
+  font-weight: bold;
+}
 .aboutPhrase, .faqPg{
   color: black;
-  font-size: 14px;
+  font-family: "gotham narrow",Georgia,serif;
+  font-size: 1vw;
   text-align: center;
-  background-color: rgb(218, 220, 206);
-  border-radius: 25px;
-  padding: 5px;
+  /* padding: 5px; */
 }
 .title-name{
+  /* font-family: "gotham narrow",Georgia,serif; */
+  font-weight: bold;
   font-size: 14px;
   margin-top: 10px;
 }
 .about{
+  font-family: "gotham narrow",Georgia,serif;
   margin-top: 5px;
   color: rgb(45, 40, 40);
   text-align: center;
   font-size: 12px;
+  margin-top: 40px;
+  padding: 20px;
+  /* border: solid #000; */
 }
 .aboutUs{
   color:rgb(17, 14, 14);
@@ -207,30 +252,47 @@ input[type=submit]:hover{
   margin-top: 5px;
 }
 .dev{
-  margin-top: 6px;
+  font-family: "gotham narrow",Georgia,serif;
+  margin-top: 20px;
   width:300px;
   font-size: 11px;
 }
 .jonathan,.joey,.john,.joseline{
-  width:150px;
-  height: 150px;
-  border-radius: 40%;
+  width:250px;
+  height: 300px;
+  border-radius: 5%;
+  filter: grayscale(100%);
 }
+.joseline{
+ object-fit: cover;
+}
+
 /* edit pg styling */
 .editFund{
   font-family: "gotham narrow",Georgia,serif;
-  font-size: 11px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  background-color: rgb(208, 216, 205);
-  border-radius:10px;
-  height: 450px;
-  width: 88%;
+  background-color: rgb(98, 114, 122);
   margin: 0px 90px 0px 90px;
+  display: grid;
+  margin-top: 30px;
+}
+.editImg{
+  grid-column-start:1 ;
+  grid-column-end: 3;
+  width: 100%;
+  max-height: 100%;
+}
+.editForm{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  font-size: 1vw;
+  text-align: center;
+  margin-left: 140px;
+  margin-right: 100px;
+  margin-top: 15px;
+  max-width: 20vw;
 }
 label{
-  font-size: 18px;
+  font-size: 1vw;
   font-weight: bold;
 }
 select[name="company"]{
@@ -256,11 +318,18 @@ border: none;
   flex-wrap: wrap;
  justify-content: center;
 }
-.twitter, .youtube, .contacts,.faq{
+.twitter, .youtube, .contacts,.faq, .chatIcon{
   max-width: 45px;
   margin-left: 5px;
   border:solid white;
-  border-radius: 50%;
+  border-radius: 30%;
+  transition: transform 0.3s ease;
+}
+.twitter{
+  border-radius: 45%;
+}
+.twitter:hover, .youtube:hover, .contacts:hover,.faq:hover, .chatIcon:hover{
+  transform: scale(1.2);
 }
 
 /* account page styling */
@@ -276,19 +345,23 @@ border: none;
 }
 
 /* FAQ styling */
-hr{
-  margin-left:800px;
-  margin-right: 800px;
+.faqLine{
+  margin-left:400px;
+  margin-right: 400px;
 }
 .faqPg{
+  background-color:  rgb(233, 232, 232);
   text-align: left;
   display: flex;
   flex-direction: column;
   margin: 0px 30px 0px 30px;
+  padding: 10px;
 }
 .faq_phrase, hr{
   text-align: center;
   color: black;
+  font-weight: bold;
+ 
 }
 .question{
   border-style: outset;
@@ -296,17 +369,24 @@ hr{
   margin: 10px 0px 10px 0px;
 }
 
+.quest{
+  font-weight: bold;
+}
 
 /* blog styling */
 .selection{
   margin-top: 6px;
   margin-bottom: 6px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(208, 216, 205);
+  background-color: whitesmoke;
+  max-width: 80%;
+  margin: auto;
 }
-
 .blogger-card{
+  font-family: "gotham narrow",Georgia,serif;
   color:rgb(9, 8, 8);
   display: flex;
   flex-direction: column;
@@ -314,24 +394,47 @@ hr{
   margin: 1rem;
   padding: 1rem;
   text-align: center;
-  /* border: 1px solid #3a492d; */
   border-style: none;
   border-radius: 0.5rem;
   width: 95%;
-  height: 450px;
-  background-color: rgb(208, 216, 205);
-}
+  height: 500px;
+  background-color:  #dddbd8;
 
+}
 .choose {
+  font-family: "gotham narrow",Georgia,serif;
   color:rgb(9, 8, 8);
   text-align: center;
+  background-color: whitesmoke;
+  border-radius: 100%;
+  width: 200px;
+  justify-content: center;
 }
-
+.name{
+  font-weight: bold;
+}
+.blogSelect{
+  font-weight: bold;
+}
+.selector{
+  width: 200px;
+  height: 30px;
+}
 .companyLogo {
   width: 250px;
   height: 125px;
   border: 1px solid white;
   background-color: white;
+}
+.readbtn{
+background-color: rgb(98, 114, 122);
+color:white;
+border-radius: 10px;
+width: 250px;
+}
+.readbtn:hover{
+  background-color: #8a949a;
+  color: white;
 }
 
 /* editing of the funds containers in the index page */
@@ -465,40 +568,16 @@ button:hover{
   background-color: 	#9d9fa1;
   border-radius: 20px;
 }
-
-/* end of show page styling */
-
-.chatdot{
-  color:rgb(224, 245, 224);
-  font-size:16px;
-  border-radius: 15%;
-  border-style: none;
-  height:60px;
-  width:70px;
-  background-color: #30d04b;
-  margin-bottom: 3px;
-  margin-top: 10px;
-  margin-left: 1050px;
-  transition: transform 0.3s ease;
+/* auth styling */
+.createForm{
+  font-family: "gotham narrow",Georgia,serif;
 }
 
-.chatdot:hover{
-  color:rgb(224, 245, 224);
-  background-color: #f4a321;
-  transform: scale(1.2);
-
-}
-
-.readbtn{
-background-color: #f8aa18;
-border-radius: 5px;
-margin-top:13px;
-}
 /* styling of the chat we use the !important to override the styling from the comet-chat packages */
 .cometchat__users__with__messages {
-  width: 90vh !important;
-  height: 50vh !important;
-  border: 1px solid #005A9C !important;
+  width: 90% !important;
+  height: 60% !important;
+  border: 1px solid grey !important;
   position: absolute;
   top: 50%;
   left: 50%;
