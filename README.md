@@ -6,19 +6,19 @@ Scared about investing in the stock market? Not sure how to start? Don’t worry
 ![Screenshot 2023-04-20 at 7 11 05 PM](https://user-images.githubusercontent.com/117129130/233506310-ccb0336e-ecab-4a04-a171-2c73acad7c53.png)
 
 ## Technologies Used
-*CSS
-*HTML
-*JavaScript
-*MongoDB
-*Bcrypt
-*Node.js
-*Mongoose
-*Express
-*React
-*Alpha Advantage API 
-*GitHub
-*Auth0 User Authentication Functionality 
-*Comet Chat Feature
+* CSS
+* HTML
+* JavaScript
+* MongoDB
+* Bcrypt
+* Node.js
+* Mongoose
+* Express
+* React
+* Alpha Advantage API 
+* GitHub
+* Auth0 User Authentication Functionality 
+* Comet Chat Feature
 
 ## User Stories
 * As a user I want to be able to add index funds that I want to recommend to others using
