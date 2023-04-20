@@ -11,7 +11,6 @@ const CompanyLogo = (props) => {
         "Northern Trust": "https://cdn.northerntrust.com/pws/nt/images/social-media/nt-2linestacked-logo-1200x628.png",
         "Legal & General": "https://upload.wikimedia.org/wikipedia/commons/a/a5/L%26G_Sponsorship_Logo_Large_PMS_4C_Black.png", 
         "DWS Group": "https://thewealthmosaic.s3.amazonaws.com/media/Logo_DWS.png"
-        
     }
 
     const companyName = props.fund.company
@@ -23,6 +22,5 @@ const CompanyLogo = (props) => {
         </>
     )
 }
-
 
 export default CompanyLogo

@@ -12,10 +12,6 @@ const Profile = () => {
   return (
     isAuthenticated && (
       <div>
-        {/* <img src={user.picture} alt={user.name} />
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>  */}
-
         {/* pass in the username as a prop into the chat component */}
         <Chat userName={user.name} />
       </div>
