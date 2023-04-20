@@ -5,31 +5,19 @@ Scared about investing in the stock market? Not sure how to start? Don’t worry
 ## Wireframes
 
 ## Technologies Used
-CSS
-
-HTML
-
-JavaScript
-
-MongoDB
-
-Bcrypt
-
-Node.js
-
-Mongoose
-
-Express
-
-React
-
-Alpha Advantage API 
-
-GitHub
-
-Auth0 User Authentication Functionality 
-
-Comet Chat Feature
+*CSS
+*HTML
+*JavaScript
+*MongoDB
+*Bcrypt
+*Node.js
+*Mongoose
+*Express
+*React
+*Alpha Advantage API 
+*GitHub
+*Auth0 User Authentication Functionality 
+*Comet Chat Feature
 
 ## User Stories
 * As a user I want to be able to add index funds that I want to recommend to others using
