@@ -48,9 +48,9 @@ Currently the chat feature is logged in under one user however as a stretch goal
 We want to go back and add our own user authentication to connect the user data to our back-end. Due to time-constraints we pivoted to using Auth0 instead.
 
 ## Website Link
-	Front end Deployed Application - 
+Front end Deployed Application - https://jxfunds.netlify.app/
 Front End GitHub Repository - https://github.com/Jonathan2025/project3_frontend 	
-	Back End Github Repository - https://github.com/Jonathan2025/backend_jxfunds
+Back End Github Repository - https://github.com/Jonathan2025/backend_jxfunds
 
 ## Citations 
 
