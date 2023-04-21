@@ -14,8 +14,8 @@ Scared about investing in the stock market? Not sure how to start? Don’t worry
 </div>
 
 <div style="display:flex;justify-content:center;">
-  <img src="https://user-images.githubusercontent.com/118234157/233675604-a11bcfb6-cc3e-4624-872a-dee30de01efe.png" style="width:50%;height:auto;">
-  <img src="https://user-images.githubusercontent.com/118234157/233675623-7c6807ff-c1e8-4dc6-9908-c70f361e946e.png" style="width:50%;height:auto;">
+  <img src="https://user-images.githubusercontent.com/118234157/233675604-a11bcfb6-cc3e-4624-872a-dee30de01efe.png" style="width:40%;height:auto;">
+  <img src="https://user-images.githubusercontent.com/118234157/233675623-7c6807ff-c1e8-4dc6-9908-c70f361e946e.png" style="width:40%;height:auto;">
 </div>
 
 
