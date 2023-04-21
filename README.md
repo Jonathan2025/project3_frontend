@@ -7,11 +7,16 @@ https://jxfunds.netlify.app/
 Scared about investing in the stock market? Not sure how to start? Don’t worry! Jx Funds is a full CRUD application where users can come together as a community and add Index Funds that they want to recommend to others. Index funds have proven to be a safe yet effective investment vehicle that has built wealth for many people for many generations. Users can log in, chat about index funds with others, and view up-to-date information about the recommended funds.
 
 ## Photos
-![image](https://user-images.githubusercontent.com/118234157/233675482-2c3f4459-7962-4398-8805-93077b3b5b4c.png)
-![image](https://user-images.githubusercontent.com/118234157/233675516-823821f4-47be-46e5-a1e8-ac3dbcb5dd93.png)
-![image](https://user-images.githubusercontent.com/118234157/233675566-11979136-47de-4689-85b2-51e5a027c074.png)
-![image](https://user-images.githubusercontent.com/118234157/233675604-a11bcfb6-cc3e-4624-872a-dee30de01efe.png)
-![image](https://user-images.githubusercontent.com/118234157/233675623-7c6807ff-c1e8-4dc6-9908-c70f361e946e.png)
+<div style="display:flex;justify-content:center;">
+  <img src="https://user-images.githubusercontent.com/118234157/233675482-2c3f4459-7962-4398-8805-93077b3b5b4c.png" style="width:33%;height:auto;">
+  <img src="https://user-images.githubusercontent.com/118234157/233675516-823821f4-47be-46e5-a1e8-ac3dbcb5dd93.png" style="width:33%;height:auto;">
+  <img src="https://user-images.githubusercontent.com/118234157/233675566-11979136-47de-4689-85b2-51e5a027c074.png" style="width:33%;height:auto;">
+</div>
+
+<div style="display:flex;justify-content:center;">
+  <img src="https://user-images.githubusercontent.com/118234157/233675604-a11bcfb6-cc3e-4624-872a-dee30de01efe.png" style="width:50%;height:auto;">
+  <img src="https://user-images.githubusercontent.com/118234157/233675623-7c6807ff-c1e8-4dc6-9908-c70f361e946e.png" style="width:50%;height:auto;">
+</div>
 
 
 ## Wireframes
