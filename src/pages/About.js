@@ -34,19 +34,19 @@ const About = () => {
             <hr className="aboutLine"/>
             <div className="aboutUs">
             <div className="dev">
-                <img className='jonathan' src= {require('../images/jonathan.png')} alt='jonathan'/>
+                <a href="https://www.linkedin.com/in/jonathan-liang7/"><img className='jonathan' src= {require('../images/jonathan.png')} alt='jonathan'/></a>
                 <h3 className="title-name"> Release Manager <br/> Jonathan Liang</h3>
             </div >
             <div className='dev'>
-                <img className='joey' src={require('../images/joey.jpg')} alt='joey'/>
+               <a href="https://www.linkedin.com/in/joey-cheng-/"><img className='joey' src={require('../images/joey.jpg')} alt='joey'/></a>
                 <h3 className="title-name"> Product Manager <br/> Joey Cheng</h3>
             </div >
             <div className='dev'>
-                <img className='john' src= {require('../images/johnfrick.jpg')} alt='john'/>
+               <a href="https://www.linkedin.com/in/john-r-frick/"><img className='john' src= {require('../images/johnfrick.jpg')} alt='john'/></a>
                 <h3 className="title-name"> Lead Back-End Developer <br/> John Frick</h3>
             </div >
             <div className='dev'>
-                <img className='joseline' src= {require('../images/joseline.jpg')} alt='joseline'/>
+                <a href="https://www.linkedin.com/in/joseline-cedano/"><img className='joseline' src= {require('../images/joseline.jpg')} alt='joseline'/></a>
                 <h3 className="title-name"> Lead Front-End Developer <br/> Joseline Cedano </h3>
             </div > 
             </div>
