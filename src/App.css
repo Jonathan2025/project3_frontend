@@ -230,8 +230,8 @@ input[type=date]{
   display: block;
 }
 .aboutLine{
-  margin-left: 400px;
-  margin-right: 400px;
+  margin-left: 30%;
+  margin-right: 30%;
 }
 .aboutT{
   font-weight: bold;
