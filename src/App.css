@@ -206,19 +206,27 @@ input[type=date]{
 .allAbout{
   font-family: "gotham narrow",Georgia,serif;
   animation: fadeIn 2s;
+  text-align: center;
+  margin: auto;
 }
+
 @keyframes fadeIn{
 0% {opacity: .4;}
 100% {opacity: 1;}
 }
 .aboutImg{
-  width: 100%;
+  width: 60%;
   height: 50vh;
+  margin: auto;
 }
 .aboutPhrase{
   background-color: #f1efeb;
   padding: 15px;
   margin-top: 10px;
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 .aboutLine{
   margin-left: 400px;
@@ -227,15 +235,13 @@ input[type=date]{
 .aboutT{
   font-weight: bold;
 }
-.aboutPhrase, .faqPg{
+.faqPg{
   color: black;
   font-family: "gotham narrow",Georgia,serif;
   font-size: 1vw;
   text-align: center;
-  /* padding: 5px; */
 }
 .title-name{
-  /* font-family: "gotham narrow",Georgia,serif; */
   font-weight: bold;
   font-size: 14px;
   margin-top: 10px;
@@ -248,8 +254,12 @@ input[type=date]{
   font-size: 12px;
   margin-top: 40px;
   padding: 20px;
-  /* border: solid #000; */
 }
+
+.aboutParagraph{
+  font-size: 1em;
+}
+
 .aboutUs{
   color:rgb(17, 14, 14);
   text-align: center;
