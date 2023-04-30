@@ -14,7 +14,6 @@ import withAuth from './Authentication/Authenticated';
 // lets add authentication for the profile routes
 // the other routes will already have the user authentication function in the component
 // or there will be no authentication needed at all
-
 const AuthProfile = withAuth(Profile)
 
 const Main = (props) => {
