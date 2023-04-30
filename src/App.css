@@ -27,6 +27,7 @@
 .sticky-top{
   position: sticky;
 }
+
 a:not(.logo){
   font-weight: bold;
   text-decoration: none;
@@ -257,7 +258,7 @@ input[type=date]{
 }
 
 .aboutParagraph{
-  font-size: 1em;
+  font-size: 1.25em;
 }
 
 .aboutUs{
