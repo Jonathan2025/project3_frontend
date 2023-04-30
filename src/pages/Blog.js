@@ -1,7 +1,4 @@
-import { Link } from "react-router-dom";
 import React, { useState } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
-import LoginButton from "../components/Authentication/Login";
 
 const OPEN = "Open an account";
 const Blog = () => {
@@ -37,20 +34,6 @@ const Blog = () => {
   ]);
 
   const [category, setCategory] = useState(OPEN);
-
-  // check to see if the user is logged in
-  // this was placed here to avoid the warning errors with the user hooks
-  const { isAuthenticated } = useAuth0();
-  if (!isAuthenticated) {
-    return (
-      <section className="createForm">
-        <div>
-          <h1>Sign In to Access JXFunds!</h1>
-          <LoginButton className="loginButton" />
-        </div>
-      </section>
-    );
-  }
 
   const getBloggersInCategory = (category) => {
     return bloggers.filter((blogger) => blogger.category === category);

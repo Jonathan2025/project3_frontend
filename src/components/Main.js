@@ -11,8 +11,9 @@ import Blog from '../pages/Blog';
 import Profile from './Chat/ChatProfile';
 import withAuth from './Authentication/Authenticated';
 
-// lets add authentication for most of the routes, the other routes will already have the user authentication function in the component
-const AuthFaq = withAuth(Faq)
+// lets add authentication for the profile routes
+// the other routes will already have the user authentication function in the component
+// or there will be no authentication needed at all
 const AuthProfile = withAuth(Profile)
 
 const Main = (props) => {
@@ -75,7 +76,7 @@ const Main = (props) => {
                 {/* Here are the routes to hit the specific pages in the application, in which the user will need to be authenticated to access some of them */}
                 <Route path='/' element={<Landing />} />
                 <Route path='/about' element={<About />} />
-                <Route path='/faq' element={<AuthFaq><Faq /></AuthFaq>} />
+                <Route path='/faq' element={<Faq />} />
                 <Route path='/blog' element={<Blog />} />
                 <Route path='/jxfunds' element={funds && <Index funds={funds} createFund={createFund} />}/>
                 <Route path='/jxfunds/create' element={<Create funds={funds} createFund={createFund}/>}/>
