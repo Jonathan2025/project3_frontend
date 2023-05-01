@@ -393,68 +393,8 @@ border: none;
 }
 
 /* blog styling */
-.selection{
-  margin-top: 6px;
-  margin-bottom: 6px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: whitesmoke;
-  max-width: 80%;
-  margin: auto;
-}
-.blogger-card{
-  font-family: "gotham narrow",Georgia,serif;
-  color:rgb(9, 8, 8);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1rem;
-  padding: 1rem;
-  text-align: center;
-  border-style: none;
-  border-radius: 0.5rem;
-  width: 95%;
-  height: 500px;
-  background-color:  #dddbd8;
+/* can remove all blog styling when done */
 
-}
-.choose {
-  font-family: "gotham narrow",Georgia,serif;
-  color:rgb(9, 8, 8);
-  text-align: center;
-  background-color: whitesmoke;
-  border-radius: 100%;
-  width: 200px;
-  justify-content: center;
-}
-.name{
-  font-weight: bold;
-}
-.blogSelect{
-  font-weight: bold;
-}
-.selector{
-  width: 200px;
-  height: 30px;
-}
-.companyLogo {
-  width: 250px;
-  height: 125px;
-  border: 1px solid white;
-  background-color: white;
-}
-.readbtn{
-background-color: rgb(98, 114, 122);
-color:white;
-border-radius: 10px;
-width: 250px;
-}
-.readbtn:hover{
-  background-color: #8a949a;
-  color: white;
-}
 
 /* editing of the funds containers in the index page */
 .fund{
