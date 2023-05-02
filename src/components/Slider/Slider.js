@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import "./Slider.scss"
 import {AiOutlineArrowLeft, AiOutlineArrowRight} from "react-icons/ai"
 import { sliderData } from "./Slider-data";
@@ -9,12 +9,26 @@ const Slider = () => {
 
     // create a use state
     const [currentSlide, setCurrentSlide] = useState(0)
+    // slide length will be 1 2 3 since we have 3 slides
+    // currentSlide = 0 1 2 (array indexing)
+    const slideLength = sliderData.length
 
+    // add 1 to the currentslide to get the next slide
+    const nextSlide = () =>{
+        // now IF we are on the last slide, we want to be able to go to the FIRST slide 
+        // meaning on the last slide we set it to 0
+        setCurrentSlide(currentSlide === slideLength -1 ? 0 : currentSlide + 1)
+    }
+
+    useEffect(()=> {
+        setCurrentSlide(0)
+    }, [])
 
     return( 
         <div className="slider"> 
-            <AiOutlineArrowLeft className="arrow prev"/>
-            <AiOutlineArrowRight className="arrow next"/>
+            <AiOutlineArrowLeft className="arrow prev" onClick={prevSlide}/>
+            // ad the onclick 
+            <AiOutlineArrowRight className="arrow next" onClick={nextSlide} />
 
             {/* we want to access the slider data and then map it */}
             {sliderData.map((slide, index)=>{
