@@ -20,6 +20,17 @@ const Slider = () => {
         setCurrentSlide(currentSlide === slideLength -1 ? 0 : currentSlide + 1)
     }
 
+    const prevSlide = () =>{
+        // when we are on the first slide, then set the next slide to be the 3rd slide
+        setCurrentSlide(currentSlide === 0 ? slideLength -1: currentSlide -1)
+    }
+
+
+
+
+
+
+
     useEffect(()=> {
         setCurrentSlide(0)
     }, [])
@@ -27,7 +38,6 @@ const Slider = () => {
     return( 
         <div className="slider"> 
             <AiOutlineArrowLeft className="arrow prev" onClick={prevSlide}/>
-            // ad the onclick 
             <AiOutlineArrowRight className="arrow next" onClick={nextSlide} />
 
             {/* we want to access the slider data and then map it */}
