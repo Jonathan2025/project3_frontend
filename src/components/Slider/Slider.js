@@ -16,6 +16,28 @@ const Slider = () => {
             <AiOutlineArrowLeft className="arrow prev"/>
             <AiOutlineArrowRight className="arrow next"/>
 
+            {/* we want to access the slider data and then map it */}
+            {sliderData.map((slide, index)=>{
+                return (
+                    // If the index is equal to the current slide, then set the class name as "slide current"
+                    // and since we arent really modifying the slides we can just set the key to index
+                    <div className={index === currentSlide ? "slide current": "slide"} 
+                        key={index}> 
+                        {/* if the index is the current slide then set the image and information*/}
+                        {index === currentSlide && (
+                            <>
+                                <img src={slide.image} alt="slide"/>
+                                <div className="content">
+                                    <h2>{slide.heading}</h2>
+                                    <p>{slide.desc}</p>
+                                    <hr/>
+                                    <button className="--btn--btn-primary">Get Started</button>
+                                </div> 
+                            </>
+                        )}
+                    </div>
+                )
+            })}
 
         </div>
     )
