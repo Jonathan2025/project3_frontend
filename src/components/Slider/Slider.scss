@@ -29,26 +29,93 @@
 }
 
 
+
+
+
+// style the contents on the slide
+.content{
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
+    opacity: 0;
+    width: 50%;
+    padding: 3rem;
+    background: rgba(0,0,0,0.5);
+    // we want to animate to slide up 
+    animation: slide-up 1s ease .5s;
+    animation-fill-mode: forwards;
+    // visibility: hidden;
+}
+
+
+@keyframes slide-up {
+    0%{
+        visibility: visible;
+        top: 23 rem; 
+    }
+    100%{
+        visibility: visible;
+        top: 17 rem; 
+    }
+}
+
+
+// now we want to adjust for the mobile phone 
+@media screen and (max-wdith: 600px){
+    .content{
+        width: 80%;
+    }
+}
+
+
+
+
+//all children of content set it to white 
+.content > * {
+    color: white;
+    margin-bottom: 1rem;
+}
+
 // current slide
 .current{
     opacity: 1;
     transform: translateX(0);
 }
 
-
-// style the contents 
-.content{
-    position: absolute;
-    top: 23rem;
-    left: 5rem;
-    // opacity: 0;
-    width: 50%;
-    padding: 3rem;
-    background: rgba(0,0,0,0.5);
+.current .content{
+    opacity: 1;
 }
 
-//all children of content set it to white 
-.content > * {
+
+// Arrows 
+.arrow {
+    border: 2px solid white;
+    border-radius: 50%;
+    background: transparent;
     color: white;
-    margin-bottom: 1rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer; 
+    position: absolute;
+    top:50%;
+    z-index: 999;
+}
+
+.arrow:hover{
+    background: white;
+    color:gray;
+}
+
+.next{
+    right: 1.5rem;
+}
+
+.prev{
+    left: 1.5rem;
+}
+
+hr{
+    height:2px; 
+    background:white;
+    width: 50%;
 }
