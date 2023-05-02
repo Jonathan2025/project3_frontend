@@ -1,0 +1,54 @@
+// In this file we will put the css for the slider
+.slider{
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: all .5s ease;
+}
+// For the slide image, if the screen is more than 600 px, the set the max width and height to 100%
+@media screen and (min-width: 600px){
+    .slide img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.slide img {
+    height: 100%;
+}
+
+
+// current slide
+.current{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+// style the contents 
+.content{
+    position: absolute;
+    top: 23rem;
+    left: 5rem;
+    // opacity: 0;
+    width: 50%;
+    padding: 3rem;
+    background: rgba(0,0,0,0.5);
+}
+
+//all children of content set it to white 
+.content > * {
+    color: white;
+    margin-bottom: 1rem;
+}
