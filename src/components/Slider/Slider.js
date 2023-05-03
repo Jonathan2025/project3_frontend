@@ -16,7 +16,7 @@ const Slider = () => {
     // now we want to set up a autoscroll 
     const autoScroll = true
     let slideInterval 
-    let intervalTime = 7000 // 5 seconds
+    let intervalTime = 600000 // 5 seconds
 
     // add 1 to the currentslide to get the next slide
     const nextSlide = () =>{
@@ -56,6 +56,7 @@ const Slider = () => {
 
             {/* we want to access the slider data and then map it */}
             {sliderData.map((slide, index)=>{
+                console.log(index)
                 return (
                     // If the index is equal to the current slide, then set the class name as "slide current"
                     // and since we arent really modifying the slides we can just set the key to index
@@ -69,7 +70,7 @@ const Slider = () => {
                                     <h2>{slide.heading}</h2>
                                     <p>{slide.desc}</p>
                                     <hr/>
-                                    <button className="--btn--btn-primary">Get Started</button>
+                                    <a className="blogBtn" href={slide.link}><button>Get Started</button></a>
                                 </div> 
                             </>
                         )}
