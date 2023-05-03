@@ -14,6 +14,6 @@ export const sliderData = [
     {
         image: "https://www.gohawaii.com/sites/default/files/hero-unit-images/11500_mauibeaches.jpg",
         heading: "Following Mr. Money Mustache’s Simple Strategy to Financial Freedom",
-        desc: "Good decisions, consistently made, build wealth. I want to get across to you in this blog post that slow and steady investment over time works; I think about it as “the gentle path to FI”. Good decisions, when consistently made, do build wealth. I am not following a get rich scheme. I’m not mortgaged up to the eyeballs in rental property. I’m just following the bright idea that MMM so eloquently explained in his blog posts. As I gather more data year after year, I see that this simple strategy works."
+        desc: "Good decisions, consistently made, build wealth. I want to get across to you in this blog post that slow and steady investment over time works; I think about it as “the gentle path to FI”. Good decisions, when consistently made, do build wealth."
     }
 ]

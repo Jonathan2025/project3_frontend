@@ -13,6 +13,11 @@ const Slider = () => {
     // currentSlide = 0 1 2 (array indexing)
     const slideLength = sliderData.length
 
+    // now we want to set up a autoscroll 
+    const autoScroll = true
+    let slideInterval 
+    let intervalTime = 7000 // 5 seconds
+
     // add 1 to the currentslide to get the next slide
     const nextSlide = () =>{
         // now IF we are on the last slide, we want to be able to go to the FIRST slide 
@@ -26,14 +31,23 @@ const Slider = () => {
     }
 
 
+    function auto() {
+        slideInterval = setInterval(nextSlide, intervalTime)
+    }
 
-
-
-
-
-    useEffect(()=> {
-        setCurrentSlide(0)
+    useEffect(() => {
+        setCurrentSlide(0);
     }, [])
+
+    // This useeffect will allow the autoscroll to function
+    // Now we need to add a "cleanup" function because this will mess with the scroll if we click the arrows
+    useEffect(() => {
+        if (autoScroll) {
+          auto();
+        }
+        // we clear the slide interval 
+        return () => clearInterval(slideInterval)
+      }, [currentSlide]); // need to also set a dependency on the current slide
 
     return( 
         <div className="slider"> 
