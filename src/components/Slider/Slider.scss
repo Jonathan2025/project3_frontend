@@ -31,12 +31,12 @@
 // style the contents on the slide
 .content{
     position: absolute;
-    top: 10rem;
+    top: 9rem;
     left: 5rem;
     opacity: 0;
     width: 50%;
     padding: 3rem;
-    background: rgba(0,0,0,0.5);
+    background: rgba(80, 110, 130, 0.75);
     // we want to animate to slide up 
     animation: slide-up 1s ease .5s;
     animation-fill-mode: forwards;
@@ -46,11 +46,11 @@
 @keyframes slide-up {
     0%{
         visibility: visible;
-        top: 23 rem; 
+        top: 30rem; 
     }
     100%{
         visibility: visible;
-        top: 17 rem; 
+        top: 9rem; 
     }
 }
 

@@ -3,8 +3,6 @@ import "./Slider.scss"
 import {AiOutlineArrowLeft, AiOutlineArrowRight} from "react-icons/ai"
 import { sliderData } from "./Slider-data";
 
-
-
 const Slider = () => {
 
     // create a use state
@@ -16,7 +14,7 @@ const Slider = () => {
     // now we want to set up a autoscroll 
     const autoScroll = true
     let slideInterval 
-    let intervalTime = 600000 // 5 seconds
+    let intervalTime = 7000 // 7 seconds
 
     // add 1 to the currentslide to get the next slide
     const nextSlide = () =>{
