@@ -70,7 +70,7 @@ const Slider = () => {
                                     <h2>{slide.heading}</h2>
                                     <p>{slide.desc}</p>
                                     <hr/>
-                                    <a className="blogBtn" href={slide.link}><button>Get Started</button></a>
+                                    <a href={slide.link}><button className="blogBtn">Learn More</button></a>
                                 </div> 
                             </>
                         )}

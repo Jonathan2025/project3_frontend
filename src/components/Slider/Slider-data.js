@@ -8,13 +8,13 @@ export const sliderData = [
         link: "https://themillennialmoneywoman.com/how-to-invest-in-index-funds/"
     },
     {
-        image: "https://about.bankofamerica.com/content/dam/about/images/notched-image/making-an-impact/masthead-img-wh-mobile@2x.jpg",
+        image: "https://extension.harvard.edu/wp-content/uploads/sites/8/2022/07/careers-in-corporate-finance.jpg",
         heading: "Open an investment account",
         desc: "Learn which investment account is right for you and begin investing today!",
         link: "https://fortune.com/recommends/investing/how-to-open-an-investment-account/"
     },
     {
-        image: "https://www.gohawaii.com/sites/default/files/hero-unit-images/11500_mauibeaches.jpg",
+        image: "https://imageio.forbes.com/specials-images/imageserve/624446bd14ca222952b1927f/0x0.jpg?format=jpg&width=1200",
         heading: "Mr. Money Mustache’s Simple Strategy to Financial Freedom",
         desc: "Good decisions, consistently made, build wealth. I want to get across to you in this blog post that slow and steady investment over time works; I think about it as “the gentle path to FI”. Good decisions, when consistently made, do build wealth.",
         link: "https://www.thehappysaver.com/blog/following-mr-money-mustaches-simple-strategy-to-financial-freedom"
