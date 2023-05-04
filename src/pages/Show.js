@@ -6,6 +6,10 @@ import Card from "../components/ShowPage/ChangeCard";
 import FundInformation from "../components/ShowPage/FundContainer";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "../components/Authentication/Login";
+import CommentsContainer from "../components/Comments/CommentsContainer";
+
+
+
 
 // importing bootstrap so that we can use the grid layout for the components on the page 
 // Bootstrap CSS
@@ -86,6 +90,12 @@ const Show = (props) => {
       </div>
 
 
+
+
+      <div className="row text-center">
+          <CommentsContainer />
+      </div>
+
         <div className="row text-center">
           <div className="col">
             <div className="editDltButtons">
@@ -94,6 +104,8 @@ const Show = (props) => {
             </div>
           </div>
         </div>
+
+        
       </div>
       
   );
