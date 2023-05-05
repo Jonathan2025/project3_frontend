@@ -7,7 +7,8 @@ import { FiMessageSquare, FiEdit2, FiTrash } from "react-icons/fi";
 const Comment = ({comment, loginUserId}) => {
     // we want to check if the user is logged in
     const isUserLoggedIn = Boolean(loginUserId)
-    
+    // logged in user has to have the same user id as the user who made the comment in order to edit and delete
+    const commentBelongsToUser = loginUserId === comment.user._id
 
 
 
@@ -37,22 +38,21 @@ const Comment = ({comment, loginUserId}) => {
                             <span>Reply</span>
                         </button>
                     )}
-                    
-                    <button className="commentEdit">
-                        <FiEdit2 />
-                        <span>Edit</span>
-                    </button>
-                    <button className="commentDelete">
-                        <FiTrash />
-                        <span>Delete</span>
-                    </button>
-
-
+                    {/* user must be the same user as the one who made the comment to be able to edit and delete it */}
+                    {commentBelongsToUser && (
+                    <>
+                        <button className="commentEdit">
+                            <FiEdit2 />
+                            <span>Edit</span>
+                        </button>
+                        <button className="commentDelete">
+                            <FiTrash />
+                            <span>Delete</span>
+                        </button>
+                    </>
+                    )}
                 </div>
-
-                
             </div>
-        
         </div>
     )
 }
