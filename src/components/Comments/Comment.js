@@ -4,7 +4,14 @@ import { FiMessageSquare, FiEdit2, FiTrash } from "react-icons/fi";
 
 
 // pass in the comment props
-const Comment = ({comment}) => {
+const Comment = ({comment, loginUserId}) => {
+    // we want to check if the user is logged in
+    const isUserLoggedIn = Boolean(loginUserId)
+    
+
+
+
+
     return(
         <div className="comment"> 
             {/* we can add a left side div here such as a user image but we dont need to do that  */}
@@ -22,11 +29,15 @@ const Comment = ({comment}) => {
                 </span>
                 <p className="commentDescription">{comment.desc}</p>
                 
+                {/* seeing if user is logged in before we allow them to reply to a comment */}
                 <div className="commentActions">
-                    <button className="commentReply">
-                        <FiMessageSquare />
-                        <span>Reply</span>
-                    </button>
+                    {isUserLoggedIn && (
+                        <button className="commentReply">
+                            <FiMessageSquare />
+                            <span>Reply</span>
+                        </button>
+                    )}
+                    
                     <button className="commentEdit">
                         <FiEdit2 />
                         <span>Edit</span>

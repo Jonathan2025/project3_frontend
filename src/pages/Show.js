@@ -93,7 +93,8 @@ const Show = (props) => {
 
 
       <div className="row text-center">
-          <CommentsContainer />
+          {/* right now we pass in a dummary loginUserId which will then be replaced from the backend */}
+          <CommentsContainer loginUserId="a"/>
       </div>
 
         <div className="row text-center">

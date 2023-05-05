@@ -3,7 +3,7 @@ import { getCommentsData } from "../Data/Data"
 import CommentForm from "./CommentForm"
 import Comment from "./Comment"
 
-const CommentsContainer = () => {
+const CommentsContainer = ({loginUserId}) => {
 
 
     // create a state for comments
@@ -54,7 +54,7 @@ const CommentsContainer = () => {
         
         <div className="mainComment">
             {mainComments.map((comment) => (
-                <Comment comment={comment}/>
+                <Comment comment={comment} loginUserId={loginUserId}/>
             ))}
         </div>
         
