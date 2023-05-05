@@ -1,4 +1,7 @@
 import React from "react"
+import { FiMessageSquare, FiEdit2, FiTrash } from "react-icons/fi";
+
+
 
 // pass in the comment props
 const Comment = ({comment}) => {
@@ -17,6 +20,26 @@ const Comment = ({comment}) => {
                         hour: "2-digit"
                     })}
                 </span>
+                <p className="commentDescription">{comment.desc}</p>
+                
+                <div className="commentActions">
+                    <button className="commentReply">
+                        <FiMessageSquare />
+                        <span>Reply</span>
+                    </button>
+                    <button className="commentEdit">
+                        <FiEdit2 />
+                        <span>Edit</span>
+                    </button>
+                    <button className="commentDelete">
+                        <FiTrash />
+                        <span>Delete</span>
+                    </button>
+
+
+                </div>
+
+                
             </div>
         
         </div>
