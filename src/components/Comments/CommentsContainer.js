@@ -5,11 +5,11 @@ import Comment from "./Comment"
 
 const CommentsContainer = ({loginUserId}) => {
 
+    const [comments, setComments] = useState([]) // create a state for comments
+    const mainComments = comments.filter((comment) => comment.parent == null) // filter for only the main comments 
+    const [affectedComment, setAffectedComment] = useState(null) // want to select the affected comment
 
-    // create a state for comments
-    const [comments, setComments] = useState([])
-    // filter for only the main comments 
-    const mainComments = comments.filter((comment) => comment.parent == null)
+
     console.log("Here are the comments", comments)
 
     // now we want to use useffect to fill the comments state with the comment data, it runs on itsself
@@ -54,7 +54,7 @@ const CommentsContainer = ({loginUserId}) => {
         
         <div className="mainComment">
             {mainComments.map((comment) => (
-                <Comment comment={comment} loginUserId={loginUserId}/>
+                <Comment comment={comment} loginUserId={loginUserId} affectedComment={affectedComment} setAffectedComment={setAffectedComment}/>
             ))}
         </div>
         

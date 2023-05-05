@@ -4,12 +4,12 @@ import { FiMessageSquare, FiEdit2, FiTrash } from "react-icons/fi";
 
 
 // pass in the comment props
-const Comment = ({comment, loginUserId}) => {
+const Comment = ({comment, loginUserId, affectedComment, setAffectedComment}) => {
     // we want to check if the user is logged in
     const isUserLoggedIn = Boolean(loginUserId)
     // logged in user has to have the same user id as the user who made the comment in order to edit and delete
     const commentBelongsToUser = loginUserId === comment.user._id
-
+    const isReplying = affectedComment && affectedComment.type === 'replying' && affectedComment._id === comment._id // in order to reply, the comment must be affected and it must be a reply type
 
 
 
@@ -33,7 +33,7 @@ const Comment = ({comment, loginUserId}) => {
                 {/* seeing if user is logged in before we allow them to reply to a comment */}
                 <div className="commentActions">
                     {isUserLoggedIn && (
-                        <button className="commentReply">
+                        <button className="commentReply" onClick={() => setAffectedComment({type: 'replying', _id:comment._id})}>
                             <FiMessageSquare />
                             <span>Reply</span>
                         </button>
@@ -52,6 +52,7 @@ const Comment = ({comment, loginUserId}) => {
                     </>
                     )}
                 </div>
+                
             </div>
         </div>
     )
