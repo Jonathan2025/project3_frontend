@@ -54,7 +54,14 @@ const CommentsContainer = ({loginUserId}) => {
         
         <div className="mainComment">
             {mainComments.map((comment) => (
-                <Comment comment={comment} loginUserId={loginUserId} affectedComment={affectedComment} setAffectedComment={setAffectedComment}/>
+                <Comment 
+                comment={comment} 
+                loginUserId={loginUserId} 
+                affectedComment={affectedComment} 
+                setAffectedComment={setAffectedComment}
+                addComment= {addCommentHandler}
+                
+                />
             ))}
         </div>
         

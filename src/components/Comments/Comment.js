@@ -1,15 +1,22 @@
 import React from "react"
 import { FiMessageSquare, FiEdit2, FiTrash } from "react-icons/fi";
-
+import CommentForm from "./CommentForm";
 
 
 // pass in the comment props
-const Comment = ({comment, loginUserId, affectedComment, setAffectedComment}) => {
+const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, addComment, parentId = null }) => {
     // we want to check if the user is logged in
     const isUserLoggedIn = Boolean(loginUserId)
     // logged in user has to have the same user id as the user who made the comment in order to edit and delete
     const commentBelongsToUser = loginUserId === comment.user._id
-    const isReplying = affectedComment && affectedComment.type === 'replying' && affectedComment._id === comment._id // in order to reply, the comment must be affected and it must be a reply type
+    // in order to reply, the comment must be affected and it must be a reply type
+    const isReplying = 
+        affectedComment && 
+        affectedComment.type === 'replying' && 
+        affectedComment._id === comment._id 
+    
+    // create a replied comment ID which is equal to parentID. If the parentID is not null, then set the replied comment ID to parentID else set to comment._id
+    const repliedCommentID = parentId ?  parentId :comment._id
 
 
 
@@ -52,7 +59,8 @@ const Comment = ({comment, loginUserId, affectedComment, setAffectedComment}) =>
                     </>
                     )}
                 </div>
-                
+                {/* If the user is replying then render the comment form and then pass in the addComment function*/}
+                {isReplying && <CommentForm btnLabel="Reply" formSubmitHandler={(value) => addComment(value, repliedCommentID)}/>}
             </div>
         </div>
     )
