@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react"
 import { getCommentsData } from "../Data/Data"
 import CommentForm from "./CommentForm"
+import Comment from "./Comment"
 
 const CommentsContainer = () => {
 
 
     // create a state for comments
     const [comments, setComments] = useState([])
+    // filter for only the main comments 
+    const mainComments = comments.filter((comment) => comment.parent == null)
     console.log("Here are the comments", comments)
 
     // now we want to use useffect to fill the comments state with the comment data, it runs on itsself
@@ -48,6 +51,14 @@ const CommentsContainer = () => {
         <div className="commentsContainer">
             <h1> This will be the comment section</h1>
             <CommentForm btnLabel="Submit" formSubmitHandler={(value) => addCommentHandler(value)}/>
+        
+        <div className="mainComment">
+            {mainComments.map((comment) => (
+                <Comment comment={comment}/>
+            ))}
+        </div>
+        
+        
         </div>
     )
 }
