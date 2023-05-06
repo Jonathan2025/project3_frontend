@@ -4,7 +4,7 @@ import CommentForm from "./CommentForm";
 
 
 // pass in the comment props
-const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, addComment, parentId = null }) => {
+const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, addComment, parentId = null, updateComment }) => {
     // we want to check if the user is logged in
     const isUserLoggedIn = Boolean(loginUserId)
     // logged in user has to have the same user id as the user who made the comment in order to edit and delete
@@ -14,6 +14,15 @@ const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, add
         affectedComment && 
         affectedComment.type === 'replying' && 
         affectedComment._id === comment._id 
+    
+
+    // create an isEditing 
+    const isEditing = 
+        affectedComment && 
+        affectedComment.type === 'editing' && 
+        affectedComment._id === comment._id 
+
+
     
     // create a replied comment ID which is equal to parentID. If the parentID is not null, then set the replied comment ID to parentID else set to comment._id
     const repliedCommentID = parentId ?  parentId :comment._id
@@ -37,8 +46,25 @@ const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, add
                         hour: "2-digit"
                     })}
                 </span>
-                <p className="commentDescription">{comment.desc}</p>
                 
+                {/* If not editing then can render the comment description */}
+                {!isEditing && (
+                    <p className="commentDescription">{comment.desc}</p>
+                )}
+
+
+
+                
+                
+                {/* If we are editing the comment, then render the comment form and we want to show the initial text  */}
+                {isEditing && (
+                    <CommentForm btnLabel="Update" formSubmitHandler={(value) => updateComment(value, comment._id)}
+                    formCancelHandler={() => setAffectedComment(null)}
+                    initialText ={comment.desc}
+                    />
+                )}
+
+
                 {/* seeing if user is logged in before we allow them to reply to a comment */}
                 <div className="commentActions">
                     {isUserLoggedIn && (
@@ -50,7 +76,9 @@ const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, add
                     {/* user must be the same user as the one who made the comment to be able to edit and delete it */}
                     {commentBelongsToUser && (
                     <>
-                        <button className="commentEdit">
+                        <button className="commentEdit"
+                            onClick={() => setAffectedComment({type: 'editing', _id:comment._id})}
+                        >
                             <FiEdit2 />
                             <span>Edit</span>
                         </button>

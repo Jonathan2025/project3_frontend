@@ -1,8 +1,12 @@
 import React from "react"
 import { useState } from "react"
-const CommentForm = ({btnLabel, formSubmitHandler, formCancelHandler = null}) => {
+const CommentForm = ({btnLabel, 
+    formSubmitHandler, 
+    formCancelHandler = null, 
+    initialText ="",
+}) => {
 
-    const [value, setValue] = useState("")
+    const [value, setValue] = useState(initialText)
 
     const submitHandler = (e) => {
         e.preventDefault()

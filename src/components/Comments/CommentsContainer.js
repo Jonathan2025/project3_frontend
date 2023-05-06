@@ -42,9 +42,25 @@ const CommentsContainer = ({loginUserId}) => {
         setComments((curState) => {
             return [newComment, ...curState]
         })
+        setAffectedComment(null)
 
 
     }
+
+
+    // create a handler for updating comments 
+    const updateCommentHandler = (value, commentId) => {
+        const updatedComments = comments.map((comment) => {
+            if(comment._id === commentId){
+                return {...comment, desc:value}
+            }
+            return comment
+        })
+        setComments(updatedComments)
+        setAffectedComment(null)
+    }
+
+
 
 
     return (
@@ -62,7 +78,7 @@ const CommentsContainer = ({loginUserId}) => {
                 affectedComment={affectedComment} 
                 setAffectedComment={setAffectedComment}
                 addComment= {addCommentHandler}
-                
+                updateComment = {updateCommentHandler}
                 />
             ))}
         </div>
