@@ -62,7 +62,11 @@ const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, add
                     )}
                 </div>
                 {/* If the user is replying then render the comment form and then pass in the addComment function*/}
-                {isReplying && <CommentForm btnLabel="Reply" formSubmitHandler={(value) => addComment(value, repliedCommentID, replyOnUserID)}/>}
+                {isReplying && <CommentForm btnLabel="Reply" formSubmitHandler={(value) => addComment(value, repliedCommentID, replyOnUserID)}
+                
+                //add in the formCancelHandler 
+                formCancelHandler={() => setAffectedComment(null)}
+                />}
             </div>
         </div>
     )

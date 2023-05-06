@@ -54,7 +54,9 @@ const CommentsContainer = ({loginUserId}) => {
         
         <div className="mainComment">
             {mainComments.map((comment) => (
-                <Comment 
+                <Comment
+                //need to also pass in a key prop
+                key = {comment._id}
                 comment={comment} 
                 loginUserId={loginUserId} 
                 affectedComment={affectedComment} 
