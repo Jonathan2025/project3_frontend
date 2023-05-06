@@ -17,7 +17,9 @@ const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, add
     
     // create a replied comment ID which is equal to parentID. If the parentID is not null, then set the replied comment ID to parentID else set to comment._id
     const repliedCommentID = parentId ?  parentId :comment._id
-
+    
+    // create a replyOnUserID
+    const replyOnUserID = comment.user._id
 
 
     return(
@@ -60,7 +62,7 @@ const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, add
                     )}
                 </div>
                 {/* If the user is replying then render the comment form and then pass in the addComment function*/}
-                {isReplying && <CommentForm btnLabel="Reply" formSubmitHandler={(value) => addComment(value, repliedCommentID)}/>}
+                {isReplying && <CommentForm btnLabel="Reply" formSubmitHandler={(value) => addComment(value, repliedCommentID, replyOnUserID)}/>}
             </div>
         </div>
     )
