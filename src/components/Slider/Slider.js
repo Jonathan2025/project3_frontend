@@ -3,8 +3,6 @@ import "./Slider.scss"
 import {AiOutlineArrowLeft, AiOutlineArrowRight} from "react-icons/ai"
 import { sliderData } from "./Slider-data";
 
-
-
 const Slider = () => {
 
     // create a use state
@@ -12,6 +10,11 @@ const Slider = () => {
     // slide length will be 1 2 3 since we have 3 slides
     // currentSlide = 0 1 2 (array indexing)
     const slideLength = sliderData.length
+
+    // now we want to set up a autoscroll 
+    const autoScroll = true
+    let slideInterval 
+    let intervalTime = 7000 // 7 seconds
 
     // add 1 to the currentslide to get the next slide
     const nextSlide = () =>{
@@ -26,14 +29,23 @@ const Slider = () => {
     }
 
 
+    function auto() {
+        slideInterval = setInterval(nextSlide, intervalTime)
+    }
 
-
-
-
-
-    useEffect(()=> {
-        setCurrentSlide(0)
+    useEffect(() => {
+        setCurrentSlide(0);
     }, [])
+
+    // This useeffect will allow the autoscroll to function
+    // Now we need to add a "cleanup" function because this will mess with the scroll if we click the arrows
+    useEffect(() => {
+        if (autoScroll) {
+          auto();
+        }
+        // we clear the slide interval 
+        return () => clearInterval(slideInterval)
+      }, [currentSlide]); // need to also set a dependency on the current slide
 
     return( 
         <div className="slider"> 
@@ -42,6 +54,7 @@ const Slider = () => {
 
             {/* we want to access the slider data and then map it */}
             {sliderData.map((slide, index)=>{
+                console.log(index)
                 return (
                     // If the index is equal to the current slide, then set the class name as "slide current"
                     // and since we arent really modifying the slides we can just set the key to index
@@ -55,7 +68,7 @@ const Slider = () => {
                                     <h2>{slide.heading}</h2>
                                     <p>{slide.desc}</p>
                                     <hr/>
-                                    <button className="--btn--btn-primary">Get Started</button>
+                                    <a href={slide.link}><button className="blogBtn">Learn More</button></a>
                                 </div> 
                             </>
                         )}

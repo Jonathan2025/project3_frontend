@@ -1,7 +1,7 @@
 // In this file we will put the css for the slider
 .slider{
     width: 100%;
-    height: 90vh;
+    height: 80vh;
     position: relative;
     overflow: hidden;
 }
@@ -28,34 +28,29 @@
     height: 100%;
 }
 
-
-
-
-
 // style the contents on the slide
 .content{
     position: absolute;
-    top: 10rem;
+    top: 9rem;
     left: 5rem;
     opacity: 0;
     width: 50%;
     padding: 3rem;
-    background: rgba(0,0,0,0.5);
+    background: rgba(80, 110, 130, 0.75);
     // we want to animate to slide up 
     animation: slide-up 1s ease .5s;
     animation-fill-mode: forwards;
-    // visibility: hidden;
 }
 
 
 @keyframes slide-up {
     0%{
         visibility: visible;
-        top: 23 rem; 
+        top: 30rem; 
     }
     100%{
         visibility: visible;
-        top: 17 rem; 
+        top: 9rem; 
     }
 }
 
@@ -80,6 +75,7 @@
 .current{
     opacity: 1;
     transform: translateX(0);
+    z-index: 1; // add this so that we can make the other slides clickable
 }
 
 .current .content{
@@ -119,3 +115,18 @@ hr{
     background:white;
     width: 50%;
 }
+
+.blogBtn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+  }
