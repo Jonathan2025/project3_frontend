@@ -4,7 +4,7 @@ import CommentForm from "./CommentForm";
 
 
 // pass in the comment props
-const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, addComment, parentId = null, updateComment }) => {
+const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, addComment, parentId = null, updateComment, deleteComment }) => {
     // we want to check if the user is logged in
     const isUserLoggedIn = Boolean(loginUserId)
     // logged in user has to have the same user id as the user who made the comment in order to edit and delete
@@ -82,7 +82,7 @@ const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, add
                             <FiEdit2 />
                             <span>Edit</span>
                         </button>
-                        <button className="commentDelete">
+                        <button className="commentDelete" onClick={() => deleteComment(comment._id)}>
                             <FiTrash />
                             <span>Delete</span>
                         </button>

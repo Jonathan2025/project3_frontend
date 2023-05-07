@@ -43,9 +43,12 @@ const CommentsContainer = ({loginUserId}) => {
             return [newComment, ...curState]
         })
         setAffectedComment(null)
-
-
     }
+
+
+
+
+
 
 
     // create a handler for updating comments 
@@ -60,7 +63,13 @@ const CommentsContainer = ({loginUserId}) => {
         setAffectedComment(null)
     }
 
-
+    // create handler for delete comment, only allow the 
+    const deleteCommentHandler = (commentId) => {
+        const updatedComments = comments.filter((comment) => {
+            return comment._id !== commentId
+        })
+        setComments(updatedComments)
+    }
 
 
     return (
@@ -79,6 +88,7 @@ const CommentsContainer = ({loginUserId}) => {
                 setAffectedComment={setAffectedComment}
                 addComment= {addCommentHandler}
                 updateComment = {updateCommentHandler}
+                deleteComment={deleteCommentHandler}
                 />
             ))}
         </div>
