@@ -4,7 +4,7 @@ import CommentForm from "./CommentForm";
 
 
 // pass in the comment props
-const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, addComment, parentId = null, updateComment }) => {
+const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, addComment, parentId = null, updateComment, deleteComment, replies }) => {
     // we want to check if the user is logged in
     const isUserLoggedIn = Boolean(loginUserId)
     // logged in user has to have the same user id as the user who made the comment in order to edit and delete
@@ -82,7 +82,7 @@ const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, add
                             <FiEdit2 />
                             <span>Edit</span>
                         </button>
-                        <button className="commentDelete">
+                        <button className="commentDelete" onClick={() => deleteComment(comment._id)}>
                             <FiTrash />
                             <span>Delete</span>
                         </button>
@@ -90,11 +90,34 @@ const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, add
                     )}
                 </div>
                 {/* If the user is replying then render the comment form and then pass in the addComment function*/}
-                {isReplying && <CommentForm btnLabel="Reply" formSubmitHandler={(value) => addComment(value, repliedCommentID, replyOnUserID)}
+                {isReplying && (
+                    <CommentForm 
+                    btnLabel="Reply" 
+                    formSubmitHandler={(value) => 
+                        addComment(value, repliedCommentID, replyOnUserID)
+                    }
                 
                 //add in the formCancelHandler 
                 formCancelHandler={() => setAffectedComment(null)}
-                />}
+                />
+                )}
+                {replies.length > 0 && (
+                    <div> 
+                        {replies.map((reply)=> (
+                            <Comment key={reply._id} 
+                            addComment={addComment} 
+                            affectedComment = {affectedComment} 
+                            setAffectedComment={setAffectedComment} 
+                            comment = {reply}
+                            deleteComment={deleteComment}
+                            loginUserId={loginUserId}
+                            replies={[]} // to avoid too many nested comments we just want a parent level and a child level
+                            updateComment={updateComment}
+                            parentId={comment._id}
+                            />
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     )

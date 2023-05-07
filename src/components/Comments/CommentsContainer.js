@@ -26,7 +26,7 @@ const CommentsContainer = ({loginUserId}) => {
     // These properties are based on the comment schema
     const addCommentHandler = (value, parent= null, replyOnUser = null)=>{
         const newComment = {
-                _id: "10",
+                _id: Math.random().toString(),
                 user: {
                   _id: "a",
                   name: "Mohammad Rezaii",
@@ -35,7 +35,7 @@ const CommentsContainer = ({loginUserId}) => {
                 post: "1",
                 parent: parent,
                 replyOnUser: replyOnUser,
-                createdAt: "2022-12-31T17:22:05.092+0000",
+                createdAt: new Date().toISOString(),
         }
 
 
@@ -43,9 +43,12 @@ const CommentsContainer = ({loginUserId}) => {
             return [newComment, ...curState]
         })
         setAffectedComment(null)
-
-
     }
+
+
+
+
+
 
 
     // create a handler for updating comments 
@@ -58,6 +61,27 @@ const CommentsContainer = ({loginUserId}) => {
         })
         setComments(updatedComments)
         setAffectedComment(null)
+    }
+
+    // create handler for delete comment, only allow the 
+    const deleteCommentHandler = (commentId) => {
+        const updatedComments = comments.filter((comment) => {
+            return comment._id !== commentId
+        })
+        setComments(updatedComments)
+    }
+
+
+
+    // create a get replies handler 
+    // we use a filter to get the children of the main comment
+    const getRepliesHandler = (commentId) => {
+        return comments
+        .filter((comment) => comment.parent === commentId)
+        // then we need to sort the replies in ascending order
+        .sort((a,b)=> {
+            return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+        })
     }
 
 
@@ -79,6 +103,8 @@ const CommentsContainer = ({loginUserId}) => {
                 setAffectedComment={setAffectedComment}
                 addComment= {addCommentHandler}
                 updateComment = {updateCommentHandler}
+                deleteComment={deleteCommentHandler}
+                replies={getRepliesHandler(comment._id)}
                 />
             ))}
         </div>
