@@ -27,6 +27,7 @@ const Show = (props) => {
 
   // see if the user is authenticated first
   const { isAuthenticated } = useAuth0();
+
   if (!isAuthenticated) {
       return (
           <section className='createForm'>
@@ -36,7 +37,8 @@ const Show = (props) => {
               </div>
           </section>
       );
-  }
+  } 
+
 
   //linking edit btn to edit route
   const editForm = (e) => {
