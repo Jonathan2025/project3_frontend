@@ -42,7 +42,7 @@ const PriceGraph = ({fund}) => {
     const getAPIData = async () => {
       const response = await fetch(URL)
       const data = await response.json()
-      console.log(data)
+      // console.log(data)
       
       //set the metadata state variable
       setMetaData(data['Meta Data'])

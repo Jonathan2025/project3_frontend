@@ -24,11 +24,9 @@ const Main = (props) => {
 
     //function to make the api call 
     const getFunds = async () => {
-        const response = await fetch(URL);
-        const data = await response.json();
-        setFunds(data.data);
-        console.log('API Call complete')
-        console.log(data.data);
+        const response = await fetch(URL)
+        const data = await response.json()
+        setFunds(data.data)
     }
   
     // makes a post request to create a fund

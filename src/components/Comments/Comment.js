@@ -33,11 +33,9 @@ const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, add
 
     return(
         <div className="comment"> 
-            {/* we can add a left side div here such as a user image but we dont need to do that  */}
-        
-            {/* now we will add the right side  which will have the username*/}
+           {/* Now this is where the comment will be displayed and we pass in the user who made the comment */}
             <div className="">
-                <h5 className="commentUserName">{comment.user.name}</h5>
+                <h5 className="commentUserName">{comment.user}</h5>
                 <span className="commentDate">
                     {new Date(comment.createdAt).toLocaleDateString("en-US", {
                         day:"numeric",

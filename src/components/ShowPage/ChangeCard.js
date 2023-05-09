@@ -20,7 +20,7 @@ function Card({fund, showPercent}) {
       const getAPIData = async () => {
         const response = await fetch(URL)
         const data = await response.json()
-        console.log(data)
+        // console.log(data)
         
         // set the data to be the percent change data 
         setPercentChangeData(data['Global Quote']['10. change percent'])

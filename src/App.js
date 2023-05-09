@@ -17,11 +17,11 @@ function App() {
     const response = await fetch(URL);
     const data = await response.json();
     setFunds(data.data);
-    console.log('API Call complete')
-    console.log(data.data);
+    // console.log('API Call complete')
+    // console.log("this is data from main", data);
   }
   useEffect(()=> {
-    console.log('Getting funds...')
+    console.log('Getting the funds...')
     getFunds()
   }, [])
   

@@ -39,14 +39,14 @@ const HistoricalGraph = ({fund}) => {
         const getAPIData = async () => {
             const response = await fetch(URL)
             const data = await response.json()
-            console.log("this will be the historical", data)
+            // console.log("this will be the historical", data)
             setMonthlyAdjustedCloseData(data["Monthly Adjusted Time Series"])
             }
         getAPIData()
     }, [])
 
     
-    console.log("monthly close data", monthlyAdjustedCloseData)
+    // console.log("monthly close data", monthlyAdjustedCloseData)
 
 
     const data = {

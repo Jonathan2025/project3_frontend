@@ -33,7 +33,7 @@ const DividendGraph = ({fund}) => {
     const getAPIData = async () => {
         const response = await fetch(URL)
         const data = await response.json()
-        console.log("Getting Dividend Data", data)
+        // console.log("Getting Dividend Data", data)
 
         // set the timeSeriesData state variable 
         setTimeSeriesData(data["Time Series (Daily)"])
@@ -41,7 +41,7 @@ const DividendGraph = ({fund}) => {
     getAPIData()
   }, [])
 
-  console.log("here is the dividends timeseries data", timeSeriesData)
+  // console.log("here is the dividends timeseries data", timeSeriesData)
    
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries

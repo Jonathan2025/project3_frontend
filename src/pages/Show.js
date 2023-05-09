@@ -23,10 +23,12 @@ const Show = (props) => {
   const id = params.id;
   const funds = props.funds;
   const fund = funds.find((f) => f._id === id);
-
+  // console.log("here are all the data for this fund", fund)
+  // console.log(fund.comments)
 
   // see if the user is authenticated first
-  const { isAuthenticated } = useAuth0();
+  const { user, isAuthenticated } = useAuth0();
+  const loginUserId = isAuthenticated ? user.email.split('@')[0] : 'No user login was passed';
 
   if (!isAuthenticated) {
       return (
@@ -38,7 +40,6 @@ const Show = (props) => {
           </section>
       );
   } 
-
 
   //linking edit btn to edit route
   const editForm = (e) => {
@@ -91,12 +92,11 @@ const Show = (props) => {
         </div>
       </div>
 
-
-
-
       <div className="row text-center">
-          {/* right now we pass in a dummary loginUserId which will then be replaced from the backend */}
-          <CommentsContainer loginUserId="a"/>
+          {/* we pass in the usernmae from the login information from the auth0 when the user is authenticated */}
+          {/* We also pass in the comments data that we get from the backend */}
+          {/* {console.log("loginUserId:", loginUserId)} */}
+          <CommentsContainer loginUserId={loginUserId} comments={fund.comments}/>
       </div>
 
         <div className="row text-center">
