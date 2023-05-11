@@ -5,11 +5,7 @@ import Comment from "./Comment"
 
 const CommentsContainer = ({loginUserId, comments, fundId}) => {
 
-    //const [comments, setComments] = useState([]) // create a state for comments
-    // const mainComments = comments.filter((comment) => comment.parent == null) // filter for only the main comments 
     const [affectedComment, setAffectedComment] = useState(null) // want to select the affected comment
-
-
 
     // Essentially we need to match the comment with the parent ID (whether the comment is a comment or a reply)
     // and the user that it was replied to
@@ -37,7 +33,7 @@ const CommentsContainer = ({loginUserId, comments, fundId}) => {
             })
 
             const newComment = await response.json()
-
+           
         } catch (error) {
             console.error(error)
         }
@@ -86,16 +82,15 @@ const CommentsContainer = ({loginUserId, comments, fundId}) => {
             })
             const deletedComment = await response.json()
 
+            // Reload the window after the comment is deleted
+            window.location.reload()
+
         } catch (error) {
             console.error(error);
         } 
         
     }
 
-
-
-
-    
     // create a get replies handler 
     // we use a filter to get the children of the main comment
     // const getRepliesHandler = (commentId) => {
@@ -106,9 +101,6 @@ const CommentsContainer = ({loginUserId, comments, fundId}) => {
     //         return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
     //     })
     // }
-
-
-
 
     return (
         <div className="commentsContainer">

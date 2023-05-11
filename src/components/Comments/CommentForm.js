@@ -1,5 +1,6 @@
 import React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+
 const CommentForm = ({btnLabel, 
     formSubmitHandler, 
     formCancelHandler = null, 
@@ -7,11 +8,11 @@ const CommentForm = ({btnLabel,
 }) => {
 
     const [value, setValue] = useState(initialText)
-
     const submitHandler = (e) => {
         e.preventDefault()
         formSubmitHandler(value)
         setValue("")
+        window.location.reload()
     }
 
 

@@ -49,10 +49,6 @@ const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, add
                 {!isEditing && (
                     <p className="commentDescription">{comment.desc}</p>
                 )}
-
-
-
-                
                 
                 {/* If we are editing the comment, then render the comment form and we want to show the initial text  */}
                 {isEditing && (
