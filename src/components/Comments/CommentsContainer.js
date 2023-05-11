@@ -5,7 +5,7 @@ import Comment from "./Comment"
 
 const CommentsContainer = ({loginUserId, comments, fundId}) => {
 
-    // const [comments, setComments] = useState([]) // create a state for comments
+    //const [comments, setComments] = useState([]) // create a state for comments
     // const mainComments = comments.filter((comment) => comment.parent == null) // filter for only the main comments 
     const [affectedComment, setAffectedComment] = useState(null) // want to select the affected comment
 
@@ -25,6 +25,7 @@ const CommentsContainer = ({loginUserId, comments, fundId}) => {
                 fundId: fundId // we want to set the fundId to be what we get from the props fund Id
             }
 
+            // Here we make a post request to the backend route 
             const URL = process.env.REACT_APP_BACKEND_URL + `/${commentData.fundId}`
 
             const response = await fetch(URL,{
@@ -42,28 +43,30 @@ const CommentsContainer = ({loginUserId, comments, fundId}) => {
         }
     }
        
-
-
-
-
-
-
-
-
-
-
-
-
     // create a handler for updating comments 
-    const updateCommentHandler = (value, commentId) => {
-        // const updatedComments = comments.map((comment) => {
-        //     if(comment._id === commentId){
-        //         return {...comment, desc:value}
-        //     }
-        //     return comment
-        // })
-        // setComments(updatedComments)
-        setAffectedComment(null)
+    const updateCommentHandler = async(value, commentId) => {
+        try{
+            // we are going to pass in the fundId that we get from the props
+            const URL = process.env.REACT_APP_BACKEND_URL + `/${fundId}/updateComment`
+
+            // In order for the comment to update, we need to have the commentId that is passed else, the handler wont know which comment to update
+            const updatedComment ={
+                id: commentId,
+                desc: value,
+            }
+
+            const response = await fetch(URL, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(updatedComment)
+            })
+            const newUpdatedComment = await response.json()
+
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     // create handler for delete comment, only allow the 

@@ -8,7 +8,7 @@ const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, add
     // we want to check if the user is logged in
     const isUserLoggedIn = Boolean(loginUserId)
     // logged in user has to have the same user id as the user who made the comment in order to edit and delete
-    const commentBelongsToUser = loginUserId === comment.user._id
+    const commentBelongsToUser = loginUserId === comment.user
     // in order to reply, the comment must be affected and it must be a reply type
     const isReplying = 
         affectedComment && 
@@ -35,7 +35,7 @@ const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, add
         <div className="comment"> 
            {/* Now this is where the comment will be displayed and we pass in the user who made the comment */}
             <div className="">
-                <h5 className="commentUserName">{comment.user}</h5>
+                <h5 className="commentUserName">{loginUserId}</h5>
                 <span className="commentDate">
                     {new Date(comment.createdAt).toLocaleDateString("en-US", {
                         day:"numeric",
