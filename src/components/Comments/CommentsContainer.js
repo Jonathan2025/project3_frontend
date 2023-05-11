@@ -70,11 +70,26 @@ const CommentsContainer = ({loginUserId, comments, fundId}) => {
     }
 
     // create handler for delete comment, only allow the 
-    const deleteCommentHandler = (commentId) => {
-        // const updatedComments = comments.filter((comment) => {
-        //     return comment._id !== commentId
-        // })
-        // setComments(updatedComments)
+    const deleteCommentHandler = async(commentId) => {
+        try{
+            const URL = process.env.REACT_APP_BACKEND_URL + `/${fundId}/deleteComment`
+            const deleteComment = {
+                id: commentId
+            }
+
+            const response = await fetch(URL, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(deleteComment)
+            })
+            const deletedComment = await response.json()
+
+        } catch (error) {
+            console.error(error);
+        } 
+        
     }
 
 
