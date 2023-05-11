@@ -24,7 +24,7 @@ const Show = (props) => {
   const funds = props.funds;
   const fund = funds.find((f) => f._id === id);
   // console.log("here are all the data for this fund", fund)
-  // console.log(fund.comments)
+  // console.log(fund.id)
 
   // see if the user is authenticated first
   const { user, isAuthenticated } = useAuth0();
@@ -96,7 +96,7 @@ const Show = (props) => {
           {/* we pass in the usernmae from the login information from the auth0 when the user is authenticated */}
           {/* We also pass in the comments data that we get from the backend */}
           {/* {console.log("loginUserId:", loginUserId)} */}
-          <CommentsContainer loginUserId={loginUserId} comments={fund.comments}/>
+          <CommentsContainer loginUserId={loginUserId} comments={fund.comments} fundId={fund.id}/>
       </div>
 
         <div className="row text-center">

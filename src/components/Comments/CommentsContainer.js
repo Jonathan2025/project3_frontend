@@ -3,47 +3,50 @@ import { getCommentsData } from "../Data/Data"
 import CommentForm from "./CommentForm"
 import Comment from "./Comment"
 
-const CommentsContainer = ({loginUserId, comments}) => {
+const CommentsContainer = ({loginUserId, comments, fundId}) => {
 
     // const [comments, setComments] = useState([]) // create a state for comments
     // const mainComments = comments.filter((comment) => comment.parent == null) // filter for only the main comments 
     const [affectedComment, setAffectedComment] = useState(null) // want to select the affected comment
 
 
-    // console.log("Here are the comments", comments)
-
-    // now we want to use useffect to fill the comments state with the comment data, it runs on itsself
-    // useEffect(() => {
-    //     (async() => {
-    //         const commentData = await getCommentsData()
-    //         setComments(commentData)
-    //     })()
-    // }, [])
 
     // Essentially we need to match the comment with the parent ID (whether the comment is a comment or a reply)
     // and the user that it was replied to
     // Eventually we will be getting this information from the backend
     // These properties are based on the comment schema
-    const addCommentHandler = (value, parent= null, replyOnUser = null)=>{
-        // const newComment = {
-        //         _id: Math.random().toString(),
-        //         user: {
-        //           _id: "a",
-        //           name: "Mohammad Rezaii",
-        //         },
-        //         desc: value,
-        //         post: "1",
-        //         parent: parent,
-        //         replyOnUser: replyOnUser,
-        //         createdAt: new Date().toISOString(),
-        // }
+    const addCommentHandler = async(value, parent= null, replyOnUser = null)=>{
+        try { 
+            const commentData = {
+                user: loginUserId,
+                desc: value,
+                parent: parent,
+                replyOnUser: replyOnUser,
+                fundId: fundId // we want to set the fundId to be what we get from the props fund Id
+            }
 
+            const URL = process.env.REACT_APP_BACKEND_URL + `/${commentData.fundId}`
 
-        // setComments((curState) => {
-        //     return [newComment, ...curState]
-        // })
-        setAffectedComment(null)
+            const response = await fetch(URL,{
+                method:'POST',
+                headers:{
+                    'Content-Type': 'application/json'
+                }, 
+                body: JSON.stringify(commentData)
+            })
+
+            const newComment = await response.json()
+
+        } catch (error) {
+            console.error(error)
+        }
     }
+       
+
+
+
+
+
 
 
 
@@ -92,6 +95,7 @@ const CommentsContainer = ({loginUserId, comments}) => {
     return (
         <div className="commentsContainer">
             <h1> This will be the comment section</h1>
+            {/* the formSubmitHandler points to a function addCommentHandler */}
             <CommentForm btnLabel="Submit" formSubmitHandler={(value) => addCommentHandler(value)}/>
         
         {/* we want to pass in the comments that we get from props and then map them */}
