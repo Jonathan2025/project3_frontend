@@ -95,7 +95,6 @@ const Show = (props) => {
       <div className="row">
           {/* we pass in the usernmae from the login information from the auth0 when the user is authenticated */}
           {/* We also pass in the comments data that we get from the backend */}
-          {/* {console.log("loginUserId:", loginUserId)} */}
           <CommentsContainer loginUserId={loginUserId} comments={fund.comments} fundId={fund.id}/>
       </div>
 

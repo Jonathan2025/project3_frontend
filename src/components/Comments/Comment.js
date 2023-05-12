@@ -2,12 +2,6 @@ import React from "react"
 import { FiMessageSquare, FiEdit2, FiTrash } from "react-icons/fi";
 import CommentForm from "./CommentForm";
 
-
-// Bootstrap CSS
-import "bootstrap/dist/css/bootstrap.min.css";
-// Bootstrap Bundle JS
-import "bootstrap/dist/js/bootstrap.bundle.min";
-
 // pass in the comment props
 const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, addComment, parentId = null, updateComment, deleteComment, replies }) => {
     // we want to check if the user is logged in

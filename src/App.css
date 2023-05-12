@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.25%;
-  background-color: #dddbd8;
+  background-color: #79a6d2;
   opacity: .9;
   text-decoration: none;
   font-size: 1.75vw; 
@@ -504,6 +504,7 @@ button:hover{
   border-radius: 20px;
   background-color: #E0E0E0;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .dividendGraph{

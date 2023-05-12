@@ -93,14 +93,13 @@ const CommentsContainer = ({loginUserId, comments, fundId}) => {
 
     return (
         <div className="commentsContainer">
-            <h1> This will be the comment section</h1>
+            <h1 class="text-center fundTitle"> Comment section</h1>
             {/* the formSubmitHandler points to a function addCommentHandler */}
             <CommentForm btnLabel="Submit" formSubmitHandler={(value) => addCommentHandler(value)}/>
         
         {/* we want to pass in the comments that we get from props and then map them */}
-        {/* <div className="mainComment"> */}
         {/* the my-4 in boostrap sets the vertical margin of about 16px for an element */}
-        <div className="my-4">
+        <div className="my-4" style={{ maxHeight: "350px", overflow: "auto" }}>
             {comments.map((comment) => (
                 <Comment
                 //need to also pass in a key prop
