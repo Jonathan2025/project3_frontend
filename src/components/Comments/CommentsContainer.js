@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
-import { getCommentsData } from "../Data/Data"
 import CommentForm from "./CommentForm"
 import Comment from "./Comment"
+
 
 const CommentsContainer = ({loginUserId, comments, fundId}) => {
 
@@ -91,17 +91,6 @@ const CommentsContainer = ({loginUserId, comments, fundId}) => {
         
     }
 
-    // create a get replies handler 
-    // we use a filter to get the children of the main comment
-    // const getRepliesHandler = (commentId) => {
-    //     return comments
-    //     .filter((comment) => comment.parent === commentId)
-    //     // then we need to sort the replies in ascending order
-    //     .sort((a,b)=> {
-    //         return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
-    //     })
-    // }
-
     return (
         <div className="commentsContainer">
             <h1> This will be the comment section</h1>
@@ -109,7 +98,9 @@ const CommentsContainer = ({loginUserId, comments, fundId}) => {
             <CommentForm btnLabel="Submit" formSubmitHandler={(value) => addCommentHandler(value)}/>
         
         {/* we want to pass in the comments that we get from props and then map them */}
-        <div className="mainComment">
+        {/* <div className="mainComment"> */}
+        {/* the my-4 in boostrap sets the vertical margin of about 16px for an element */}
+        <div className="my-4">
             {comments.map((comment) => (
                 <Comment
                 //need to also pass in a key prop
