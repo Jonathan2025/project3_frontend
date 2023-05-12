@@ -110,7 +110,7 @@ const Comment = ({comment, loginUserId, affectedComment, setAffectedComment, add
                         )}
                         {replies.length > 0 && (
                         <div>
-                        {replies.map((reply)=> (
+                        {replies.slice(0).reverse().map((reply)=> (
                             <Comment
                             key={reply._id} 
                             addComment={addComment} 

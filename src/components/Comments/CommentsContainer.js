@@ -100,7 +100,8 @@ const CommentsContainer = ({loginUserId, comments, fundId}) => {
         {/* we want to pass in the comments that we get from props and then map them */}
         {/* the my-4 in boostrap sets the vertical margin of about 16px for an element */}
         <div className="my-4" style={{ maxHeight: "350px", overflow: "auto" }}>
-            {comments.map((comment) => (
+            {/* lets reverse the order of the comments so that the most recent will be on top */}
+            {comments.slice(0).reverse().map((comment) => (
                 <Comment
                 //need to also pass in a key prop
                 key = {comment._id}
